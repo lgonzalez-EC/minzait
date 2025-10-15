@@ -154,6 +154,22 @@ body {
 }
 
 /* ==========================================
+   Clientes
+   ========================================== */
+
+.client-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.client-item:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================
    Contacto
    ========================================== */
 
@@ -164,6 +180,14 @@ body {
 /* ==========================================
    Headers y Banners
    ========================================== */
+
+header {
+  /* background-color: #4b0082; */
+  background: linear-gradient(to bottom,
+  #8E1AFF 0%,
+  #4b0082 60%,
+  transparent 100%);
+}
 
 .full-banner {
   background:
@@ -177,9 +201,8 @@ body {
   min-height: 400px;
 }
 
-header {
-  /* background-color: #4b0082; */
-  background: linear-gradient(to bottom, #4b0082, transparent 100%);
+.background-section-light{
+  background: linear-gradient(to bottom, #F5EDE0, #ead9ff);
 }
 
 /* ==========================================

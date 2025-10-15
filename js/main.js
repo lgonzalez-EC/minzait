@@ -180,6 +180,33 @@
         },
       },
     });
+
+    ///////////////////
+    // Client carousel
+    ///////////////////
+    $(".client-carousel").owlCarousel({
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: false,
+      smartSpeed: 1000,
+      margin: 30,
+      dots: false,
+      loop: true,
+      responsive: {
+        0: {
+          items: 2,
+        },
+        576: {
+          items: 3,
+        },
+        768: {
+          items: 4,
+        },
+        992: {
+          items: 5,
+        },
+      },
+    });
   });
 
   ///////////////////
