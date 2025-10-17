@@ -131,9 +131,24 @@ body {
    Portafolios
    ========================================== */
 
+#portfolio-tabs .nav-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #8E1AFF;
+}
+
+#portfolio-tabs .nav-link.active {
+  background-color: #4B0082;
+  color: white;
+}
+
+#portfolio-tabs .nav-link:hover {
+  background-color: rgba(75, 0, 130, 0.8);
+  color: white;
+}
+
 .portfolio-item {
   transition: transform 0.3s ease, opacity 0.3s ease;
-  
+
 }
 
 .portfolio-item.hidden {
@@ -495,6 +510,10 @@ header {
   }
 }
 
+.nav-link-proyect {
+  background-color: #8E1AFF;
+}
+
 .navbar-light .navbar-nav .nav-link:hover {
   color: #34005c;
 }
@@ -507,12 +526,15 @@ header {
   transform: scale(1.1);
 }
 
-.btn-primary {
-  transition: all 0.3s ease;
+.button-primary {
+  background-color: blueviolet;
+  color: white;
 }
 
-.btn-primary:hover {
+.button-primary:hover {
   transform: translateY(-2px);
+  background-color: indigo;
+  color: white;
   box-shadow: 0 4px 15px rgba(75, 0, 130, 0.3);
 }
 
