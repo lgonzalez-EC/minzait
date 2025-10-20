@@ -15,32 +15,29 @@ $(function () {
             $this.prop("disabled", true);
 
             $.ajax({
-                url: "contact.php",
+                url: "https://api.web3forms.com/submit",
                 type: "POST",
                 data: {
+                    access_key: "66cf34d6-3a8e-4354-9a8a-b6229b9cdb3a",
                     name: name,
                     email: email,
                     subject: subject,
                     message: message
                 },
                 cache: false,
-                success: function () {
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-success')
-                            .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                            .append('</div>');
-                    $('#contactForm').trigger("reset");
+                success: function (data) {
+                    if (data.success) {
+                        $('#modalMessage').text("Tu mensaje ha sido enviado exitosamente.");
+                        $('#successModal').modal('show');
+                        $('#contactForm').trigger("reset");
+                    } else {
+                        $('#modalMessage').text("Error: " + data.message);
+                        $('#successModal').modal('show');
+                    }
                 },
                 error: function () {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
-                    $('#success > .alert-danger').append('</div>');
-                    $('#contactForm').trigger("reset");
+                    $('#modalMessage').text("Lo sentimos, parece que hay un problema con el servidor. Por favor, intenta de nuevo más tarde.");
+                    $('#successModal').modal('show');
                 },
                 complete: function () {
                     setTimeout(function () {

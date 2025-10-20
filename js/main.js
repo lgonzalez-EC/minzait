@@ -32,12 +32,24 @@
   ///////////////////
   document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById("loader");
+    const navbar = document.getElementById("navbar-floating");
 
     // Mostrar loader al cargar la página
     window.addEventListener("load", () => {
       setTimeout(() => {
         loader.classList.add("fade-out");
         document.body.classList.remove("loading");
+
+        // Animar navbar solo en la primera visita
+        if (!sessionStorage.getItem('navbarAnimated')) {
+          setTimeout(() => {
+            navbar.classList.add("animate-in");
+            sessionStorage.setItem('navbarAnimated', 'true');
+          }, 300);
+        } else {
+          // Mostrar navbar directamente sin animación en visitas posteriores
+          navbar.classList.add("animate-in");
+        }
       }, 800);
     });
 
@@ -153,60 +165,86 @@
           item.classList.add('hidden');
         }
       });
-    });
 
-    ///////////////////
-    // Testimonials carousel
-    ///////////////////
-    $(".testimonial-carousel").owlCarousel({
-      autoplay: true,
-      smartSpeed: 1500,
-      margin: 30,
-      dots: true,
-      loop: true,
-      center: true,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        576: {
-          items: 1,
-        },
-        768: {
-          items: 2,
-        },
-        992: {
-          items: 3,
-        },
-      },
+      // Refrescar AOS para recalcular posiciones después del filtro
+      AOS.refresh();
     });
+  });
 
-    ///////////////////
-    // Client carousel
-    ///////////////////
-    $(".client-carousel").owlCarousel({
-      autoplay: true,
-      autoplayTimeout: 2000,
-      autoplayHoverPause: false,
-      smartSpeed: 1000,
-      margin: 30,
-      dots: false,
-      loop: true,
-      responsive: {
-        0: {
-          items: 2,
-        },
-        576: {
-          items: 3,
-        },
-        768: {
-          items: 4,
-        },
-        992: {
-          items: 5,
-        },
+  // Agregar event listeners para hover en portfolio items (desactivado temporalmente hasta tener todas las imágenes hover)
+  /*
+  items.forEach(item => {
+    const img = item.querySelector('img');
+    const hoverSrc = img.getAttribute('data-hover-src');
+
+    if (hoverSrc) {
+      item.addEventListener('mouseenter', () => {
+        img.setAttribute('data-original-src', img.src);
+        img.src = hoverSrc;
+      });
+
+      item.addEventListener('mouseleave', () => {
+        const originalSrc = img.getAttribute('data-original-src');
+        if (originalSrc) {
+          img.src = originalSrc;
+          img.removeAttribute('data-original-src');
+        }
+      });
+    }
+  });
+  */
+
+  ///////////////////
+  // Testimonials carousel
+  ///////////////////
+  $(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    smartSpeed: 1500,
+    margin: 30,
+    dots: true,
+    loop: true,
+    center: true,
+    responsive: {
+      0: {
+        items: 1,
       },
-    });
+      576: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+      },
+      992: {
+        items: 3,
+      },
+    },
+  });
+
+  ///////////////////
+  // Client carousel
+  ///////////////////
+  $(".client-carousel").owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: false,
+    smartSpeed: 1000,
+    margin: 30,
+    dots: false,
+    loop: true,
+    responsive: {
+      0: {
+        items: 2,
+      },
+      576: {
+        items: 3,
+      },
+      768: {
+        items: 4,
+      },
+      992: {
+        items: 5,
+      },
+    },
   });
 
   ///////////////////
