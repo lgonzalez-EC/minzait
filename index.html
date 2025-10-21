@@ -181,10 +181,16 @@
     <header class="vh-100 d-flex align-items-center text-white">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-md-12 text-center px-4">
-                    <img src="img/logo_secon.webp" style="width: 800px;" alt="Imagen representativa"
-                        class="img-fluid max-img mb-4">
-                    <p class="lead">Creamos soluciones que transforman tu negocio.</p>
+                <div class="col-lg-6 text-center px-4">
+                    <img src="img/logo_secon.webp" style="width: 500px;" alt="Logo Minzait"
+                        class="img-fluid mb-4">
+                    <p class="lead text-center">Creamos soluciones que transforman tu negocio.</p>
+                    <div class="text-center">
+                        <a href="#about" class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver Más</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center px-4">
+                    <img src="img/header.webp" alt="Imagen del header" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -193,13 +199,13 @@
 
 
     <!-- About Start -->
-    <section class="py-5">
+    <section class="py-5" id="about">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
                     <img class="img-fluid mb-4 mb-lg-0" src="img/about.webp" alt="s">
                 </div>
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
                     <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quienes somos</h2>
                     <h5 class="text-uppercase text-white mb-3">En Minzait, convertimos visión en identidad y presencia digital</h5>
                     <p class="mb-4 text-white">
@@ -218,22 +224,20 @@
     <!-- Services Start -->
     <section class="py-5 background-section">
         <div class="container pt-5 pb-3 justify-content-center align-items-center">
-            <h1 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
-                data-aos-duration="1000" data-aos-once="true">Servicios</h1>
+            <h2 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
+                data-aos-duration="1000" data-aos-once="true">Servicios</h2>
             <div class="row">
                 <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                     <div class="service-item rounded p-5 mb-4">
-                        <i class="fa fa-3x fa-laptop-code mb-4"></i>
+                        <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
                         <h4 class="text-uppercase mb-4">Identidad <span class="d-block text-body">Corporativa</span>
                         </h4>
-                        <p class="m-0">Tu imagen habla por ti. Diseñamos logotipos, identidad visual, papelería y contenido para redes sociales que reflejan la esencia de tu empresa</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                     <div class="service-item rounded p-5 mb-4">
                         <i class="fa fa-3x fa-code mb-4"></i>
                         <h4 class="text-uppercase mb-4">Desarrollo  <span class="d-block text-body">Web</span></h4>
-                        <p class="m-0">Construimos sitios web informativos que comunican con claridad, se adaptan a todos los dispositivos y reflejan la identidad de tu marca</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
@@ -241,7 +245,6 @@
                         <i class="fa fa-3x fa-solid fa-hashtag mb-4"></i>
                         <h4 class="text-uppercase mb-4">Redes Sociales y <span
                                 class="d-block text-body">Comunicación</span></h4>
-                        <p class="m-0">Creamos planes de marketing personalizados que alinean tus objetivos con acciones concretas. Campañas digitales, posicionamiento de marca y análisis de mercado</p>
                     </div>
                 </div>
             </div>
@@ -253,12 +256,12 @@
     <!-- Services End -->
 
 
-    <!-- Portfolio Start -->
+    <!-- Portfolio Start --
     <section id="portafolio" class="py-5 bg-dark text-white">
         <div class="container">
             <h2 class="text-center mb-4">Portafolio</h2>
 
-            <!-- Tabs de categorías -->
+            <!- Tabs de categorías --
             <ul class="nav nav-pills justify-content-center mb-4" id="portfolio-tabs">
                 <li class="nav-item"><button class="nav-link active" data-filter="all">Todos</button></li>
                 <li class="nav-item"><button class="nav-link" data-filter="web">Páginas Web</button></li>
@@ -266,9 +269,9 @@
                 <li class="nav-item"><button class="nav-link" data-filter="social">Redes Sociales</button></li>
             </ul>
 
-            <!-- Grid de proyectos -->
+            <!- Grid de proyectos --
             <div class="row" id="portfolio-grid">
-                <!-- Ejemplo de proyecto web -->
+                <!- Página web ITBSA --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="web">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-1.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-1-hover.webp">
@@ -279,7 +282,7 @@
                     </div>
                 </div>
 
-                <!-- Ejemplo de diseño gráfico -->
+                <!- Ejemplo de diseño gráfico --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="design">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-1.jpg" class="card-img-top" alt="Branding" data-hover-src="img/portfolio-2-hover.webp">
@@ -290,7 +293,7 @@
                     </div>
                 </div>
 
-                <!-- Ejemplo de redes sociales -->
+                <!- Ejemplo de redes sociales --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="social">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-1.jpg" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-3-hover.webp">
@@ -302,7 +305,7 @@
                     </div>
                 </div>
 
-                <!-- Página web Somos People -->
+                <!- Página web Somos People --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="web">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-2.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-4-hover.webp">
@@ -313,7 +316,7 @@
                     </div>
                 </div>
 
-                <!-- Ejemplo de redes sociales -->
+                <!- Ejemplo de redes sociales --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="social">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-1.jpg" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-5-hover.webp">
@@ -325,7 +328,7 @@
                     </div>
                 </div>
 
-                <!-- Ejemplo de redes sociales -->
+                <!- Ejemplo de redes sociales --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="social">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-1.jpg" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-6-hover.webp">
@@ -337,7 +340,7 @@
                     </div>
                 </div>
 
-                <!-- Página web Somos People -->
+                <!- Página web Somos People --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="web">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-2.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-7-hover.webp">
@@ -348,7 +351,7 @@
                     </div>
                 </div>
 
-                <!-- Ejemplo de redes sociales -->
+                <!- Ejemplo de redes sociales --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="social">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-1.jpg" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-8-hover.webp">
@@ -360,7 +363,7 @@
                     </div>
                 </div>
 
-                <!-- Página web Somos People -->
+                <!- Página web Somos People --
                 <div class="col-md-3 mb-4 portfolio-item" data-category="web">
                     <div class="card portfolio-card bg-secondary text-white h-100">
                         <img src="img/portfolio-2.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-9-hover.webp">
@@ -373,14 +376,14 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio End -->
+    <!- Portfolio End -->
 
 
     <!-- Carousel Clientes Start -->
     <section class="py-5 background-section-light">
         <div class="container py-5">
-            <h2 class="text-center mb-5 text-uppercase" style="color: #B399D4;" data-aos="fade-in" data-aos-delay="200"
-                data-aos-duration="1000">Nuestros Clientes</h2>
+            <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #6f00ff;" data-aos="fade-in" data-aos-delay="200"
+                data-aos-duration="1000" data-aos-once="true">Nuestros Clientes</h2>
             <div class="client-carousel owl-carousel" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
                 <div class="client-item text-center">
                     <img src="img/clientes/24-7.webp" alt="Cliente 1" class="img-fluid mx-auto d-block"
@@ -418,8 +421,7 @@
         </div>
     </section>
     <!-- Carousel Clientes End -->
-
-
+     
 
     <!-- Paquete Básico Start -->
     <section class="py-5 background-section">
@@ -428,8 +430,8 @@
                 <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
                     <img class="img-fluid mb-4 mb-lg-0" src="img/paquete_conozcan_img.webp" alt="">
                 </div>
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-                    <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Paquete Conozcan</h2>
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                    <h2 class="display-4 text-uppercase mb-4" style="color: #bfa9db;">Paquete Conozcan</h2>
                     <h5 class="text-uppercase text-white mb-3">Ideal para pequeñas empresas y emprendedores que
                         buscan establecer su presencia en línea de manera efectiva y asequible.</h5>
                     <ul class="mb-2 text-white">
