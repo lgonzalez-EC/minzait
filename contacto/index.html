@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Contacto - Minzait</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta name="keywords" content="contacto, Minzait, agencia digital, desarrollo web, diseño web, apps móviles, branding, marketing digital, SEO, consultoría TI, León, Guanajuato, cotizaciones, WhatsApp, formulario de contacto">
+    <meta name="description" content="Contacto — Minzait: agencia digital en León (Guanajuato). Contáctanos para desarrollo y diseño web, apps móviles, branding y marketing digital. Formulario, dirección y WhatsApp para cotizaciones.">
 
     <!-- Favicon -->
     <link href="../img/icon.webp" rel="icon">
@@ -191,19 +191,20 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid py-5 px-0">
-        <div class="row mx-0">
-            <div class="col-12 px-0" style="height: 500px;">
+    <section class="container-fluid py-5 px-0">
+        <div class="row mx-0 align-items-center">
+            <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+                <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Contactanos</h2>
+                <h5 class="text-uppercase text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos
+                    lo que necesitas y déjanos ayudarte a construir una solución creativa y funcional.</h5>
+
                 <div class="position-relative h-100">
-                    <iframe class="position-relative w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369.1687201676888!2d-101.67197139500115!3d21.15287814839443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf2ff9dd7e83%3A0xc8ba86735f1289c5!2sBenedicto%20XV%20144%2C%20San%20Jeronimo%20II%2C%2037148%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1761150529099!5m2!1ses-419!2smx" 
+                    width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-        </div>
-        <div class="row mx-0 justify-content-center" style="margin-top: -200px;">
-            <div class="col-lg-6 col-md-8 col-sm-10 px-0">
-                <div class="contact-form bg-white rounded p-4">
+            <div class="col-lg-6 px-0">
+                <div class="contact-form bg-white rounded p-5">
                     <div id="success"></div>
                     <!-- Modal de Bootstrap para mensajes -->
                     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
@@ -223,40 +224,59 @@
                         </div>
                     </div>
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="form-row">
+                            <div class="col-lg">
+                                <div class="control-group">
+                                    <input type="text" class="form-control bg-light border-0 p-4" id="name"
+                                        placeholder="Nombre" required="required"
+                                        data-validation-required-message="Escribe tu nombre" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="control-group">
+                                    <input type="email" class="form-control bg-light border-0 p-4" id="email"
+                                        placeholder="Correo" required="required"
+                                        data-validation-required-message="Escribe tu correo" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="control-group">
-                            <input type="text" class="form-control bg-light border-0 p-3" id="name"
-                                placeholder="Your Name" required="required"
-                                data-validation-required-message="Please enter your name" />
+                            <input type="text" class="form-control bg-light border-0 p-4" id="subject"
+                                placeholder="Asunto" required="required"
+                                data-validation-required-message="Esribe el asunto" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control bg-light border-0 p-3" id="email"
-                                placeholder="Your Email" required="required"
-                                data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control bg-light border-0 p-3" id="subject"
-                                placeholder="Subject" required="required"
-                                data-validation-required-message="Please enter a subject" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <textarea class="form-control bg-light border-0 py-2 px-3" rows="3" id="message"
-                                placeholder="Message" required="required"
-                                data-validation-required-message="Please enter your message"></textarea>
+                            <textarea class="form-control bg-light border-0 py-3 px-4" rows="5" id="message"
+                                placeholder="Mnesaje" required="required"
+                                data-validation-required-message="Escribe el mensaje"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-primary text-uppercase py-2 px-4" type="submit"
-                                id="sendMessageButton">Send Message</button>
+                            <button class="btn button-primary text-uppercase py-3 px-5" type="submit"
+                                id="sendMessageButton">Enviar</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Contact End -->
+
+
+    <!-- Banner Start -->
+    <section class="full-banner d-flex flex-column justify-content-center align-items-center text-center">
+        <div class="container">
+            <h3 class="text-white display-6 mb-3">¡Cotiza con nosotros en minutos!</h3>
+            <a href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información" target="_blank"
+                class="btn px-4 py-2 text-white" style="background-color: #25d366;">
+                <i class="fab fa-whatsapp me-2"></i> Escríbenos por WhatsApp
+            </a>
+        </div>
+    </section>
+    <!-- Banner End -->
 
 
     <!-- Footer Start -->

@@ -22,10 +22,12 @@
     $(window).resize(toggleNavbarMethod);
   });
 
+  
   ///////////////////
   // Initiate AOS
   ///////////////////
   AOS.init();
+
 
   ///////////////////
   // Loader
