@@ -195,6 +195,9 @@
     }
   });
   */
+
+
+
   
 
   ///////////////////
@@ -287,4 +290,37 @@
       });
     });
   }
+
+  ///////////////////
+  // Typewriter effect
+  ///////////////////
+  document.addEventListener("DOMContentLoaded", () => {
+    const text = "Conectamos tu negocio con el mundo digital.";
+    const element = document.getElementById("typewriter-text");
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        element.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100); // Velocidad de escritura
+      } else {
+        // Agregar cursor parpadeante al final
+        element.innerHTML += '<span class="cursor">|</span>';
+        setInterval(() => {
+          const cursor = element.querySelector('.cursor');
+          cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+        }, 500);
+      }
+    }
+
+    // Esperar 2 segundos antes de iniciar el efecto
+    setTimeout(() => {
+      typeWriter();
+    }, 2000);
+  });
 })(jQuery);
+
+
+
+

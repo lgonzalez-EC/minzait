@@ -33,6 +33,16 @@
     <link href="css/style-optimized.css" rel="stylesheet">
 </head>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-40VJTTV59W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-40VJTTV59W');
+    </script>
+
 <body>
 
     <!--Loader start-->
@@ -50,7 +60,7 @@
         <nav class="navbar">
             <div class="navbar-content">
                 <div class="logo">
-                    <img src="img/logo_prin.webp" alt="Logo" />
+                    <a href="./"><img src="img/logo_prin.webp" alt="Logo" /></a>
                 </div>
                 <button class="hamburger" aria-label="Menú">
                     <span class="hamburger-line"></span>
@@ -184,7 +194,7 @@
                 <div class="col-lg-6 text-center px-4">
                     <img src="img/logo_secon.webp" style="width: 500px;" alt="Logo Minzait"
                         class="img-fluid mb-4">
-                    <p class="lead text-center">Creamos soluciones que transforman tu negocio.</p>
+                    <p class="lead text-center"><span id="typewriter-text"></span></p>
                     <div class="text-center">
                         <a href="#about" class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver Más</a>
                     </div>
@@ -197,15 +207,23 @@
     </header>
     <!-- Header End -->
 
+    <!-- Ejemplos de AOS -->
+     <!--   data-aos="fade-up" 
+            data-aos-duration="1000" 
+            data-aos-delay="200" 
+            data-aos-offset="120" 
+            data-aos-easing="ease-in-out" 
+            data-aos-once="true" -->
+
 
     <!-- About Start -->
     <section class="py-5" id="about">
         <div class="container py-5">
             <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000"  data-aos-easing="ease-in-out">
                     <img class="img-fluid mb-4 mb-lg-0" src="img/about.webp" alt="s">
                 </div>
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000"  data-aos-easing="ease-in-out" >
                     <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quienes somos</h2>
                     <h5 class="text-uppercase text-white mb-3">En Minzait, convertimos visión en identidad y presencia digital</h5>
                     <p class="mb-4 text-white">
@@ -224,23 +242,24 @@
     <!-- Services Start -->
     <section class="py-5 background-section">
         <div class="container pt-5 pb-3 justify-content-center align-items-center">
-            <h2 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
-                data-aos-duration="1000" data-aos-once="true">Servicios</h2>
+            <h2 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true" data-aos-easing="ease-in-out">
+                Servicios
+            </h2>
             <div class="row">
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="service-item rounded p-5 mb-4">
                         <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
                         <h4 class="text-uppercase mb-4">Identidad <span class="d-block text-body">Corporativa</span>
                         </h4>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="service-item rounded p-5 mb-4">
                         <i class="fa fa-3x fa-code mb-4"></i>
                         <h4 class="text-uppercase mb-4">Desarrollo  <span class="d-block text-body">Web</span></h4>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="service-item rounded p-5 mb-4">
                         <i class="fa fa-3x fa-solid fa-hashtag mb-4"></i>
                         <h4 class="text-uppercase mb-4">Redes Sociales y <span
@@ -248,137 +267,14 @@
                     </div>
                 </div>
             </div>
-           <div class="text-center">
+           <div class="text-center" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-in-out">
                 <a href="/servicios/" class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver Más</a>
             </div>
         </div>
     </section>
     <!-- Services End -->
 
-
-    <!-- Portfolio Start -->
-    <section id="portafolio" class="py-5 bg-dark text-white">
-        <div class="container">
-            <h2 class="text-center mb-4">Portafolio</h2>
-
-            <!-- Tabs de categorías -->
-            <ul class="nav nav-pills justify-content-center mb-4" id="portfolio-tabs">
-                <li class="nav-item"><button class="nav-link active" data-filter="all">Todos</button></li>
-                <li class="nav-item"><button class="nav-link" data-filter="web">Páginas Web</button></li>
-                <li class="nav-item"><button class="nav-link" data-filter="design">Diseño Gráfico</button></li>
-                <li class="nav-item"><button class="nav-link" data-filter="social">Redes Sociales</button></li>
-            </ul>
-
-            <!-- Grid de proyectos -->
-            <div class="row" id="portfolio-grid">
-                <!-- Página web ITBSA -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-1.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-1-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Sitio para ITBSA</h5>
-                            <p class="card-text">Diseño responsivo, optimizado para SEO y velocidad.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ejemplo de diseño gráfico -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="design">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-2.webp" class="card-img-top" alt="Branding" data-hover-src="img/portfolio-2-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Manual de Marca para Restaurante</h5>
-                            <p class="card-text">Incluye logotipo, paleta de colores y papelería empresarial.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ejemplo de redes sociales -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="social">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-3.webp" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-3-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Gestión de Instagram para Marca Fitness</h5>
-                            <p class="card-text">Calendario de contenido, diseño de posts y estrategia de engagement.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Página web Somos People -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-3.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-4-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Sitio para Somos People</h5>
-                            <p class="card-text">Diseño responsivo, optimizado para SEO y velocidad.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ejemplo de redes sociales -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="social">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-4.webp" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-5-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Gestión de Instagram para Marca Fitness</h5>
-                            <p class="card-text">Calendario de contenido, diseño de posts y estrategia de engagement.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ejemplo de redes sociales -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="social">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-4.webp" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-6-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Gestión de Instagram para Marca Fitness</h5>
-                            <p class="card-text">Calendario de contenido, diseño de posts y estrategia de engagement.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Página web Trivium -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-2.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-1-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Sitio para Trivium Records</h5>
-                            <p class="card-text">Diseño responsivo, optimizado para SEO y velocidad.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ejemplo de redes sociales -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="social">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-1.jpg" class="card-img-top" alt="Redes Sociales" data-hover-src="img/portfolio-8-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Gestión de Instagram para Marca Fitness</h5>
-                            <p class="card-text">Calendario de contenido, diseño de posts y estrategia de engagement.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Página web Somos People -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portfolio-2.webp" class="card-img-top" alt="Proyecto Web" data-hover-src="img/portfolio-9-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title">Sitio para Somos People</h5>
-                            <p class="card-text">Diseño responsivo, optimizado para SEO y velocidad.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Portfolio End -->
-
-
+    
     <!-- Carousel Clientes Start -->
     <section class="py-5 background-section-light">
         <div class="container py-5">
@@ -428,10 +324,10 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
-                    <img class="img-fluid mb-4 mb-lg-0" src="img/paquete_conozcan_img.webp" alt="">
+                    <img class="img-fluid mb-4 mb-lg-0" src="img/paquete_acceso_img.webp" alt="">
                 </div>
                 <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
-                    <h2 class="display-4 text-uppercase mb-4" style="color: #bfa9db;">Paquete Conozcan</h2>
+                    <h2 class="display-4 text-uppercase mb-4" style="color: #bfa9db;">Paquete de Acceso</h2>
                     <h5 class="text-uppercase text-white mb-3">Ideal para pequeñas empresas y emprendedores que
                         buscan establecer su presencia en línea de manera efectiva y asequible.</h5>
                     <ul class="mb-2 text-white">
@@ -442,9 +338,9 @@
                         <li>Tarjeta de presentación digital</li>
                         <li>Correo electrónico de contacto</li>
                         <li>Desarrollo de sitio web profesional</li>
-                        <li>Creación de redes sociales</li>
+                        <li>Creación de redes sociales (Incluye 4 publicaciones el primer mes)</li>
                     </ul>
-                    <h4 class="py-2 text-white">Desde $12,000mxn</h5>
+                    <h4 class="py-2 text-white">Desde $12,000 mxn</h5>
                         <a href="/contacto/" class="btn button-primary text-uppercase py-3 px-5">Contactanos</a>
                 </div>
             </div>

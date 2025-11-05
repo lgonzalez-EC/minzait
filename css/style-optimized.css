@@ -183,7 +183,6 @@ body {
   color: white;
 }
 
-
 /* ==========================================
    Testimonios
    ========================================== */
@@ -671,3 +670,48 @@ header {
     transform: rotate(360deg);
   }
 }
+
+/* ==========================================
+   Typewriter Effect
+   ========================================== */
+
+#typewriter-text {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.25rem;
+  color: white;
+  border-right: 2px solid white;
+  white-space: normal;
+  overflow: hidden;
+  animation: blink-caret 1s step-end infinite;
+  word-wrap: break-word;
+}
+
+.cursor {
+  border-right: 2px solid white;
+  animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

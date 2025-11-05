@@ -18,7 +18,7 @@ $(function () {
                 url: "https://api.web3forms.com/submit",
                 type: "POST",
                 data: {
-                    access_key: "66cf34d6-3a8e-4354-9a8a-b6229b9cdb3a",
+                    access_key: "51a0f322-b0a4-4d50-b6b6-15e8431e24fd",
                     name: name,
                     email: email,
                     subject: subject,
