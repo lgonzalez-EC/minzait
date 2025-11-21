@@ -612,33 +612,7 @@ header {
 }
 
 
-/* ==========================================
-   Degradados extra
-   ========================================== */
-/* .degradado-animado {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, #4B0082 10%, transparent 70%);
-  top: 200%;
-  left: 80%;
-}
 
-.degradado-animado-2 {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, #4B0082 10%, transparent 70%);
-  top: 300%;
-  left: 80%;
-} */
-
-
-.background-section{
-  background:
-  radial-gradient(circle at 20% 30%, #4B0082, transparent 60%),
-  radial-gradient(circle at 80% 70%, #4B0082, transparent 60%);
-}
 
 /* ==========================================
    Star Border Effect

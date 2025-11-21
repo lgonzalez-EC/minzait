@@ -131,20 +131,6 @@
   window.addEventListener("scroll", checkFooterVisibility);
   window.addEventListener("resize", checkFooterVisibility);
 
-  ///////////////////
-  // Back to top button
-  ///////////////////
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $(".back-to-top").fadeIn("slow");
-    } else {
-      $(".back-to-top").fadeOut("slow");
-    }
-  });
-  $(".back-to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-    return false;
-  });
 
   ///////////////////
   // Inicializar carruseles y portfolio después de que la página cargue completamente
@@ -195,10 +181,6 @@
     }
   });
   */
-
-
-
-  
 
   ///////////////////
   // Testimonials carousel
