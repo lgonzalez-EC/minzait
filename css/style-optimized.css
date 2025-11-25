@@ -5,7 +5,7 @@
 
 /* CSS Variables */
 :root {
-  --primary: #4b0082;
+  --primary: #4B0082;
   --secondary: #7B2D3E;
   --success: #28a745;
   --info: #17a2b8;
@@ -223,8 +223,8 @@ body {
 header {
   /* background-color: #4b0082; */
   background: linear-gradient(to bottom,
-  #8E1AFF 0%,
-  #4b0082 60%,
+  #9512f2 0%,
+  #4B0082 60%,
   transparent 100%);
 }
 
@@ -235,8 +235,8 @@ header {
   min-height: 300px;
 }
 
-.page-header {
-  background: linear-gradient(to bottom, #4b0082 , #1a1a1a);
+.page-header, .background-section {
+  background: linear-gradient(to bottom, #4B0082 , #1a1a1a);
   min-height: 400px;
 }
 
