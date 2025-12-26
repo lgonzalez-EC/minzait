@@ -159,7 +159,7 @@ body {
 }
 
 .portfolio-card {
-  background: linear-gradient(135deg, #4B0082, #7B2D3E);
+  background: linear-gradient(135deg, #4B0082, #6700b1);
   border: 2px solid #4B0082;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(75, 0, 130, 0.3);
@@ -181,6 +181,8 @@ body {
 .portfolio-card .card-body {
   background: rgba(0, 0, 0, 0.7);
   color: white;
+  height: auto;
+  width: 100%;
 }
 
 /* ==========================================
@@ -221,11 +223,23 @@ body {
    ========================================== */
 
 header {
-  /* background-color: #4b0082; */
-  background: linear-gradient(to bottom,
-  #9512f2 0%,
-  #4B0082 60%,
-  transparent 100%);
+  background: 
+    linear-gradient(to bottom,
+    #8005d8 0%,
+    #4B0082 80%,
+    transparent 100%),
+    url('../img/background.webp') center/cover no-repeat;
+  background-blend-mode: overlay;
+}
+
+header .img-header{
+  max-width: 100%;
+  height: auto;
+}
+
+.img-header-side{
+  max-width: 30rem;
+  height: auto;
 }
 
 .full-banner {
@@ -591,6 +605,10 @@ header {
 
   .display-4 {
     font-size: 2rem;
+  }
+
+  header {
+    padding-top: 20vh;
   }
 }
 

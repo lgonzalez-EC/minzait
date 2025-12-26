@@ -26,7 +26,21 @@
   ///////////////////
   // Initiate AOS
   ///////////////////
-  AOS.init();
+  function initAOS() {
+    const isMobile = window.innerWidth <= 768;
+    const offset = isMobile ? 0 : 50;
+    const anchorPlacement = isMobile ? 'top-center' : 'center-center'; // For mobile, trigger when top reaches center
+    AOS.init({
+      offset: offset,
+      anchorPlacement: anchorPlacement
+    });
+  }
+  initAOS();
+
+  // Reinitialize AOS on window resize to adjust settings
+  $(window).resize(function() {
+    AOS.refresh();
+  });
 
 
   ///////////////////
@@ -277,7 +291,7 @@
   // Typewriter effect
   ///////////////////
   document.addEventListener("DOMContentLoaded", () => {
-    const text = "Conectamos tu negocio con el mundo digital.";
+    const text = "Conectamos tu marca.";
     const element = document.getElementById("typewriter-text");
     let index = 0;
 
