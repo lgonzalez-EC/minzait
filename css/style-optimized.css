@@ -39,7 +39,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Rubik", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -52,21 +52,26 @@ body {
    TYPOGRAPHY
    ========================================== */
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
 .display-2 {
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 
 .display-3 {
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 
 .display-4 {
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -235,6 +240,7 @@ header {
 header .img-header{
   max-width: 100%;
   height: auto;
+  padding: 20px;
 }
 
 .img-header-side{
@@ -250,7 +256,13 @@ header .img-header{
 }
 
 .page-header, .background-section {
-  background: linear-gradient(to bottom, #4B0082 , #1a1a1a);
+  background: 
+    linear-gradient(to bottom,
+    #8005d8 0%,
+    #4B0082 80%,
+    transparent 100%),
+    url('../img/background.webp') center/cover no-repeat;
+  background-blend-mode: overlay;
   min-height: 400px;
 }
 
@@ -275,7 +287,7 @@ header .img-header{
    ========================================== */
 .floating-navbar {
   position: fixed;
-  bottom: 0.5rem;
+  bottom: 0.3rem;
   left: 50%;
   transform: translateX(-50%) translateY(110%);
   z-index: 10;
@@ -299,8 +311,8 @@ header .img-header{
   border: 1px solid #7b2d3e;
   border-radius: 9999px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 0.2rem 4rem;
-  width: 35rem;
+  padding: 0.1rem 3.8rem;
+  width: 30rem;
   position: relative;
 }
 
@@ -668,7 +680,7 @@ header .img-header{
    ========================================== */
 
 #typewriter-text {
-  font-family: "Rubik", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.25rem;
   color: white;
   border-right: 2px solid white;

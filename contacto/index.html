@@ -103,7 +103,7 @@
                             <span class="label">Nosotros</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="../servicios/" class="nav-btn" data-id="services" aria-label="Servicios">
                             <span class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -116,7 +116,7 @@
                             </span>
                             <span class="label">Servicios</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="./" class="nav-btn active" data-id="contact" aria-label="Contacto">
                             <span class="icon">
@@ -160,7 +160,7 @@
                                 <span class="label">Nosotros</span>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="../servicios/" class="nav-btn-mobile" data-id="services" aria-label="Servicios">
                                 <span class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -173,7 +173,7 @@
                                 </span>
                                 <span class="label">Servicios</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="./" class="nav-btn-mobile active" data-id="contact"
                                 aria-label="Contacto">
@@ -197,7 +197,7 @@
 
 
     <!-- Page Header Start -->
-    <header class="page-header bg-primary d-flex flex-column align-items-center justify-content-center">
+    <header class="page-header d-flex flex-column align-items-center justify-content-center">
         <h1 class="display-3 text-white text-uppercase mb-3">Contacto</h1>
         <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="../">Inicio</a></h6>
@@ -212,10 +212,8 @@
     <section class="container-fluid py-5 px-0">
         <div class="row mx-0 align-items-center">
             <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-                <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Contactanos</h2>
-                <h5 class="text-uppercase text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos
-                    lo que necesitas y déjanos ayudarte a construir una solución creativa y funcional.</h5>
-
+                <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Contáctanos</h2>
+                <h5 class="text-uppercase text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos tu proyecto, nosotros te asesoramos.</h5>
                 <div class="position-relative h-100">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369.1687201676888!2d-101.67197139500115!3d21.15287814839443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf2ff9dd7e83%3A0xc8ba86735f1289c5!2sBenedicto%20XV%20144%2C%20San%20Jeronimo%20II%2C%2037148%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1761150529099!5m2!1ses-419!2smx" 
                     width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -245,30 +243,41 @@
                         <div class="form-row">
                             <div class="col-lg">
                                 <div class="control-group">
-                                    <input type="text" class="form-control bg-light border-0 p-4" id="name"
-                                        placeholder="Nombre" required="required"
+                                    <p>Nombre</p>
+                                    <input type="text" class="form-control bg-light border-2 p-4" id="name"
+                                        required="required"
                                         data-validation-required-message="Escribe tu nombre" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="control-group">
-                                    <input type="email" class="form-control bg-light border-0 p-4" id="email"
-                                        placeholder="Correo" required="required"
+                                    <p>Correo</p>
+                                    <input type="email" class="form-control bg-light border-2 p-4" id="email"
+                                        required="required"
                                         data-validation-required-message="Escribe tu correo" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control bg-light border-0 p-4" id="subject"
-                                placeholder="Asunto" required="required"
+                            <p>Teléfono/WhatsApp</p>
+                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone"
+                                required="required" minlength="10" maxlength="10"
+                                data-validation-required-message="Escribe tu teléfono" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <p>Asunto</p>
+                            <input type="text" class="form-control bg-light border-2 p-4" id="subject"
+                                required="required"
                                 data-validation-required-message="Esribe el asunto" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control bg-light border-0 py-3 px-4" rows="5" id="message"
-                                placeholder="Mensaje" required="required"
+                            <p>Mensaje</p>
+                            <textarea class="form-control bg-light border-2 py-3 px-4" rows="5" id="message"
+                                required="required"
                                 data-validation-required-message="Escribe el mensaje"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
@@ -315,7 +324,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Contactanos</h4>
+                    <h4 class="text-uppercase text-white mb-4">Contáctanos</h4>
                     <a class="" target="_blank" rel="noopener" href="https://wa.me/5214791493088/">
                         <p><i class="fa-brands fa-whatsapp text-white mx-2"></i>+52 479 149 3088</p>
                     </a>

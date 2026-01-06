@@ -291,7 +291,7 @@
   // Typewriter effect
   ///////////////////
   document.addEventListener("DOMContentLoaded", () => {
-    const text = "Conectamos tu marca.";
+    const text = "Conectamos tu marca";
     const element = document.getElementById("typewriter-text");
     let index = 0;
 

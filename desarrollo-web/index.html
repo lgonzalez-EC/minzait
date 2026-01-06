@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Desarrollo Web - Minzait</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords"
+        content="desarrollo web, sitios web, landing pages, e-commerce, marketplaces, programación web, agencia creativa, Minzait, León, Guanajuato">
+    <meta name="description"
+        content="Impulsa tu presencia online con nuestros servicios de desarrollo web. En Minzait, creamos sitios web personalizados, landing pages efectivas y soluciones e-commerce para llevar tu negocio al siguiente nivel.">
+
+    <!-- Favicon -->
+    <link href="../img/icon.webp" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TWQCLB55');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/style-optimized.css" rel="stylesheet">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CVVZVJTVP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2CVVZVJTVP');
+</script>
+
+<body>
+
+    <!--Loader start-->
+    <div id="loader">
+        <div class="loader-content">
+            <lottie-player src="../img/loading.json" background="transparent" speed="1" loop autoplay>
+            </lottie-player>
+        </div>
+    </div>
+    <!--Loader end-->
+
+
+    <!-- Navbar Start -->
+    <div id="navbar-floating" class="floating-navbar">
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <a href="../"><img src="../img/logo_prin.webp" alt="Logo" /></a>
+                </div>
+                <button class="hamburger" aria-label="Menú">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <!-- Menu -->
+                <ul class="nav-items">
+                    <li>
+                        <a href="../" class="nav-btn" data-id="home" aria-label="Inicio">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                            </span>
+                            <span class="label">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../nosotros/" class="nav-btn" data-id="about" aria-label="Nosotros">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="5" />
+                                    <path d="M20 21a8 8 0 0 0-16 0" />
+                                </svg>
+                            </span>
+                            <span class="label">Nosotros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../contacto/" class="nav-btn" data-id="contact" aria-label="Contacto">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </span>
+                            <span class="label">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Menu Movil -->
+                <div class="mobile-menu">
+                    <ul class="nav-items-mobile">
+                        <li>
+                            <a href="../" class="nav-btn-mobile" data-id="home" aria-label="Inicio">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </span>
+                                <span class="label">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../nosotros/" class="nav-btn-mobile" data-id="about" aria-label="Nosotros">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="5" />
+                                        <path d="M20 21a8 8 0 0 0-16 0" />
+                                    </svg>
+                                </span>
+                                <span class="label">Nosotros</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contacto/" class="nav-btn-mobile" data-id="contact" aria-label="Contacto">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                </span>
+                                <span class="label">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <header class="page-header d-flex flex-column align-items-center justify-content-center">
+        <h1 class="display-3 text-white text-white text-uppercase mb-3">Desarrollo Web</h1>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="../">Inicio</a></h6>
+            <h6 class="m-0 px-3">/</h6>
+            <h6 class="text-uppercase m-0">Desarrollo Web</h6>
+        </div>
+    </header>
+    <!-- Page Header Start -->
+
+
+    <!-- About Start --
+    <section class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
+                    <img class="img-fluid mb-4 mb-lg-0" src="../img/about.webp" alt="">
+                </div>
+                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+                    <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quienes somos</h2>
+                    <h5 class="text-uppercase text-white mb-3">En Minzait, convertimos visión en identidad y presencia
+                        digital</h5>
+                    <p class="mb-4 text-white">
+                        Somos el aliado creativo y estratégico que tu empresa
+                        necesita para destacar en un entorno competitivo. Diseñamos marcas que comunican con claridad,
+                        desarrollamos sitios web
+                        que funcionan y se ven increíbles, y trazamos rutas digitales que conectan con tu audiencia
+                        desde el primer clic
+                    </p>
+                    <p class="mb-4 text-white">
+                        Nuestro enfoque combina diseño gráfico, marketing inteligente y tecnología web para ayudarte a
+                        construir una imagen sólida,
+                        coherente y memorable. Si buscas más que servicios, buscas impacto: estás en el lugar correcto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!- About End -->
+
+
+    <!-- Services Start -->
+    <section class="container-fluid py-5">
+        <div class="container pb-3">
+            <h2 class="text-center text-white p-4">Nuestros Servicios</h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-4 mb-2 portfolio-item">
+                    <div
+                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                        <div class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m7 8l-4 4l4 4m10-8l4 4l-4 4M14 4l-4 16" />
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-2">Desarrollo y programación de sitio web</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-2 portfolio-item">
+                    <div
+                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                        <div class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 48 48">
+                                <g fill="none">
+                                    <rect width="40" height="32" x="4" y="8" stroke="currentColor"
+                                        stroke-linejoin="round" stroke-width="4" rx="3" />
+                                    <path stroke="currentColor" stroke-width="4"
+                                        d="M4 11a3 3 0 0 1 3-3h34a3 3 0 0 1 3 3v9H4z" />
+                                    <circle r="2" fill="currentColor" transform="matrix(0 -1 -1 0 10 14)" />
+                                    <circle r="2" fill="currentColor" transform="matrix(0 -1 -1 0 16 14)" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-2">Landing page</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-2 portfolio-item">
+                    <div
+                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                        <div class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M22 7.82a1 1 0 0 0 0-.19l-2-5A1 1 0 0 0 19 2H5a1 1 0 0 0-.93.63l-2 5a1 1 0 0 0 0 .19A.6.6 0 0 0 2 8a4 4 0 0 0 2 3.4V21a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9.56A4 4 0 0 0 22 8a.6.6 0 0 0 0-.18M13 20h-2v-4h2Zm5 0h-3v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5H6v-8a4 4 0 0 0 3-1.38a4 4 0 0 0 6 0A4 4 0 0 0 18 12Zm0-10a2 2 0 0 1-2-2a1 1 0 0 0-2 0a2 2 0 0 1-4 0a1 1 0 0 0-2 0a2 2 0 0 1-4 .15L5.68 4h12.64L20 8.15A2 2 0 0 1 18 10" />
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-2">Marketplaces</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-2 portfolio-item">
+                    <div
+                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                        <div class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2s-.9-2-2-2m10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2s2-.9 2-2s-.9-2-2-2m-1.45-5c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0 0 20.01 4H5.21l-.94-2H1v2h2l3.6 7.59l-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2zM6.16 6h12.15l-2.76 5H8.53z" />
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-2">E-commerce</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-2 portfolio-item">
+                    <div
+                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                        <div class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                    <path
+                                        d="M12 8.25a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5M9.75 12a2.25 2.25 0 1 1 4.5 0a2.25 2.25 0 0 1-4.5 0" />
+                                    <path
+                                        d="M11.975 1.25c-.445 0-.816 0-1.12.02a2.8 2.8 0 0 0-.907.19a2.75 2.75 0 0 0-1.489 1.488c-.145.35-.184.72-.2 1.122a.87.87 0 0 1-.415.731a.87.87 0 0 1-.841-.005c-.356-.188-.696-.339-1.072-.389a2.75 2.75 0 0 0-2.033.545a2.8 2.8 0 0 0-.617.691c-.17.254-.356.575-.578.96l-.025.044c-.223.385-.408.706-.542.98c-.14.286-.25.568-.29.88a2.75 2.75 0 0 0 .544 2.033c.231.301.532.52.872.734a.87.87 0 0 1 .426.726a.87.87 0 0 1-.426.726c-.34.214-.64.433-.872.734a2.75 2.75 0 0 0-.545 2.033c.041.312.15.594.29.88c.135.274.32.595.543.98l.025.044c.222.385.408.706.578.96c.177.263.367.5.617.69a2.75 2.75 0 0 0 2.033.546c.376-.05.716-.2 1.072-.389a.87.87 0 0 1 .84-.005a.86.86 0 0 1 .417.731c.015.402.054.772.2 1.122a2.75 2.75 0 0 0 1.488 1.489c.29.12.59.167.907.188c.304.021.675.021 1.12.021h.05c.445 0 .816 0 1.12-.02c.318-.022.617-.069.907-.19a2.75 2.75 0 0 0 1.489-1.488c.145-.35.184-.72.2-1.122a.87.87 0 0 1 .415-.732a.87.87 0 0 1 .841.006c.356.188.696.339 1.072.388a2.75 2.75 0 0 0 2.033-.544c.25-.192.44-.428.617-.691c.17-.254.356-.575.578-.96l.025-.044c.223-.385.408-.706.542-.98c.14-.286.25-.569.29-.88a2.75 2.75 0 0 0-.544-2.033c-.231-.301-.532-.52-.872-.734a.87.87 0 0 1-.426-.726c0-.278.152-.554.426-.726c.34-.214.64-.433.872-.734a2.75 2.75 0 0 0 .545-2.033a2.8 2.8 0 0 0-.29-.88a18 18 0 0 0-.543-.98l-.025-.044a18 18 0 0 0-.578-.96a2.8 2.8 0 0 0-.617-.69a2.75 2.75 0 0 0-2.033-.546c-.376.05-.716.2-1.072.389a.87.87 0 0 1-.84.005a.87.87 0 0 1-.417-.731c-.015-.402-.054-.772-.2-1.122a2.75 2.75 0 0 0-1.488-1.489c-.29-.12-.59-.167-.907-.188c-.304-.021-.675-.021-1.12-.021zm-1.453 1.595c.077-.032.194-.061.435-.078c.247-.017.567-.017 1.043-.017s.796 0 1.043.017c.241.017.358.046.435.078c.307.127.55.37.677.677c.04.096.073.247.086.604c.03.792.439 1.555 1.165 1.974s1.591.392 2.292.022c.316-.167.463-.214.567-.227a1.25 1.25 0 0 1 .924.247c.066.051.15.138.285.338c.139.206.299.483.537.895s.397.69.506.912c.107.217.14.333.15.416a1.25 1.25 0 0 1-.247.924c-.064.083-.178.187-.48.377c-.672.422-1.128 1.158-1.128 1.996s.456 1.574 1.128 1.996c.302.19.416.294.48.377c.202.263.29.595.247.924c-.01.083-.044.2-.15.416c-.109.223-.268.5-.506.912s-.399.689-.537.895c-.135.2-.219.287-.285.338a1.25 1.25 0 0 1-.924.247c-.104-.013-.25-.06-.567-.227c-.7-.37-1.566-.398-2.292.021s-1.135 1.183-1.165 1.975c-.013.357-.046.508-.086.604a1.25 1.25 0 0 1-.677.677c-.077.032-.194.061-.435.078c-.247.017-.567.017-1.043.017s-.796 0-1.043-.017c-.241-.017-.358-.046-.435-.078a1.25 1.25 0 0 1-.677-.677c-.04-.096-.073-.247-.086-.604c-.03-.792-.439-1.555-1.165-1.974s-1.591-.392-2.292-.022c-.316.167-.463.214-.567.227a1.25 1.25 0 0 1-.924-.247c-.066-.051-.15-.138-.285-.338a17 17 0 0 1-.537-.895c-.238-.412-.397-.69-.506-.912c-.107-.217-.14-.333-.15-.416a1.25 1.25 0 0 1 .247-.924c.064-.083.178-.187.48-.377c.672-.422 1.128-1.158 1.128-1.996s-.456-1.574-1.128-1.996c-.302-.19-.416-.294-.48-.377a1.25 1.25 0 0 1-.247-.924c.01-.083.044-.2.15-.416c.109-.223.268-.5.506-.912s.399-.689.537-.895c.135-.2.219-.287.285-.338a1.25 1.25 0 0 1 .924-.247c.104.013.25.06.567.227c.7.37 1.566.398 2.292-.022c.726-.419 1.135-1.182 1.165-1.974c.013-.357.046-.508.086-.604c.127-.307.37-.55.677-.677" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-2">Desarrollos a la medida</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-2 portfolio-item">
+                    <div
+                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                        <div class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path
+                                        d="M11.607 2.342a.6.6 0 0 1 .787 0l1.948 1.692a.6.6 0 0 0 .445.145l2.572-.224a.6.6 0 0 1 .636.463l.582 2.514a.6.6 0 0 0 .275.38l2.212 1.33a.6.6 0 0 1 .243.748l-1.008 2.376a.6.6 0 0 0 0 .468l1.008 2.376a.6.6 0 0 1-.243.749l-2.212 1.33a.6.6 0 0 0-.275.379l-.582 2.514a.6.6 0 0 1-.636.463l-2.572-.224a.6.6 0 0 0-.445.144l-1.949 1.693a.6.6 0 0 1-.787 0l-1.948-1.693a.6.6 0 0 0-.445-.144l-2.572.224a.6.6 0 0 1-.636-.463l-.582-2.514a.6.6 0 0 0-.275-.38l-2.212-1.33a.6.6 0 0 1-.243-.748l1.008-2.376a.6.6 0 0 0 0-.468L2.693 9.39a.6.6 0 0 1 .243-.749l2.212-1.33a.6.6 0 0 0 .275-.379l.582-2.514a.6.6 0 0 1 .636-.463l2.572.224a.6.6 0 0 0 .445-.145z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 13l2 2l5-5" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-2">Optimización de sitios</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services End -->
+
+
+    <!-- Contact Start -->
+    <section class="container-fluid py-5 px-0">
+        <div class="row mx-0 align-items-center">
+            <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+                <h2 class="display-4 mb-4" style="color: #B399D4;">Contáctanos</h2>
+                <h5 class="text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos tu proyecto, nosotros te asesoramos.</h5>
+                <div class="position-relative h-100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369.1687201676888!2d-101.67197139500115!3d21.15287814839443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf2ff9dd7e83%3A0xc8ba86735f1289c5!2sBenedicto%20XV%20144%2C%20San%20Jeronimo%20II%2C%2037148%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1761150529099!5m2!1ses-419!2smx"
+                        width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 px-0">
+                <div class="contact-form bg-white rounded p-5">
+                    <div id="success"></div>
+                    <!-- Modal de Bootstrap para mensajes -->
+                    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="successModalLabel">Mensaje</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="modalMessage"></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="form-row">
+                            <div class="col-lg">
+                                <div class="control-group">
+                                    <p>Nombre</p>
+                                    <input type="text" class="form-control bg-light border-2 p-4" id="name"
+                                        required="required" data-validation-required-message="Escribe tu nombre" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="control-group">
+                                    <p>Correo</p>
+                                    <input type="email" class="form-control bg-light border-2 p-4" id="email"
+                                        required="required" data-validation-required-message="Escribe tu correo" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <p>Teléfono (Opcional)</p>
+                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone"
+                                required="required" minlength="10" maxlength="10"
+                                data-validation-required-message="Escribe tu teléfono" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <p>Asunto</p>
+                            <input type="text" class="form-control bg-light border-2 p-4" id="subject"
+                                required="required" data-validation-required-message="Esribe el asunto" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <p>Mensaje</p>
+                            <textarea class="form-control bg-light border-2 py-3 px-4" rows="5" id="message"
+                                required="required" data-validation-required-message="Escribe el mensaje"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn button-primary text-uppercase py-3 px-5" type="submit"
+                                id="sendMessageButton">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact End -->
+
+
+    <!-- Other Services Start -->
+    <section class="py-5 background-section">
+        <div class="container pt-5 pb-3 justify-content-center align-items-center">
+            <h2 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
+                data-aos-easing="ease-in-out">
+                Nuestros Otros Servicios
+            </h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <a href="../marketing-digital/">
+                        <div class="service-item rounded p-5 mb-4">
+                            <i class="fa fa-3x fa-code mb-4"></i>
+                            <h3 class="mb-4">Marketing <span class="d-block text-body">Digital</span></h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <a href="../diseño-produccion/">
+                        <div class="service-item rounded p-5 mb-4">
+                            <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
+                            <h3 class="mb-4">Diseño y Producción<span class="d-block text-body"></span>
+                                Audiovisual</span></h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Other Services End -->
+
+
+    <!-- Footer Start -->
+    <footer id="footer-page" class="text-white-50 py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+        <div class="text-center">
+            <a href="../" class="navbar-brand">
+                <img src="../img/logo_secon.webp" alt="Logo" style="width: 200px;" />
+            </a>
+        </div>
+        <div class="container-fluid">
+            <div class="row pt-5">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h4 class="text-uppercase text-white text-center mb-4">Siguenos</h4>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
+                            href="https://www.facebook.com/profile.php?id=61583716270317"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
+                            href="https://www.instagram.com/team.minzait/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
+                            href="https://www.linkedin.com/company/minzait/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 text-center">
+                    <h4 class="text-uppercase text-white mb-4">Contactanos</h4>
+                    <a class="" target="_blank" rel="noopener" href="https://wa.me/5214791493088/">
+                        <p><i class="fa-brands fa-whatsapp text-white mx-2"></i>+52 479 149 3088</p>
+                    </a>
+                    <a class="" target="_blank" rel="noopener" href="mailto:contacto@minzait.com">
+                        <p><i class="fa fa-envelope text-white mx-2"></i>contacto@minzait.com</p>
+                    </a>
+
+                    <style>
+                        a {
+                            text-decoration: none;
+                            color: inherit;
+                        }
+                    </style>
+
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 text-center">
+                    <h4 class="text-uppercase text-white mb-4">Ubicanos</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <p><i class="fa fa-map-marker-alt text-white mx-2"></i>Benedicto XV #144, San Jeronimo ll, C.P.
+                            37148 León, Guanajuato.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <h4 class="text-uppercase text-white text-center py-2">Accesos Directos</h4>
+                <div class="col-lg-3 col-md-6">
+                    <a href="../">
+                        <h5 class="text-uppercase text-white text-center py-2">Inicio</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="../nosotros/">
+                        <h5 class="text-uppercase text-white text-center py-2">Nosotros</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="../servicios/">
+                        <h5 class="text-uppercase text-white text-center py-2">Servicios</h5>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="../contacto/">
+                        <h5 class="text-uppercase text-white text-center py-1">Contacto</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="py-4 px-sm-3 px-md-5" style="background: #111111;">
+        <p class="mb-2 text-center text-white">&copy; <a href="../">Minzait</a>. 2025.</p>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a> -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="../mail/jqBootstrapValidation.min.js"></script>
+    <script src="../mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

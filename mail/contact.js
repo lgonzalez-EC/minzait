@@ -8,6 +8,7 @@ $(function () {
             event.preventDefault();
             var name = $("input#name").val();
             var email = $("input#email").val();
+            var phone = $("input#phone").val();
             var subject = $("input#subject").val();
             var message = $("textarea#message").val();
 
@@ -21,6 +22,7 @@ $(function () {
                     access_key: "51a0f322-b0a4-4d50-b6b6-15e8431e24fd",
                     name: name,
                     email: email,
+                    phone: phone,
                     subject: subject,
                     message: message
                 },
