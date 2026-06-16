@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Custom Cursor</title>
+<style>
+html { cursor: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#c-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+#c-cursor .dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  scale: 1;
+  transition: scale 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#c-cursor .dot.is-down {
+  scale: 0.7;
+}
+
+#c-cursor .ring {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  will-change: transform;
+  transition: width 0.25s ease, height 0.25s ease, border-radius 0.25s ease, border-color 0.25s ease, opacity 0.25s ease, border-width 0.25s ease;
+}
+
+#c-cursor .ring.is-link {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(255, 255, 255, 0.8);
+  border-width: 2px;
+}
+
+#c-cursor .ring.is-text {
+  width: 2px;
+  height: 26px;
+  border-radius: 1px;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+#c-cursor .ring.is-drag {
+  width: 64px;
+  height: 64px;
+  border-color: rgba(255, 255, 255, 0.8);
+  border-width: 2px;
+}
+
+#c-cursor .ring.is-loading {
+  border-color: transparent;
+  border-top-color: rgba(100, 200, 255, 0.9);
+  border-right-color: rgba(100, 200, 255, 0.9);
+  animation: cursorSpin 0.7s linear infinite;
+}
+
+#c-cursor .ring.is-disabled {
+  opacity: 0.2;
+}
+
+@keyframes cursorSpin {
+  to { rotate: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { cursor: auto; }
+  #c-cursor { display: none !important; }
+}
+
+/* demo styles */
+.demo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.demo-btn {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #eee;
+  font-size: 1rem;
+  cursor: none;
+}
+
+.demo-input {
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  color: #eee;
+  font-size: 1rem;
+  cursor: none;
+}
+
+.demo-link {
+  color: #6cf;
+  cursor: none;
+}
+
+.demo-zone {
+  padding: 1.5rem 2rem;
+  border: 1px dashed rgba(255,255,255,0.3);
+  border-radius: 12px;
+  text-align: center;
+  user-select: none;
+  cursor: none;
+}
+</style>
+</head>
+<body>
+
+<h1>Custom Cursor</h1>
+
+<div class="demo-grid">
+  <button class="demo-btn">Hover me (button)</button>
+  <a href="#" class="demo-link">Hover me (link)</a>
+  <input class="demo-input" type="text" placeholder="Text input" />
+  <textarea class="demo-input" placeholder="Textarea" rows="2"></textarea>
+  <div class="demo-zone" data-cursor="drag">Drag zone</div>
+  <div class="demo-zone" data-cursor="loading">Loading zone</div>
+  <div class="demo-zone" data-cursor="disabled">Disabled zone</div>
+  <button class="demo-btn" disabled>Disabled button</button>
+</div>
+
+<div id="c-cursor">
+  <div class="dot"></div>
+  <div class="ring"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  /* ---- early exit conditions ---- */
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    document.documentElement.style.cursor = 'auto';
+    return;
+  }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  /* ---- DOM refs ---- */
+  var wrapper = document.getElementById('c-cursor');
+  var dot = wrapper.querySelector('.dot');
+  var ring = wrapper.querySelector('.ring');
+
+  /* ---- state ---- */
+  var mx = window.innerWidth / 2;
+  var my = window.innerHeight / 2;
+  var rx = mx;
+  var ry = my;
+  var isDown = false;
+
+  /* ---- visibility ---- */
+  function show() { wrapper.style.display = ''; }
+  function hide() { wrapper.style.display = 'none'; }
+
+  /* ---- dot ---- */
+  function updateDot() {
+    dot.style.translate = mx + 'px ' + my + 'px';
+    dot.classList.toggle('is-down', isDown);
+  }
+
+  /* ---- ring ---- */
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function animate() {
+    rx = lerp(rx, mx, 0.12);
+    ry = lerp(ry, my, 0.12);
+    ring.style.transform = 'translate(' + rx + 'px, ' + ry + 'px)';
+    requestAnimationFrame(animate);
+  }
+
+  /* ---- cursor state classes ---- */
+  var stateMap = {
+    link: 'is-link',
+    text: 'is-text',
+    drag: 'is-drag',
+    loading: 'is-loading',
+    disabled: 'is-disabled',
+  };
+
+  function setRingState(el) {
+    if (!el || el.disabled) {
+      ring.className = 'ring is-disabled';
+      return;
+    }
+    var val = el.getAttribute('data-cursor')
+      || (el.tagName === 'A' && 'link')
+      || (['INPUT', 'TEXTAREA'].indexOf(el.tagName) !== -1 && 'text')
+      || (el.tagName === 'BUTTON' && 'link')
+      || null;
+
+    ring.className = 'ring' + (val && stateMap[val] ? ' ' + stateMap[val] : '');
+  }
+
+  function resetRing() { ring.className = 'ring'; }
+
+  /* ---- listeners ---- */
+
+  // mouse move
+  document.addEventListener('mousemove', function(e) {
+    mx = e.clientX;
+    my = e.clientY;
+    if (wrapper.style.display === 'none') show();
+    updateDot();
+  });
+
+  // mouse down / up
+  document.addEventListener('mousedown', function() { isDown = true; updateDot(); });
+  document.addEventListener('mouseup', function() { isDown = false; updateDot(); });
+
+  // leave / enter document
+  document.documentElement.addEventListener('mouseleave', hide);
+  document.documentElement.addEventListener('mouseenter', show);
+
+  // window blur / focus
+  window.addEventListener('blur', hide);
+  window.addEventListener('focus', show);
+
+  // data-cursor elements
+  document.querySelectorAll('[data-cursor]').forEach(function(el) {
+    el.addEventListener('mouseenter', function() { setRingState(el); });
+    el.addEventListener('mouseleave', resetRing);
+  });
+
+  // tag-based detection (skip elements with data-cursor)
+  document.querySelectorAll('a, button, input, textarea').forEach(function(el) {
+    if (el.hasAttribute('data-cursor')) return;
+    el.addEventListener('mouseenter', function() { setRingState(el); });
+    el.addEventListener('mouseleave', resetRing);
+  });
+
+  // disabled attribute via event capture (disabled elements don't fire mouseenter)
+  document.addEventListener('mouseover', function(e) {
+    var el = e.target.closest('[disabled]');
+    if (el && !el.hasAttribute('data-cursor') && !el.contains(e.relatedTarget)) {
+      ring.className = 'ring is-disabled';
+    }
+  }, true);
+
+  document.addEventListener('mouseout', function(e) {
+    var el = e.target.closest('[disabled]');
+    if (el && !el.contains(e.relatedTarget)) {
+      ring.className = 'ring';
+    }
+  }, true);
+
+  /* ---- init ---- */
+  updateDot();
+  animate();
+})();
+</script>
+</body>
+</html>

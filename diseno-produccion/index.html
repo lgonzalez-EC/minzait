@@ -32,9 +32,6 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <!-- AOS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -43,7 +40,10 @@
     <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/style-optimized.css" rel="stylesheet">
+    <link href="../css/style-v2.css" rel="stylesheet">
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -61,7 +61,7 @@
     <!--Loader start-->
     <div id="loader">
         <div class="loader-content">
-            <lottie-player src="../img/loading.json" background="transparent" speed="1" loop autoplay>
+            <lottie-player src="../assets/loading.json" background="transparent" speed="1" loop autoplay>
             </lottie-player>
         </div>
     </div>
@@ -96,7 +96,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../nosotros/" class="nav-btn active" data-id="about" aria-label="Nosotros">
+                        <a href="../nosotros/" class="nav-btn" data-id="about" aria-label="Nosotros">
                             <span class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -184,36 +184,6 @@
     <!-- Page Header Start -->
 
 
-    <!-- About Start --
-    <section class="container-xxl py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
-                    <img class="img-fluid mb-4 mb-lg-0" src="../img/about.webp" alt="">
-                </div>
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-                    <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quienes somos</h2>
-                    <h5 class="text-uppercase text-white mb-3">En Minzait, convertimos visión en identidad y presencia
-                        digital</h5>
-                    <p class="mb-4 text-white">
-                        Somos el aliado creativo y estratégico que tu empresa
-                        necesita para destacar en un entorno competitivo. Diseñamos marcas que comunican con claridad,
-                        desarrollamos sitios web
-                        que funcionan y se ven increíbles, y trazamos rutas digitales que conectan con tu audiencia
-                        desde el primer clic
-                    </p>
-                    <p class="mb-4 text-white">
-                        Nuestro enfoque combina diseño gráfico, marketing inteligente y tecnología web para ayudarte a
-                        construir una imagen sólida,
-                        coherente y memorable. Si buscas más que servicios, buscas impacto: estás en el lugar correcto.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!- About End -->
-
-
     <!-- Services Start -->
     <section class="container-fluid py-5">
         <div class="container pb-3">
@@ -293,9 +263,10 @@
     <!-- Contact Start -->
     <section class="container-fluid py-5 px-0">
         <div class="row mx-0 align-items-center">
-            <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+            <div class="col-lg-6">
                 <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Contáctanos</h2>
-                <h5 class="text-uppercase text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos tu proyecto, nosotros te asesoramos.</h5>
+                <h5 class="text-uppercase text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos tu proyecto,
+                    nosotros te asesoramos.</h5>
                 <div class="position-relative h-100">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369.1687201676888!2d-101.67197139500115!3d21.15287814839443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf2ff9dd7e83%3A0xc8ba86735f1289c5!2sBenedicto%20XV%20144%2C%20San%20Jeronimo%20II%2C%2037148%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1761150529099!5m2!1ses-419!2smx"
@@ -347,9 +318,8 @@
                         </div>
                         <div class="control-group">
                             <p>Teléfono (Opcional)</p>
-                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone"
-                                required="required" maxlength="10"
-                                data-validation-required-message="Escribe tu teléfono" />
+                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone" required="required"
+                                maxlength="10" data-validation-required-message="Escribe tu teléfono" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
@@ -379,12 +349,12 @@
     <!-- Other Services Start -->
     <section class="py-5 background-section">
         <div class="container pt-5 pb-3 justify-content-center align-items-center">
-            <h2 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
-                data-aos-easing="ease-in-out">
+            <h2 class="display-4 text-uppercase text-white text-center mb-5"
+               >
                 Nuestros Otros Servicios
             </h2>
             <div class="row justify-content-center align-items-center">
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <div class="col-lg-4 mb-2">
                     <a href="../desarrollo-web/">
                         <div class="service-item rounded p-5 mb-4">
                             <i class="fa fa-3x fa-code mb-4"></i>
@@ -392,7 +362,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <div class="col-lg-4 mb-2">
                     <a href="../marketing-digital/">
                         <div class="service-item rounded p-5 mb-4">
                             <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
@@ -416,19 +386,21 @@
         <div class="container-fluid">
             <div class="row pt-5">
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <h4 class="text-uppercase text-white text-center mb-4">Siguenos</h4>
+                    <h4 class="text-uppercase text-white text-center mb-4">Síguenos</h4>
                     <div class="d-flex justify-content-center">
                         <a class="btn button-primary mx-2" target="_blank" rel="noopener"
                             href="https://www.facebook.com/profile.php?id=61583716270317"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.instagram.com/team.minzait/"><i class="fab fa-instagram"></i></a>
+                            href="https://www.instagram.com/minzait.agency/"><i class="fab fa-instagram"></i></a>
                         <a class="btn button-primary mx-2" target="_blank" rel="noopener"
                             href="https://www.linkedin.com/company/minzait/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
+                            href="https://www.tiktok.com/@minzait.agency"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Contactanos</h4>
+                    <h4 class="text-uppercase text-white mb-4">Contáctanos</h4>
                     <a class="" target="_blank" rel="noopener" href="https://wa.me/5214791493088/">
                         <p><i class="fa-brands fa-whatsapp text-white mx-2"></i>+52 479 149 3088</p>
                     </a>
@@ -445,7 +417,7 @@
 
                 </div>
                 <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Ubicanos</h4>
+                    <h4 class="text-uppercase text-white mb-4">Encuentra la Mina</h4>
                     <div class="d-flex flex-column justify-content-start">
                         <p><i class="fa fa-map-marker-alt text-white mx-2"></i>Benedicto XV #144, San Jeronimo ll, C.P.
                             37148 León, Guanajuato.</p>
@@ -454,7 +426,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row justify-content-center">
                 <h4 class="text-uppercase text-white text-center py-2">Accesos Directos</h4>
                 <div class="col-lg-3 col-md-6">
                     <a href="../">
@@ -466,11 +438,11 @@
                         <h5 class="text-uppercase text-white text-center py-2">Nosotros</h5>
                     </a>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <!-- <div class="col-lg-3 col-md-6">
                     <a href="../servicios/">
                         <h5 class="text-uppercase text-white text-center py-2">Servicios</h5>
                     </a>
-                </div>
+                </div> -->
                 <div class="col-lg-3 col-md-6">
                     <a href="../contacto/">
                         <h5 class="text-uppercase text-white text-center py-1">Contacto</h5>
@@ -480,7 +452,7 @@
         </div>
     </footer>
     <div class="py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="mb-2 text-center text-white">&copy; <a href="../">Minzait</a>. 2025.</p>
+        <p class="mb-2 text-center text-white">&copy; <a href="../">Minzait</a>. 2026.</p>
     </div>
     <!-- Footer End -->
 
@@ -497,8 +469,7 @@
     <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="../lib/isotope/isotope.pkgd.min.js"></script>
     <script src="../lib/lightbox/js/lightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <!-- Contact Javascript File -->
     <script src="../mail/jqBootstrapValidation.min.js"></script>
     <script src="../mail/contact.js"></script>

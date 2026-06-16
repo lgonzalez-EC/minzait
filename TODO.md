@@ -1,7 +1,7 @@
 # TODO: Añadir Sección de Galería
 
 ## Información Recopilada
-- El sitio usa Bootstrap 5, Isotope (incluido), Lightbox (incluido), AOS para animaciones.
+- El sitio usa Bootstrap 5, Isotope (incluido), Lightbox (incluido).
 - Sección portafolio actual usa filtrado con Isotope, pero no masonry.
 - Librerías disponibles: Isotope para masonry, Lightbox para modal.
 - Imágenes disponibles en img/ (portfolio-*.webp, etc.).

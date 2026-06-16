@@ -22,50 +22,17 @@
     $(window).resize(toggleNavbarMethod);
   });
 
-  
-  ///////////////////
-  // Initiate AOS
-  ///////////////////
-  function initAOS() {
-    const isMobile = window.innerWidth <= 768;
-    const offset = isMobile ? 0 : 50;
-    const anchorPlacement = isMobile ? 'top-center' : 'center-center'; // For mobile, trigger when top reaches center
-    AOS.init({
-      offset: offset,
-      anchorPlacement: anchorPlacement
-    });
-  }
-  initAOS();
-
-  // Reinitialize AOS on window resize to adjust settings
-  $(window).resize(function() {
-    AOS.refresh();
-  });
-
-
   ///////////////////
   // Loader
   ///////////////////
   document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById("loader");
-    const navbar = document.getElementById("navbar-floating");
 
     // Mostrar loader al cargar la página
     window.addEventListener("load", () => {
       setTimeout(() => {
         loader.classList.add("fade-out");
         document.body.classList.remove("loading");
-
-        // Animar navbar solo en la primera visita
-        if (!sessionStorage.getItem('navbarAnimated')) {
-          setTimeout(() => {
-            navbar.classList.add("animate-in");
-            sessionStorage.setItem('navbarAnimated', 'true');
-          }, 300);
-        } else {
-          // Mostrar navbar directamente sin animación en visitas posteriores
-          navbar.classList.add("animate-in");
-        }
       }, 800);
     });
 
@@ -130,71 +97,45 @@
   const navbar = document.getElementById("navbar-floating");
   const footer = document.getElementById("footer-page");
 
-  function checkFooterVisibility() {
-    const footerRect = footer.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+  if (navbar && footer) {
+    function checkFooterVisibility() {
+      const footerRect = footer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-    // Si el top del footer está dentro de la ventana visible
-    if (footerRect.top < windowHeight && footerRect.bottom > 0) {
-      navbar.classList.add("hidden");
-    } else {
-      navbar.classList.remove("hidden");
+      if (footerRect.top < windowHeight && footerRect.bottom > 0) {
+        navbar.classList.add("hidden");
+      } else {
+        navbar.classList.remove("hidden");
+      }
     }
+
+    window.addEventListener("scroll", checkFooterVisibility);
+    window.addEventListener("resize", checkFooterVisibility);
   }
-
-  window.addEventListener("scroll", checkFooterVisibility);
-  window.addEventListener("resize", checkFooterVisibility);
-
 
   ///////////////////
   // Inicializar carruseles y portfolio después de que la página cargue completamente
   ///////////////////
-  const tabs = document.querySelectorAll('#portfolio-tabs .nav-link');
-  const items = document.querySelectorAll('.portfolio-item');
+  const tabs = document.querySelectorAll("#portfolio-tabs .nav-link");
+  const items = document.querySelectorAll(".portfolio-item");
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
 
-      const category = tab.getAttribute('data-filter');
+      const category = tab.getAttribute("data-filter");
 
-      items.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (category === itemCategory || category === 'all') {
-          item.classList.remove('hidden');
+      items.forEach((item) => {
+        const itemCategory = item.getAttribute("data-category");
+        if (category === itemCategory || category === "all") {
+          item.classList.remove("hidden");
         } else {
-          item.classList.add('hidden');
+          item.classList.add("hidden");
         }
       });
-
-      // Refrescar AOS para recalcular posiciones después del filtro
-      AOS.refresh();
     });
   });
-
-  // Agregar event listeners para hover en portfolio items (desactivado temporalmente hasta tener todas las imágenes hover)
-  /*
-  items.forEach(item => {
-    const img = item.querySelector('img');
-    const hoverSrc = img.getAttribute('data-hover-src');
-
-    if (hoverSrc) {
-      item.addEventListener('mouseenter', () => {
-        img.setAttribute('data-original-src', img.src);
-        img.src = hoverSrc;
-      });
-
-      item.addEventListener('mouseleave', () => {
-        const originalSrc = img.getAttribute('data-original-src');
-        if (originalSrc) {
-          img.src = originalSrc;
-          img.removeAttribute('data-original-src');
-        }
-      });
-    }
-  });
-  */
 
   ///////////////////
   // Testimonials carousel
@@ -252,46 +193,12 @@
   ///////////////////
   // Toggle menú hamburguesa móvil
   ///////////////////
-  const hamburger = document.querySelector(".hamburger");
-  const mobileMenu = document.querySelector(".mobile-menu");
-
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("show")) {
-        mobileMenu.classList.remove("show");
-        setTimeout(() => {
-          mobileMenu.style.display = "none";
-        }, 300);
-      } else {
-        mobileMenu.style.display = "flex";
-        setTimeout(() => {
-          mobileMenu.classList.add("show");
-        }, 10);
-      }
-    });
-
-    // Cerrar menú móvil al hacer click en un enlace
-    document.querySelectorAll(".nav-btn-mobile").forEach((button) => {
-      button.addEventListener("click", () => {
-        document
-          .querySelectorAll(".nav-btn-mobile")
-          .forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-        mobileMenu.classList.remove("show");
-        setTimeout(() => {
-          mobileMenu.style.display = "none";
-        }, 300);
-        const itemId = button.getAttribute("data-id");
-        console.log("Navegando a:", itemId);
-      });
-    });
-  }
 
   ///////////////////
   // Typewriter effect
   ///////////////////
   document.addEventListener("DOMContentLoaded", () => {
-    const text = "Conectamos tu marca";
+    const text = "Agencia de Marketing Integral";
     const element = document.getElementById("typewriter-text");
     let index = 0;
 
@@ -304,8 +211,9 @@
         // Agregar cursor parpadeante al final
         element.innerHTML += '<span class="cursor">|</span>';
         setInterval(() => {
-          const cursor = element.querySelector('.cursor');
-          cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+          const cursor = element.querySelector(".cursor");
+          cursor.style.visibility =
+            cursor.style.visibility === "hidden" ? "visible" : "hidden";
         }, 500);
       }
     }
@@ -317,6 +225,246 @@
   });
 })(jQuery);
 
+const dot = document.querySelector("#dot");
+const ring = document.querySelector("#ring");
 
+if (dot && ring) {
+  let mx = 0,
+    my = 0,
+    rx = 0,
+    ry = 0;
 
+  document.addEventListener("mousemove", (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.transform = `translate(${mx}px,${my}px)`;
+  });
 
+  function loop() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.transform = `translate(${rx}px,${ry}px)`;
+    requestAnimationFrame(loop);
+  }
+  loop();
+}
+
+///////////////////
+// Menú cortina (hamburger menu)
+///////////////////
+let isOpen = false;
+let currentBg = "#111";
+let tl = null;
+
+const curtain = document.getElementById("curtain");
+const curtainInner = curtain.querySelector(".curtain-inner");
+const hamburger = document.getElementById("hamburger");
+const bars = hamburger.querySelectorAll(".bar");
+
+const timeLabel = document.getElementById("time-label");
+const navItems = document.querySelectorAll(".hamburger-menu .nav-item");
+const navFooter = document.querySelector(".hamburger-menu .nav-footer");
+const pageContent = document.getElementById("page-content");
+
+gsap.set(curtain, {
+  display: "none",
+  transformOrigin: "top center",
+  scaleY: 0,
+});
+gsap.set(curtainInner, { opacity: 0 });
+gsap.set(navItems, { y: 40, opacity: 0 });
+gsap.set(navFooter, { y: 30, opacity: 0 });
+
+function updateTime() {
+  const now = new Date();
+  timeLabel.textContent =
+    now.toLocaleTimeString("es-MX", { hour: "2-digit", minute: "2-digit" }) +
+    " · León, Mx";
+}
+updateTime();
+setInterval(updateTime, 30000);
+
+function getDuration() {
+  return 0.6;
+}
+function getEasing() {
+  return "linear";
+}
+
+function openMenu() {
+  if (tl) tl.kill();
+  const d = getDuration();
+  const e = getEasing();
+
+  tl = gsap.timeline({
+    onStart: () => {
+      hamburger.classList.add("open");
+      hamburger.setAttribute("aria-expanded", "true");
+    },
+  });
+
+  tl.set(curtain, { display: "block" })
+    .to(curtain, { scaleY: 1, duration: d * 0.7, ease: e })
+    .to(curtainInner, { opacity: 1, duration: d * 0.3 }, "-=0.15")
+    .add(() => pageContent.classList.add("menu-blur"), "-=0.3")
+    .to(
+      navItems,
+      {
+        y: 0,
+        opacity: 1,
+        duration: d * 0.5,
+        stagger: 0.07,
+        ease: "power3.out",
+      },
+      "-=0.25",
+    )
+    .to(
+      navFooter,
+      { y: 0, opacity: 1, duration: d * 0.35, ease: "power2.out" },
+      "-=0.2",
+    );
+}
+
+function closeMenu() {
+  if (tl) tl.kill();
+  const d = getDuration();
+  const e = getEasing();
+
+  tl = gsap.timeline({
+    onStart: () => {
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+    },
+  });
+
+  tl.to(navItems, {
+    y: 30,
+    opacity: 0,
+    duration: d * 0.2,
+    stagger: 0.02,
+    ease: "power2.in",
+  })
+    .to(navFooter, { y: 20, opacity: 0, duration: d * 0.15 }, "-=0.1")
+    .add(() => pageContent.classList.remove("menu-blur"), "-=0.1")
+    .to(curtainInner, { opacity: 0, duration: d * 0.15 }, "-=0.05")
+    .to(curtain, { scaleY: 0, duration: d * 0.5, ease: e }, "-=0.1")
+    .set(curtain, { display: "none" });
+}
+
+window.toggleMenu = function () {
+  isOpen ? closeMenu() : openMenu();
+  isOpen = !isOpen;
+};
+
+function setColor(bg, textColor) {
+  const isLight = bg === "#f5f5f0";
+  currentBg = bg;
+  gsap.set(curtain, { background: bg });
+  document.querySelectorAll(".hamburger-menu .nav-link").forEach((el) => {
+    el.style.color = isLight ? "#111" : "#fff";
+    el.onmouseenter = () => (el.style.color = "#888");
+    el.onmouseleave = () => (el.style.color = isLight ? "#111" : "#fff");
+  });
+  document.querySelectorAll(".hamburger-menu .social-link").forEach((el) => {
+    el.style.color = isLight ? "#999" : "#555";
+  });
+  timeLabel.style.color = isLight ? "#999" : "#444";
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && isOpen) window.toggleMenu();
+});
+
+const equipo = [
+  {
+    nombre: "Leo González",
+    rol: "Diseño",
+    initials: "LG",
+    avatarBg: "#EEEDFE",
+    avatarColor: "#3C3489",
+    mensaje: "Esta semana no puedo parar de escuchar esto",
+    spotifyId: "track/7qkKJFIYBsLEVOjgAwqTlz",
+    semana: 1,
+  },
+  {
+    nombre: "Carlos Ríos",
+    rol: "Desarrollo",
+    initials: "CR",
+    avatarBg: "#E1F5EE",
+    avatarColor: "#085041",
+    mensaje: "La tengo en repeat desde el lunes",
+    spotifyId: "track/7qiZfU4dY1lWllzX7mPBI3",
+    semana: 2,
+  },
+  {
+    nombre: "María López",
+    rol: "Marketing",
+    initials: "ML",
+    avatarBg: "#FAEEDA",
+    avatarColor: "#633806",
+    mensaje: "Perfecta para concentrarse",
+    spotifyId: "track/5Rqh2EiFg4D22cJ3kIqCjm",
+    semana: 3,
+  },
+  {
+    nombre: "Diego Salas",
+    rol: "Backend",
+    initials: "DS",
+    avatarBg: "#E6F1FB",
+    avatarColor: "#0C447C",
+    mensaje: "No la esperaba pero me encantó",
+    spotifyId: "track/0rKtyWc8bvkfBm2SWi8Vw3",
+    semana: 4,
+  },
+];
+
+const widget = document.getElementById("musicWidget");
+const card = document.getElementById("musicCard");
+const btn = document.getElementById("musicBtn");
+const closeBtn = document.getElementById("wClose");
+
+const now = new Date();
+const start = new Date(now.getFullYear(), 0, 1);
+const weekNum = Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7);
+const idx = weekNum % equipo.length;
+const member = equipo[idx];
+
+document.getElementById("wAvatar").style.background = member.avatarBg;
+document.getElementById("wAvatar").style.color = member.avatarColor;
+document.getElementById("wAvatar").textContent = member.initials;
+document.getElementById("wName").textContent = member.nombre;
+document.getElementById("wRole").textContent = member.rol;
+document.getElementById("wMsg").textContent = '"' + member.mensaje + '"';
+document.getElementById("wIframe").src =
+  "https://open.spotify.com/embed/" + member.spotifyId;
+document.getElementById("wWeek").textContent = "Semana " + weekNum;
+const daysLeft = 7 - now.getDay();
+document.getElementById("wCountdown").textContent =
+  "cambia en " + daysLeft + " día" + (daysLeft !== 1 ? "s" : "");
+
+let open = false;
+
+function openWidget() {
+  open = true;
+  btn.classList.add("hidden");
+  card.classList.add("open");
+  localStorage.removeItem("musicWidgetClosed");
+}
+
+function closeWidget() {
+  open = false;
+  card.classList.remove("open");
+  btn.classList.remove("hidden");
+  localStorage.setItem("musicWidgetClosed", "1");
+}
+
+if (localStorage.getItem("musicWidgetClosed") !== "1") {
+  openWidget();
+}
+
+btn.addEventListener("click", openWidget);
+closeBtn.addEventListener("click", closeWidget);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && open) closeWidget();
+});

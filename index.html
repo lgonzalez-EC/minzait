@@ -17,6 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
+
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -32,9 +34,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <!-- AOS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -43,7 +42,10 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style-optimized.css" rel="stylesheet">
+    <link href="css/style-v2.css" rel="stylesheet">
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -58,622 +60,509 @@
 
 <body>
 
+
+
     <!--Loader start-->
     <div id="loader">
         <div class="loader-content">
-            <lottie-player src="img/loading.json" background="transparent" speed="1" loop autoplay>
-            </lottie-player>
+            <!-- <lottie-player src="assets/loading.json" background="transparent" speed="1" loop autoplay>
+            </lottie-player> -->
         </div>
     </div>
     <!--Loader end-->
 
 
     <!-- Navbar Start -->
-    <div id="navbar-floating" class="floating-navbar">
+    <div class="hamburger-menu" id="hamburger-menu">
         <nav class="navbar">
-            <div class="navbar-content">
-                <div class="logo">
-                    <a href="./"><img src="img/logo_prin.webp" alt="Logo" /></a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú"
+                aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+
+        <div class="curtain" id="curtain" role="dialog" aria-label="Menú de navegación">
+            <div class="curtain-inner">
+                <div class="curtain-body">
+                    <div class="curtain-left">
+                        <nav class="nav-links" id="nav-links">
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="./">Inicio</a></span>
+                                <span class="nav-num">01</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="nosotros/">Nosotros</a></span>
+                                <span class="nav-num">02</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="contacto/">Contacto</a></span>
+                                <span class="nav-num">03</span>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="curtain-right">
+                        <div class="logo-placeholder">
+                            <img src="img/logo_secon.webp" alt="">
+                        </div>
+                    </div>
                 </div>
-                <button class="hamburger" aria-label="Menú">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                <!-- Menu -->
-                <ul class="nav-items">
-                    <li>
-                        <a href="./" class="nav-btn active" data-id="home" aria-label="Inicio">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                    <polyline points="9 22 9 12 15 12 15 22" />
-                                </svg>
-                            </span>
-                            <span class="label">Inicio</span>
+                <div class="nav-footer">
+                    <div class="social-links">
+                        <a class="btn button-primary " href="https://www.facebook.com/profile.php?id=61583716270317"
+                            target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="./nosotros/" class="nav-btn" data-id="about" aria-label="Nosotros">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <circle cx="12" cy="8" r="5" />
-                                    <path d="M20 21a8 8 0 0 0-16 0" />
-                                </svg>
-                            </span>
-                            <span class="label">Nosotros</span>
+                        <a class="btn button-primary " href="https://www.instagram.com/minzait.agency/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
-                    </li>
-                    <!-- <li>
-                        <a href="./servicios/" class="nav-btn" data-id="services" aria-label="Servicios">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="18" height="18" x="3" y="3" rx="2" />
-                                    <path d="M3 9h18" />
-                                    <path d="M9 21V9" />
-                                </svg>
-                            </span>
-                            <span class="label">Servicios</span>
+                        <a class="btn button-primary " href="https://www.linkedin.com/company/minzait/" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                    </li> -->
-                    <li>
-                        <a href="./contacto/" class="nav-btn" data-id="contact" aria-label="Contacto">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                </svg>
-                            </span>
-                            <span class="label">Contacto</span>
+                        <a class="btn button-primary " href="https://www.tiktok.com/@minzait.agency" target="_blank">
+                            <i class="fa-brands fa-tiktok"></i>
                         </a>
-                    </li>
-                </ul>
-                <!-- Menu Movil -->
-                <div class="mobile-menu">
-                    <ul class="nav-items-mobile">
-                        <li>
-                            <a href="./" class="nav-btn-mobile active" data-id="home" aria-label="Inicio">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                </span>
-                                <span class="label">Inicio</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./nosotros/" class="nav-btn-mobile" data-id="about" aria-label="Nosotros">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="12" cy="8" r="5" />
-                                        <path d="M20 21a8 8 0 0 0-16 0" />
-                                    </svg>
-                                </span>
-                                <span class="label">Nosotros</span>
-                            </a>
-                        </li>
-                        <!-- <li>
-                            <a href="./servicios/" class="nav-btn-mobile" data-id="services" aria-label="Servicios">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <rect width="18" height="18" x="3" y="3" rx="2" />
-                                        <path d="M3 9h18" />
-                                        <path d="M9 21V9" />
-                                    </svg>
-                                </span>
-                                <span class="label">Servicios</span>
-                            </a>
-                        </li> -->
-                        <li>
-                            <a href="./contacto/" class="nav-btn-mobile" data-id="contact" aria-label="Contacto">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                    </svg>
-                                </span>
-                                <span class="label">Contacto</span>
-                            </a>
-                        </li>
-                    </ul>
+                    </div>
+                    <span class="contact-hint mx-0" id="time-label"></span>
                 </div>
             </div>
-        </nav>
+        </div>
     </div>
     <!-- Navbar End -->
 
 
-    <!-- Header Start -->
-    <header class="vh-100 d-flex align-items-center justify-content-center text-white" style="padding-top: 80px;">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <img src="img/logo_secon.webp" alt="Logo Minzait" class="img-fluid img-header">
-                    <p class="lead text-center"><span id="typewriter-text"></span></p>
-                    <div class="text-center">
-                        <a href="#about"
-                            class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver
-                            Más</a>
+    <!-- Page Content Start -->
+    <div id="page-content">
+
+        <!-- Header Start -->
+        <header class="vh-100 d-flex align-items-center justify-content-center text-white" style="padding-top: 80px;">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <img src="img/logo_secon.webp" alt="Logo Minzait" class="img-fluid img-header">
+                        <h3 class="lead text-center p-3"><span id="typewriter-text"></span></h3>
+                        <div class="text-center ">
+                            <a href="#about"
+                                class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver
+                                Más</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- Header End -->
+        </header>
+        <!-- Header End -->
 
 
-    <!-- Ejemplos de AOS -->
-    <!--   data-aos="fade-up" 
-            data-aos-duration="1000" 
-            data-aos-delay="200" 
-            data-aos-offset="120" 
-            data-aos-easing="ease-in-out" 
-            data-aos-once="true" -->
 
-
-    <!-- About Start -->
-    <section class="py-5" id="about">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000"
-                    data-aos-easing="ease-in-out">
-                    <img class="img-fluid mb-4 mb-lg-0" src="img/about.webp" alt="s">
-                </div>
-                <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000"
-                    data-aos-easing="ease-in-out">
-                    <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quienes somos</h2>
-                    <h3 class="text-uppercase text-white mb-3">En Minzait<sup>&reg;</sup>, convertimos visión en identidad y presencia
-                        digital</h3>
-                    <p class="mb-4 text-white">
-                        Somos el aliado creativo y estratégico que tu empresa
-                        necesita para destacar en un entorno competitivo.
-                    </p>
-                    <p class="mb-4 text-white">
-                        Diseñamos marcas que comunican con claridad,
-                        desarrollamos sitios web
-                        que funcionan y se ven increíbles, y trazamos rutas digitales que conectan con tu audiencia
-                        desde el primer clic.
-                    </p>
-                    <a href="/nosotros/" class="btn button-primary text-uppercase py-3 px-5">Ver Más</a>
+        <!-- About Start -->
+        <section class="py-5" id="about">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img class="img-fluid mb-4 mb-lg-0" src="img/about.webp" alt="s">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quiénes somos</h2>
+                        <h5 class="text-uppercase text-white mb-2">Marketing Group | Agencia de
+                            Marketing Integral
+                        </h5>
+                        <p class="mb-4 text-white">Estrategia, diseño y performance para crecer</p>
+                        <p class="mb-4 text-white">
+                            Somos el aliado creativo y estratégico que tu empresa
+                            necesita para destacar en un entorno competitivo.
+                        </p>
+                        <p class="mb-4 text-white">
+                            Diseñamos marcas que comunican con claridad,
+                            desarrollamos sitios web
+                            que funcionan y se ven increíbles, y trazamos rutas digitales que conectan con tu audiencia
+                            desde el primer clic.
+                        </p>
+                        <a href="/nosotros/" class="btn button-primary text-uppercase py-3 px-5">Ver Más</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- About End -->
+        </section>
+        <!-- About End -->
 
 
-    <!-- Services Start -->
-    <section class="py-5 background-section">
-        <div class="container pt-5 pb-3 justify-content-center align-items-center">
-            <h2 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
-                data-aos-easing="ease-in-out">
-                Servicios
-            </h2>
-            <div class="row">
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                    <a href="/marketing-digital/">
-                        <div class="service-item rounded p-5 mb-4">
-                            <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
-                            <h3 class="mb-4">Marketing <span class="d-block text-body">Digital</span>
-                            </h3>
-                        </div>
-                    </a>
+        <!-- Services Start -->
+        <section class="py-5 background-section">
+            <div class="container pt-5 pb-3 justify-content-center align-items-center">
+                <h2 class="display-4 text-uppercase text-white text-center mb-5">
+                    Servicios
+                </h2>
+                <div class="row">
+                    <div class="col-lg-4 mb-2">
+                        <a href="/marketing-digital/">
+                            <div class="service-item  p-5 mb-4">
+                                <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
+                                <h3 class="mb-4">Marketing <span class="d-block text-body">Digital</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-2">
+                        <a href="/desarrollo-web/">
+                            <div class="service-item  p-5 mb-4">
+                                <i class="fa fa-3x fa-code mb-4"></i>
+                                <h3 class="mb-4">Desarrollo <span class="d-block text-body">Web</span></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-2">
+                        <a href="/diseno-produccion/">
+                            <div class="service-item  p-5 mb-4">
+                                <i class="fa fa-3x fa-solid fa-pen-ruler mb-4"></i>
+                                <h3 class="mb-4">Diseño y Producción<span class="d-block text-body"></span>
+                                    Audiovisual</span></h3>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                    <a href="/desarrollo-web/">
-                        <div class="service-item rounded p-5 mb-4">
-                            <i class="fa fa-3x fa-code mb-4"></i>
-                            <h3 class="mb-4">Desarrollo <span class="d-block text-body">Web</span></h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
-                    <a href="/diseño-produccion/">
-                        <div class="service-item rounded p-5 mb-4">
-                            <i class="fa fa-3x fa-solid fa-pen-ruler mb-4"></i>
-                            <h3 class="mb-4">Diseño y Producción<span class="d-block text-body"></span>
-                                Audiovisual</span></h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- <div class="text-center" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+                <!-- <div class="text-center">
                 <a href="/servicios/"
                     class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver Más</a>
             </div> -->
-        </div>
-    </section>
-    <!-- Services End -->
-
-
-    <!-- Portfolio Start -->
-    <section id="portafolio" class="py-5 bg-dark text-white">
-        <div class="container">
-            <h2 class="text-center mb-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
-                data-aos-easing="ease-in-out">Casos de exito</h2>
-
-            <!-- Tabs de categorías -->
-            <!-- <ul class="nav nav-pills justify-content-center mb-4" id="portfolio-tabs" data-aos="fade-in"
-                data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                <li class="nav-item"><button class="nav-link active" data-filter="all">Todos</button></li>
-                <li class="nav-item"><button class="nav-link" data-filter="web">Páginas Web</button></li>
-                <li class="nav-item"><button class="nav-link" data-filter="design">Identidad Corporativa</button></li>
-                <li class="nav-item"><button class="nav-link" data-filter="social">Redes Sociales</button></li>
-            </ul> -->
-
-            <!-- Grid de proyectos -->
-            <div class="row" id="portfolio-grid" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
-                data-aos-easing="ease-in-out">
-                <!-- Página web ITBSA -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portafolio/portfolio_pagina_itbsa.webp" class="card-img-top" alt="Proyecto Web"
-                            data-hover-src="img/portfolio-1-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Página web para SEEM</h5>
-                            <p class="card-text">Desarrollo de página web informativa para empresa constructora</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Credenciales SEEM -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="design">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portafolio/portfolio_credenciales_seem.webp" class="card-img-top"
-                            alt="Redes Sociales" data-hover-src="img/portfolio-3-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Credenciales SEEM</h5>
-                            <p class="card-text">Diseño de credenciales físicas o digitales</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Página web Trivium -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portafolio/portfolio_pagina_trivium.webp" class="card-img-top" alt="Branding"
-                            data-hover-src="img/portfolio-2-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Página web para Trivium</h5>
-                            <p class="card-text">Desarrollo de página web informativa para una empresa del area músical
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Página web Somos People -->
-                <div class="col-md-3 mb-4 portfolio-item" data-category="web">
-                    <div class="card portfolio-card bg-secondary text-white h-100">
-                        <img src="img/portafolio/portfolio_pagina_sp.webp" class="card-img-top" alt="Proyecto Web"
-                            data-hover-src="img/portfolio-4-hover.webp">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Página web para Somos People</h5>
-                            <p class="card-text">Diseño responsivo, optimizado para SEO y velocidad.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-    <!-- Portfolio End -->
+        </section>
+        <!-- Services End -->
 
 
-    <!-- Carousel Clientes Start -->
-    <section class="py-5 background-section-light">
-        <div class="container py-5">
-            <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #6f00ff;" data-aos="fade-in"
-                data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">Nuestros Clientes</h2>
-            <div class="client-carousel owl-carousel" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
-                <div class="client-item text-center">
-                    <img src="img/clientes/24-7.webp" alt="Cliente 1" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/vetro.webp" alt="Cliente 2" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/itbsa.webp" alt="Cliente 3" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/pepe-torres.webp" alt="Cliente 4" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/rama.webp" alt="Cliente 5" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/somos-people.webp" alt="Cliente 6" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/trivium.webp" alt="Cliente 7" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-                <div class="client-item text-center">
-                    <img src="img/clientes/edge-cloud.webp" alt="Cliente 8" class="img-fluid mx-auto d-block"
-                        style="max-height: 150px; width: auto;">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Carousel Clientes End -->
-
-
-    <!-- Paquete Básico Start -->
-    <section class="py-5 background-section">
-        <div class="container py-5">
-            <div class="row justify-content-center align-items-center ">
-                <h2 class="display-4 text-center text-uppercase mb-4" style="color: #ffffff;">Planes y paquetes</h2>
-                <div class="col-lg-5 mb-2 portfolio-item">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <div class="p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 10 10">
-                                <path fill="currentColor"
-                                    d="M4.998 0a4.998 4.998 0 1 0 0 9.995a4.998 4.998 0 0 0 0-9.995M1 4.998a3.998 3.998 0 1 1 7.995 0a3.998 3.998 0 0 1-7.995 0m6.104-1.602a.5.5 0 0 1 0 .708l-2.25 2.25a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647l1.896-1.897a.5.5 0 0 1 .708 0" />
-                            </svg>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-center p-2"><strong>Presencia digital</strong></h4>
-                            <p class="card-text"><strong>$10,000 MXN / mes</strong></p>
-                            <p><strong>Contrato mínimo: 3 meses</strong></p>
-                            <p>Objetivo: <strong>Presencia profesional</strong> y base para vender.</p>
-                            <ul class="card-text">
-                                <li>Diagnóstico y estrategia básica</li>
-                                <li>Branding ligero (ajustes visuales y lineamientos)</li>
-                                <li>9 publicaciones mensuales</li>
-                                <li>Community management básico</li>
-                                <li>Mini landing o web one-page (setup único)</li>
-                                <li>Reporte mensual de visibilidad</li>
-                                <li>Campañas de interacción o tráfico</li>
-                                <li>Inversión en campañas pagadas <strong>por hasta $3,000</strong> [costo de inversión]. <strong>Inversión no incluida</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 mb-2 portfolio-item">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <div class="p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M4 19h4v-8H4zm6 0h4V5h-4zm6 0h4v-6h-4zM2 21V9h6V3h8v8h6v10z" />
-                            </svg>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-center p-2"><strong>Lead builder</strong></h4>
-                            <p class="card-text"><strong>$12,500 MXN / mes</strong></p>
-                            <p><strong>Contrato mínimo: 3-6 meses</strong></p>
-                            <p>Objetivo: Generación constante de <strong>leads calificados.</strong></p>
-                            <ul class="card-text"> 
-                                <li>Estrategia de adquisición de leads</li>
-                                <li>10-12 publicaciones</li>
-                                <li>Community management</li>
-                                <li>Copywriting orientado a conversión</li>
-                                <li>Landing page de captación (setup único)</li>
-                                <li>Integración WhatsApp / formularios</li>
-                                <li>Reporte con KPIs de leads</li>
-                                <li>Campañas de leads</li>
-                                <li>Inversión en campañas pagadas <strong>por hasta $15,000</strong> [costo de inversión]. <strong>Inversión no incluida</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 mb-2 portfolio-item">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <div class="p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 32 32">
-                                <path fill="currentColor"
-                                    d="M30 6V4h-3V2h-2v2h-1c-1.103 0-2 .898-2 2v2c0 1.103.897 2 2 2h4v2h-6v2h3v2h2v-2h1c1.103 0 2-.897 2-2v-2c0-1.102-.897-2-2-2h-4V6zm-6 14v2h2.586L23 25.586l-2.292-2.293a1 1 0 0 0-.706-.293H20a1 1 0 0 0-.706.293L14 28.586L15.414 30l4.587-4.586l2.292 2.293a1 1 0 0 0 1.414 0L28 23.414V26h2v-6zM4 30H2v-5c0-3.86 3.14-7 7-7h6c1.989 0 3.89.85 5.217 2.333l-1.49 1.334A5 5 0 0 0 15 20H9c-2.757 0-5 2.243-5 5zm8-14a7 7 0 1 0 0-14a7 7 0 0 0 0 14m0-12a5 5 0 1 1 0 10a5 5 0 0 1 0-10" />
-                            </svg>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-center p-2"><strong>Sales performance</strong></h4>
-                            <p class="card-text"><strong>$16,000 MXN / mes</strong></p>
-                            <p><strong>Contrato mínimo: 6 meses</strong></p>
-                            <p>Objetivo: <strong>Ventas directas</strong> y retorno de inversión.</p>
-                            <ul class="card-text">
-                                <li>Planeación estratégica integral</li>
-                                <li>16-20 publicaciones</li>
-                                <li>Community management avanzado</li>
-                                <li>Desarrollo web (setup único)</li>
-                                <li>Creatividades publicitarias</li>
-                                <li>Funnel de ventas</li>
-                                <li>Optimización semanal</li>
-                                <li>Reportes quincenales</li>
-                                <li>Campañas de conversión</li>
-                                <li>Inversión en campañas pagadas <strong>por hasta $40,000</strong> [costo de inversión]. <strong>Inversión no incluida</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 mb-2 portfolio-item">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <div class="p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <path d="m11 17l2 2a1 1 0 1 0 3-3" />
-                                    <path
-                                        d="m14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-                                    <path d="m21 3l1 11h-2M3 3L2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8" />
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-center p-2"><strong>Scale partner</strong></h4>
-                            <p class="card-text"><strong>Desde $25,000 MXN / mes</strong></p>
-                            <p><strong>Contrato mínimo: 6-12 meses</strong></p>
-                            <p>Objetivo: <strong>Escalar ventas</strong> y optimizar CAC (Customer Acquisition Cost) Costo de Adquisición
-                                de Cliente.</p>
-                            <ul class="card-text">
-                                <li>Estrategia dedicada</li>
-                                <li>Auditorías constantes</li>
-                                <li>Testing A/B</li>
-                                <li>Desarrollo web (setup único)</li>
-                                <li>Producción creativa</li>
-                                <li>Funnel avanzado y automatizaciones</li>
-                                <li>Reporte ejecutivo</li>
-                                <li>Inversión en campañas pagadas <strong>$40,000+</strong> [costo de inversión]. <strong>Inversión no incluida</strong></li>
-                                <li>Fee: 15% del spend o inversión</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Paquete Básico End -->
-
-
-    <!-- Testimonial Start -->
-    <!-- <section class="py-5">
-        <div class="container py-5 pb-3">
-            <h1 class="display-4 text-uppercase text-white text-center mb-5" data-aos="fade-in" data-aos-delay="100"
-                data-aos-duration="1000" data-aos-once="true">Testimonios</h1>
-            <div class="owl-carousel testimonial-carousel" data-aos="fade-up" data-aos-delay="100"
-                data-aos-duration="1000" data-aos-once="true">
-                <div class="testimonial-item position-relative text-center rounded p-4">
-                    <img class="img-fluid rounded mx-auto my-4" src="img/testimonial-1.jpg" alt="">
-                    <h5 class="text-uppercase">Client Name</h5>
-                    <p class="text-uppercase">Profession</p>
-                    <p class="text-secondary">Tempor lorem dolor sea et ipsum, lorem justo kasd dolore vero eos. Lorem
-                        duo ipsum sea amet et clita dolor</p>
-                </div>
-                <div class="testimonial-item position-relative text-center rounded p-4">
-                    <img class="img-fluid rounded mx-auto my-4" src="img/testimonial-2.jpg" alt="">
-                    <h5 class="text-uppercase">Client Name</h5>
-                    <p class="text-uppercase">Profession</p>
-                    <p class="text-secondary">Tempor lorem dolor sea et ipsum, lorem justo kasd dolore vero eos. Lorem
-                        duo ipsum sea amet et clita dolor</p>
-                </div>
-                <div class="testimonial-item position-relative text-center rounded p-4">
-                    <img class="img-fluid rounded mx-auto my-4" src="img/testimonial-3.jpg" alt="">
-                    <h5 class="text-uppercase">Client Name</h5>
-                    <p class="text-uppercase">Profession</p>
-                    <p class="text-secondary">Tempor lorem dolor sea et ipsum, lorem justo kasd dolore vero eos. Lorem
-                        duo ipsum sea amet et clita dolor</p>
-                </div>
-                <div class="testimonial-item position-relative text-center rounded p-4">
-                    <img class="img-fluid rounded mx-auto my-4" src="img/testimonial-4.jpg" alt="">
-                    <h5 class="text-uppercase">Client Name</h5>
-                    <p class="text-uppercase">Profession</p>
-                    <p class="text-secondary">Tempor lorem dolor sea et ipsum, lorem justo kasd dolore vero eos. Lorem
-                        duo ipsum sea amet et clita dolor</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Testimonial End -->
-
-
-    <!-- Contact Start -->
-    <section class="container-fluid py-5 px-0">
-        <div class="row mx-0 align-items-center">
-            <div class="col-lg-6" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-                <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Contáctanos</h2>
-                <h3 class="text-white mb-3">¿Listo para dar el siguiente paso? Cuéntanos tu proyecto, nosotros te asesoramos.</h3>
-            </div>
-            <div class="col-lg-6 px-0">
-                <div class="contact-form bg-white rounded p-5">
-                    <div id="success"></div>
-                    <!-- Modal de Bootstrap para mensajes -->
-                    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="successModalLabel">Mensaje</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+        <!-- Portfolio Start -->
+        <section id="portafolio" class="py-5 bg-dark">
+            <div class="container">
+                <div class="row g-5 justify-content-center">
+                    <h2 class="display-4 text-uppercase text-white text-center mb-5">
+                        Casos de éxito
+                    </h2>
+                    <!-- Caso de éxito 1 -->
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="case-item w-100 p-4">
+                            <div class="service-bg" style="background-image: url('img/portafolio/service_1.webp');">
+                            </div>
+                            <div class="card-hover">
+                                <div class="card-hover-top">
+                                    <a href="https://thetrendingbox.com" class="button-link"><i
+                                            class="fa-solid fa-arrow-up-right-from-square fa-xl p-3"></i></a>
                                 </div>
-                                <div class="modal-body">
-                                    <p id="modalMessage"></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cerrar</button>
+                                <div class="card-rest">
+                                    <h5>Página web para <span>The Trending Box</span></h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="form-row">
-                            <div class="col-lg">
-                                <div class="control-group">
-                                    <p>Nombre</p>
-                                    <input type="text" class="form-control bg-light border-2 p-4" id="name"
-                                        required="required"
-                                        data-validation-required-message="Escribe tu nombre"/>
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                    <!-- Caso de éxito 2 -->
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="case-item w-100 p-4">
+                            <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
                             </div>
-                            <div class="col-lg">
-                                <div class="control-group">
-                                    <p>Correo</p>
-                                    <input type="email" class="form-control bg-light border-2 p-4" id="email"
-                                        required="required"
-                                        data-validation-required-message="Escribe tu correo" />
-                                    <p class="help-block text-danger"></p>
+                            <div class="card-hover">
+                                <div class="card-hover-top">
+                                    <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                    <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                                </div>
+                                <div class="card-rest">
+                                    <h5>Branding para <span>Somos People</span></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <p>Teléfono (Opcional)</p>
-                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone"
-                                minlength="10" maxlength="10"/>
-                            <p class="help-block text-danger"></p>
+                    </div>
+                    <!-- Caso de éxito 3 -->
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="case-item w-100 p-4">
+                            <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                            </div>
+                            <div class="card-hover">
+                                <div class="card-hover-top">
+                                    <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                    <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                                </div>
+                                <div class="card-rest">
+                                    <h5>Marketing digital para <span>El Dorado Travel</span></h5>
+                                </div>
+                            </div>
                         </div>
-                        <div class="control-group">
-                            <p>Asunto</p>
-                            <input type="text" class="form-control bg-light border-2 p-4" id="subject"
-                                required="required"
-                                data-validation-required-message="Esribe el asunto" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <p>Mensaje</p>
-                            <textarea class="form-control bg-light border-2 py-3 px-4" rows="5" id="message"
-                                required="required"
-                                data-validation-required-message="Escribe el mensaje"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn button-primary text-uppercase py-3 px-5" type="submit"
-                                id="sendMessageButton">Enviar</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Contact End -->
+        </section>
+        <!-- Portfolio End -->
 
 
-    <!-- Banner Start -->
-    <!-- <section class="full-banner d-flex flex-column justify-content-center align-items-center text-center">
+        <!-- Carousel Clientes Start -->
+        <section class="py-5 background-section-light">
+            <div class="container py-5">
+                <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #6f00ff;">Nuestros Clientes</h2>
+                <div class="client-carousel owl-carousel">
+                    <div class="client-item text-center">
+                        <img src="img/clientes/24-7.webp" alt="Cliente 1" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/vetro.webp" alt="Cliente 2" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/the-trending-box.webp" alt="Cliente 3" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/el-dorado.webp" alt="Cliente 4" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/rama.webp" alt="Cliente 5" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/somos-people.webp" alt="Cliente 6" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/trivium.webp" alt="Cliente 7" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/edge-cloud.webp" alt="Cliente 8" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/edt.webp" alt="Cliente 8" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/clupse.webp" alt="Cliente 8" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                    <div class="client-item text-center">
+                        <img src="img/clientes/faser.webp" alt="Cliente 8" class="img-fluid mx-auto d-block"
+                            style="max-height: 150px; width: auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Carousel Clientes End -->
+
+
+        <!-- Paquete Básico Start -->
+        <section class="py-5 ">
+            <div class="container py-5">
+                <div class="row justify-content-center align-items-center ">
+                    <h2 class="display-4 text-center text-uppercase mb-4" style="color: #ffffff;">Planes y paquetes</h2>
+                    <div class="col-lg-5 mb-2 portfolio-item">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <div class="p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 10 10">
+                                    <path fill="currentColor"
+                                        d="M4.998 0a4.998 4.998 0 1 0 0 9.995a4.998 4.998 0 0 0 0-9.995M1 4.998a3.998 3.998 0 1 1 7.995 0a3.998 3.998 0 0 1-7.995 0m6.104-1.602a.5.5 0 0 1 0 .708l-2.25 2.25a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647l1.896-1.897a.5.5 0 0 1 .708 0" />
+                                </svg>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center p-2"><strong>Presencia digital</strong></h4>
+                                <!-- <p class="card-text"><strong>$10,000 MXN / mes</strong></p> -->
+                                <p><strong>Contrato mínimo: 3 meses</strong></p>
+                                <p>Objetivo: <strong>Presencia profesional</strong> y base para vender.</p>
+                                <ul class="card-text">
+                                    <li>Diagnóstico y estrategia básica</li>
+                                    <li>Branding ligero (ajustes visuales y lineamientos)</li>
+                                    <li>9 publicaciones mensuales</li>
+                                    <li>Community management básico</li>
+                                    <li>Mini landing o web one-page (setup único)</li>
+                                    <li>Reporte mensual de visibilidad</li>
+                                    <li>Campañas de interacción o tráfico</li>
+                                    <li>Inversión en campañas pagadas <strong>por hasta $3,000</strong> [costo de
+                                        inversión]. <strong>Inversión no incluida</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mb-2 portfolio-item">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <div class="p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M4 19h4v-8H4zm6 0h4V5h-4zm6 0h4v-6h-4zM2 21V9h6V3h8v8h6v10z" />
+                                </svg>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center p-2"><strong>Lead builder</strong></h4>
+                                <!-- <p class="card-text"><strong>$12,500 MXN / mes</strong></p> -->
+                                <p><strong>Contrato mínimo: 3-6 meses</strong></p>
+                                <p>Objetivo: Generación constante de <strong>leads calificados.</strong></p>
+                                <ul class="card-text">
+                                    <li>Estrategia de adquisición de leads</li>
+                                    <li>10-12 publicaciones</li>
+                                    <li>Community management</li>
+                                    <li>Copywriting orientado a conversión</li>
+                                    <li>Landing page de captación (setup único)</li>
+                                    <li>Integración WhatsApp / formularios</li>
+                                    <li>Reporte con KPIs de leads</li>
+                                    <li>Campañas de leads</li>
+                                    <li>Inversión en campañas pagadas <strong>por hasta $15,000</strong> [costo de
+                                        inversión]. <strong>Inversión no incluida</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mb-2 portfolio-item">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <div class="p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 32 32">
+                                    <path fill="currentColor"
+                                        d="M30 6V4h-3V2h-2v2h-1c-1.103 0-2 .898-2 2v2c0 1.103.897 2 2 2h4v2h-6v2h3v2h2v-2h1c1.103 0 2-.897 2-2v-2c0-1.102-.897-2-2-2h-4V6zm-6 14v2h2.586L23 25.586l-2.292-2.293a1 1 0 0 0-.706-.293H20a1 1 0 0 0-.706.293L14 28.586L15.414 30l4.587-4.586l2.292 2.293a1 1 0 0 0 1.414 0L28 23.414V26h2v-6zM4 30H2v-5c0-3.86 3.14-7 7-7h6c1.989 0 3.89.85 5.217 2.333l-1.49 1.334A5 5 0 0 0 15 20H9c-2.757 0-5 2.243-5 5zm8-14a7 7 0 1 0 0-14a7 7 0 0 0 0 14m0-12a5 5 0 1 1 0 10a5 5 0 0 1 0-10" />
+                                </svg>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center p-2"><strong>Sales performance</strong></h4>
+                                <!-- <p class="card-text"><strong>$16,000 MXN / mes</strong></p> -->
+                                <p><strong>Contrato mínimo: 6 meses</strong></p>
+                                <p>Objetivo: <strong>Ventas directas</strong> y retorno de inversión.</p>
+                                <ul class="card-text">
+                                    <li>Planeación estratégica integral</li>
+                                    <li>16-20 publicaciones</li>
+                                    <li>Community management avanzado</li>
+                                    <li>Desarrollo web (setup único)</li>
+                                    <li>Creatividades publicitarias</li>
+                                    <li>Funnel de ventas</li>
+                                    <li>Optimización semanal</li>
+                                    <li>Reportes quincenales</li>
+                                    <li>Campañas de conversión</li>
+                                    <li>Inversión en campañas pagadas <strong>por hasta $40,000</strong> [costo de
+                                        inversión]. <strong>Inversión no incluida</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mb-2 portfolio-item">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <div class="p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <path d="m11 17l2 2a1 1 0 1 0 3-3" />
+                                        <path
+                                            d="m14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                                        <path d="m21 3l1 11h-2M3 3L2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center p-2"><strong>Scale partner</strong></h4>
+                                <!-- <p class="card-text"><strong>Desde $25,000 MXN / mes</strong></p> -->
+                                <p><strong>Contrato mínimo: 6-12 meses</strong></p>
+                                <p>Objetivo: <strong>Escalar ventas</strong> y optimizar CAC (Customer Acquisition Cost)
+                                    Costo de Adquisición
+                                    de Cliente.</p>
+                                <ul class="card-text">
+                                    <li>Estrategia dedicada</li>
+                                    <li>Auditorías constantes</li>
+                                    <li>Testing A/B</li>
+                                    <li>Desarrollo web (setup único)</li>
+                                    <li>Producción creativa</li>
+                                    <li>Funnel avanzado y automatizaciones</li>
+                                    <li>Reporte ejecutivo</li>
+                                    <li>Inversión en campañas pagadas <strong>$40,000+</strong> [costo de inversión].
+                                        <strong>Inversión no incluida</strong>
+                                    </li>
+                                    <li>Fee: 15% del spend o inversión</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Paquete Básico End -->
+
+
+        <!-- Contact Start -->
+        <section class="container-fluid py-5 px-0">
+            <div class="row mx-0 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Contáctanos</h2>
+                    <h3 class="text-white mb-3">¿Listo para dar el siguiente paso?</h3>
+                    <h3 class="text-white mb-3">Cuéntanos tu proyecto, nosotros te asesoramos.</h3>
+                </div>
+                <div class="col-lg-6 px-0">
+                    <div class="contact-form bg-white rounded p-5">
+                        <div id="success"></div>
+                        <!-- Modal de Bootstrap para mensajes -->
+                        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="successModalLabel">Mensaje</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="modalMessage"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="form-row">
+                                <div class="col-lg">
+                                    <div class="control-group">
+                                        <p>Nombre</p>
+                                        <input type="text" class="form-control bg-light border-2 p-4" id="name"
+                                            required="required" data-validation-required-message="Escribe tu nombre" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg">
+                                    <div class="control-group">
+                                        <p>Correo</p>
+                                        <input type="email" class="form-control bg-light border-2 p-4" id="email"
+                                            required="required" data-validation-required-message="Escribe tu correo" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <p>Teléfono (Opcional)</p>
+                                <input type="tel" class="form-control bg-light border-2 p-4" id="phone" minlength="10"
+                                    maxlength="10" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <p>Asunto</p>
+                                <input type="text" class="form-control bg-light border-2 p-4" id="subject"
+                                    required="required" data-validation-required-message="Escribe el asunto" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <p>Mensaje</p>
+                                <textarea class="form-control bg-light border-2 py-3 px-4" rows="5" id="message"
+                                    required="required"
+                                    data-validation-required-message="Escribe el mensaje"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn button-primary text-uppercase py-3 px-5" type="submit"
+                                    id="sendMessageButton">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact End -->
+
+
+        <!-- Banner Start -->
+        <!-- <section class="full-banner d-flex flex-column justify-content-center align-items-center text-center">
         <div class="container">
             <h3 class="text-white display-6 mb-3">¡Cotiza con nosotros en minutos!</h3>
             <a href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información" target="_blank"
@@ -682,108 +571,189 @@
             </a>
         </div>
     </section> -->
-    <!-- Banner End -->
+        <!-- Banner End -->
 
+        <!-- footer prueba Start -->
+        <footer id="footer-page">
+            <div style="padding: 44px 36px 32px; text-align: center">
+                <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 28px;
+                        margin-bottom: 28px;
+                        flex-wrap: wrap;
+                    ">
+                    <a href="./" class="nav-link" style="font-size: 14px"><i class="ti ti-home" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Inicio</a>
+                    <a href="nosotros/" class="nav-link" style="font-size: 14px"><i class="ti ti-users" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Nosotros</a>
+                    <a href="contacto/" class="nav-link" style="font-size: 14px"><i class="ti ti-mail" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Contacto</a>
+                </div>
 
-    <!-- Footer Start -->
-    <footer id="footer-page" class="text-white-50 py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
-        <div class="text-center">
-            <a href="/" class="navbar-brand">
-                <img src="img/logo_secon.webp" alt="Logo" style="width: 200px;" />
-            </a>
-        </div>
-        <div class="container-fluid">
-            <div class="row pt-5">
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <h4 class="text-uppercase text-white text-center mb-4">Siguenos</h4>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.facebook.com/profile.php?id=61583716270317"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.instagram.com/team.minzait/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.linkedin.com/company/minzait/"><i class="fab fa-linkedin-in"></i></a>
+                <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 28px;
+                    ">
+                    <div class="">
+                        <a class="btn button-primary mx-2" href="https://www.instagram.com/minzait.agency/"
+                            target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a class="btn button-primary mx-2" href="https://www.facebook.com/profile.php?id=61583716270317"
+                            target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a class="btn button-primary mx-2" href="https://www.linkedin.com/company/minzait/"
+                            target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                    </div>
+                    <div class="">
+                        <a class="btn button-primary mx-2" href="https://www.tiktok.com/@minzait.agency"
+                            target="_blank">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Contáctanos</h4>
-                    <a class="" target="_blank" rel="noopener" href="https://wa.me/5214791493088/">
-                        <p><i class="fa-brands fa-whatsapp text-white mx-2"></i>+52 479 149 3088</p>
-                    </a>
-                    <a class="" target="_blank" rel="noopener" href="mailto:contacto@minzait.com">
-                        <p><i class="fa fa-envelope text-white mx-2"></i>contacto@minzait.com</p>
-                    </a>
 
-                    <style>
-                        a {
-                            text-decoration: none;
-                            color: inherit;
-                        }
-                    </style>
-
+                <div style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        margin-bottom: 28px;
+                    ">
+                    <span style="color: #666; font-size: 13px"><i class="ti ti-mail" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>contacto@minzait.com</span>
+                    <span style="color: #333">·</span>
+                    <span style="color: #666; font-size: 13px"><i class="ti ti-phone" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>+52 479 149 3088</span>
+                    <span style="color: #333">·</span>
+                    <span style="color: #666; font-size: 13px"><i class="ti ti-map-pin" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Benedicto XV #144, San Jerónimo ll, C.P. 37148 León,
+                        Guanajuato.</span>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Ubicanos</h4>
-                    <div class="d-flex flex-column justify-content-start">
-                        <p><i class="fa fa-map-marker-alt text-white mx-2"></i>Benedicto XV #144, San Jeronimo ll, C.P.
-                            37148 León, Guanajuato.</p>
+
+                <!-- <button class="btn button-primary">Contáctanos</button> -->
+            </div>
+
+            <div class="img-footer-logo">
+                <div style="
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(
+                            to bottom,
+                            transparent 0%,
+                            rgba(26, 26, 26, 0.35) 100%
+                        );
+                    "></div>
+                <img src="img/logo_secon.webp" alt="" />
+            </div>
+
+            <div style="
+                    border-top: 0.5px solid rgba(179, 153, 212, 0.1);
+                    padding: 14px 36px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                ">
+                <span style="color: #fafafa; font-size: 12px">© 2026 Minzait.</span>
+                <div style="display: flex; gap: 18px">
+                    <a class="nav-link" style="font-size: 12px">Privacidad</a>
+                    <a class="nav-link" style="font-size: 12px">Términos</a>
+                </div>
+            </div>
+        </footer>
+        <!-- Page Content End -->
+
+        <!-- Botón musical Start -->
+        <div class="music-float" id="musicWidget" role="region" aria-label="Recomendación musical semanal del equipo">
+            <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
+                <i class="ti ti-music" aria-hidden="true"></i>
+            </button>
+            <div class="music-card" id="musicCard">
+                <div class="head">
+                    <div class="avatar" id="wAvatar" style="background:#EEEDFE;color:#3C3489">AT</div>
+                    <div class="info">
+                        <p class="name" id="wName">Ana Torres</p>
+                        <p class="role" id="wRole">Diseño</p>
                     </div>
+                    <button class="close-btn" id="wClose" aria-label="Cerrar widget de música">
+                        <i class="ti ti-x" style="font-size:14px" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="msg" id="wMsg">"Esta semana no puedo parar de escuchar esto"</p>
+                <div class="spotify-wrap">
+                    <iframe id="wIframe" src="" title="Reproducir canción recomendada en Spotify" loading="lazy"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+                <div class="foot">
+                    <span class="week" id="wWeek">Semana 0</span>
+                    <span class="countdown" id="wCountdown">cambia en 0 días</span>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <h4 class="text-uppercase text-white text-center py-2">Accesos Directos</h4>
-                <div class="col-lg-3 col-md-6">
-                    <a href="./">
-                        <h5 class="text-uppercase text-white text-center py-2">Inicio</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="/nosotros/">
-                        <h5 class="text-uppercase text-white text-center py-2">Nosotros</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="/servicios/">
-                        <h5 class="text-uppercase text-white text-center py-2">Servicios</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="/contacto/">
-                        <h5 class="text-uppercase text-white text-center py-1">Contacto</h5>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="mb-2 text-center text-white">&copy; <a href="/">Minzait</a>. 2025.</p>
-    </div>
-    <!-- Footer End -->
+        <!-- Botón musical End -->
+
+        <!-- Botón WhatsApp Start -->
+        <a class="wa-float" href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información"
+            target="_blank" aria-label="WhatsApp">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+        </a>
+        <!-- Botón WhatsApp End -->
+
+        <!-- footer prueba -->
 
 
-    <!-- Back to Top -->
-    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a> -->
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>
