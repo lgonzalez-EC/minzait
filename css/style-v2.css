@@ -91,25 +91,22 @@ a {
 /* ==========================================
    Servicios
    ========================================== */
-
 .service-item {
-  background-color: #f5ede0;
+  background-color: var(--primary);
+  color: var(--light);
   border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   transition: all 0.3s ease;
 }
 
 .service-item:hover {
+  background-color: #5c00a3;
+  color: #fff;
+  border-color: var(--secondary);
+  box-shadow: 0 0 15px rgba(179, 153, 212, 0.4);
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.service-item i {
-  color: #4b0082;
-  transition: all 0.3s ease;
-}
-
-.service-item:hover i {
-  transform: scale(1.1);
 }
 
 /* ==========================================
@@ -144,10 +141,10 @@ a {
 
 .case-item:hover {
   background: #4c0082;
-  border-color: #b399d4;
+  border-color: var(--secondary);
   transform: translateY(-5px);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(59, 80, 105, 0.1);
+  box-shadow: 0 0 15px rgba(179, 153, 212, 0.4);
 }
 
 .card-rest,
@@ -1026,5 +1023,110 @@ h2.sr-only {
 
   .wa-float i {
     font-size: 26px;
+  }
+}
+
+/* About sections start */
+.circle-section {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 80px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle-container {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-svg {
+  width: 300px;
+  height: 300px;
+  will-change: transform;
+}
+
+.circle-content {
+  flex: 1;
+}
+
+.circle-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 30%, #b399d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.circle-desc {
+  font-size: 1.15rem;
+  color: #999;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+.circle-badge {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: 1px solid rgba(179, 153, 212, 0.3);
+  color: #b399d4;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.circle-badge:hover {
+  background: rgba(75, 0, 130, 0.3);
+  border-color: #b399d4;
+}
+
+@media (max-width: 768px) {
+  .circle-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 24px;
+    text-align: center;
+  }
+
+  .circle-container {
+    flex: 0 0 220px;
+  }
+
+  .circle-svg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .circle-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-texto-section {
+    padding: 80px 0;
+  }
+
+  .carousel-texto-section.-tilt-left {
+    transform: rotate(-1.5deg);
+  }
+
+  .carousel-texto-section.-tilt-right {
+    transform: rotate(1.5deg);
+  }
+
+  .carousel-overlay-left,
+  .carousel-overlay-right {
+    width: 60px;
   }
 }

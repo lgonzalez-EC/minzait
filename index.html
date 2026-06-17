@@ -41,11 +41,16 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style-v2.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style-v2.css" rel="stylesheet">
+
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -156,18 +161,37 @@
 
 
         <!-- About Start -->
-        <section class="py-5" id="about">
+        <section class=" py-5" id="about">
             <div class="container py-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="img-fluid mb-4 mb-lg-0" src="img/about.webp" alt="s">
+                    <div class="col-lg-6 d-flex justify-content-center" id="circleSection">
+                        <svg class="circle-svg" viewBox="0 0 300 300" id="rotatingCircle">
+                            <defs>
+                                <path id="circlePath" d="M 150 30 A 120 120 0 1 1 149.99 30" fill="none" />
+                            </defs>
+                            <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(179,153,212,0.15)"
+                                stroke-width="1" />
+                            <circle cx="150" cy="150" r="100" fill="none" stroke="rgba(179,153,212,0.05)"
+                                stroke-width="1" />
+                            <text font-size="20" font-weight="700" fill="#b399d4" letter-spacing="6" textLength="680">
+                                <textPath href="#circlePath" startOffset="0%">Estrategia, diseño y performance para
+                                    crecer
+                                </textPath>
+                            </text>
+                            <circle cx="150" cy="150" r="35" fill="rgba(75,0,130,0.3)" stroke="rgba(179,153,212,0.2)"
+                                stroke-width="1" />
+                            <text x="150" y="146" text-anchor="middle" font-size="13" fill="#b399d4"
+                                font-weight="600">Marketing</text>
+                            <text x="150" y="163" text-anchor="middle" font-size="10" fill="#888"
+                                font-weight="400">Group</text>
+                        </svg>
                     </div>
                     <div class="col-lg-6">
                         <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quiénes somos</h2>
                         <h5 class="text-uppercase text-white mb-2">Marketing Group | Agencia de
                             Marketing Integral
                         </h5>
-                        <p class="mb-4 text-white">Estrategia, diseño y performance para crecer</p>
+                        <!-- <p class="mb-4 text-white">Estrategia, diseño y performance para crecer</p> -->
                         <p class="mb-4 text-white">
                             Somos el aliado creativo y estratégico que tu empresa
                             necesita para destacar en un entorno competitivo.
@@ -183,13 +207,29 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            const circleEl = document.getElementById('rotatingCircle');
+            const circleSection = document.getElementById('circleSection');
+
+            ScrollTrigger.create({
+                trigger: circleSection,
+                start: 'top bottom',
+                end: 'bottom top',
+                onUpdate: (self) => {
+                    gsap.set(circleEl, { rotation: self.progress * 360 });
+                }
+            });
+        </script>
+
         <!-- About End -->
 
 
+
         <!-- Services Start -->
-        <section class="py-5 background-section">
+        <section class="py-5 background-section-light">
             <div class="container pt-5 pb-3 justify-content-center align-items-center">
-                <h2 class="display-4 text-uppercase text-white text-center mb-5">
+                <h2 class="display-4 text-uppercase text-center mb-5">
                     Servicios
                 </h2>
                 <div class="row">
@@ -197,7 +237,7 @@
                         <a href="/marketing-digital/">
                             <div class="service-item  p-5 mb-4">
                                 <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
-                                <h3 class="mb-4">Marketing <span class="d-block text-body">Digital</span>
+                                <h3 class="mb-4">Marketing <span class="d-block">Digital</span>
                                 </h3>
                             </div>
                         </a>
@@ -206,7 +246,7 @@
                         <a href="/desarrollo-web/">
                             <div class="service-item  p-5 mb-4">
                                 <i class="fa fa-3x fa-code mb-4"></i>
-                                <h3 class="mb-4">Desarrollo <span class="d-block text-body">Web</span></h3>
+                                <h3 class="mb-4">Desarrollo <span class="d-block">Web</span></h3>
                             </div>
                         </a>
                     </div>
@@ -214,8 +254,8 @@
                         <a href="/diseno-produccion/">
                             <div class="service-item  p-5 mb-4">
                                 <i class="fa fa-3x fa-solid fa-pen-ruler mb-4"></i>
-                                <h3 class="mb-4">Diseño y Producción<span class="d-block text-body"></span>
-                                    Audiovisual</span></h3>
+                                <h3 class="mb-4">Diseño y Producción<span class="d-block">
+                                        Audiovisual</span></h3>
                             </div>
                         </a>
                     </div>
@@ -291,9 +331,9 @@
 
 
         <!-- Carousel Clientes Start -->
-        <section class="py-5 background-section-light">
+        <section class="py-5 background-section">
             <div class="container py-5">
-                <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #6f00ff;">Nuestros Clientes</h2>
+                <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #ffffff;">Nuestros Clientes</h2>
                 <div class="client-carousel owl-carousel">
                     <div class="client-item text-center">
                         <img src="img/clientes/24-7.webp" alt="Cliente 1" class="img-fluid mx-auto d-block"
