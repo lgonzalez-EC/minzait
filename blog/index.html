@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Minzait - Próximamente</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Página en desarrollo" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/icon.webp" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TWQCLB55');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/style-v2.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="loader-content">
+            <!-- <lottie-player src="assets/loading.json" background="transparent" speed="1" loop autoplay>
+            </lottie-player> -->
+            <dotlottie-wc src="https://lottie.host/6a9cb8dc-3556-4cb4-9969-892bfb0857fc/CtLRSRNt5q.lottie"
+                style="width: 400px;height: 400px" autoplay loop></dotlottie-wc>
+        </div>
+    </div>
+
+    <!-- Navbar Start -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú"
+                aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+
+        <div class="curtain" id="curtain" role="dialog" aria-label="Menú de navegación">
+            <div class="curtain-inner">
+                <div class="curtain-body">
+                    <div class="curtain-left">
+                        <nav class="nav-links" id="nav-links">
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="./">Inicio</a></span>
+                                <span class="nav-num">01</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="nosotros/">Nosotros</a></span>
+                                <span class="nav-num">02</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="contacto/">Contacto</a></span>
+                                <span class="nav-num">03</span>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="curtain-right">
+                        <div class="logo-placeholder">
+                            <img src="img/logo_secon.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-footer">
+                    <div class="social-links">
+                        <a class="btn button-primary " href="https://www.facebook.com/profile.php?id=61583716270317"
+                            target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a class="btn button-primary " href="https://www.instagram.com/minzait.agency/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a class="btn button-primary " href="https://www.linkedin.com/company/minzait/" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a class="btn button-primary " href="https://www.tiktok.com/@minzait.agency" target="_blank">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <span class="contact-hint mx-0" id="time-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <header class="page-header d-flex flex-column align-items-center justify-content-center">
+        <h1 class="display-3 text-white text-white text-uppercase mb-3">Blog</h1>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="../">Inicio</a></h6>
+            <h6 class="m-0 px-3">/</h6>
+            <h6 class="text-uppercase m-0">Blog</h6>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+    <!-- Coming Soon Section Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5 justify-content-center">
+                <!-- <h3 class="text-center text-white mb-4">Próximamente</h3> -->
+                <!-- Caso de éxito 1 -->
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="case-item w-100 p-4">
+                        <div class="service-bg" style="background-image: url('img/portafolio/service_1.webp');">
+                        </div>
+                        <div class="card-hover">
+                            <div class="card-hover-top">
+                                <a href="https://thetrendingbox.com" class="button-link"><i
+                                        class="fa-solid fa-arrow-up-right-from-square fa-xl p-3"></i></a>
+                            </div>
+                            <div class="card-rest">
+                                <h5>Página web para <span>The Trending Box</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Caso de éxito 2 -->
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="case-item w-100 p-4">
+                        <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                        </div>
+                        <div class="card-hover">
+                            <div class="card-hover-top">
+                                <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                            </div>
+                            <div class="card-rest">
+                                <h5>Branding para <span>Somos People</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Caso de éxito 3 -->
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="case-item w-100 p-4">
+                        <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                        </div>
+                        <div class="card-hover">
+                            <div class="card-hover-top">
+                                <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                            </div>
+                            <div class="card-rest">
+                                <h5>Marketing digital para <span>El Dorado Travel</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="case-item w-100 p-4">
+                        <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                        </div>
+                        <div class="card-hover">
+                            <div class="card-hover-top">
+                                <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                            </div>
+                            <div class="card-rest">
+                                <h5>Marketing digital para <span>El Dorado Travel</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                    <div class="case-item w-100 p-4">
+                        <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                        </div>
+                        <div class="card-hover">
+                            <div class="card-hover-top">
+                                <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                            </div>
+                            <div class="card-rest">
+                                <h5>Marketing digital para <span>El Dorado Travel</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Coming Soon Section End -->
+
+
+    <!-- Footer Start -->
+    <footer id="footer-page">
+        <div style="padding: 44px 36px 32px; text-align: center">
+            <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 28px;
+                        margin-bottom: 28px;
+                        flex-wrap: wrap;
+                    ">
+                <a href="../" class="nav-link" style="font-size: 14px"><i class="ti ti-home" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Inicio</a>
+                <a href="../nosotros/" class="nav-link" style="font-size: 14px"><i class="ti ti-users" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Nosotros</a>
+                <a href="../contacto/" class="nav-link" style="font-size: 14px"><i class="ti ti-mail" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Contacto</a>
+            </div>
+
+            <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 28px;
+                    ">
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.instagram.com/minzait.agency/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.facebook.com/profile.php?id=61583716270317"
+                        target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.linkedin.com/company/minzait/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.tiktok.com/@minzait.agency" target="_blank">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <div style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        margin-bottom: 28px;
+                    ">
+                <span style="color: #666; font-size: 13px"><i class="ti ti-mail" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>contacto@minzait.com</span>
+                <span style="color: #333">·</span>
+                <span style="color: #666; font-size: 13px"><i class="ti ti-phone" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>+52 479 149 3088</span>
+                <span style="color: #333">·</span>
+                <span style="color: #666; font-size: 13px"><i class="ti ti-map-pin" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Benedicto XV #144, San Jerónimo ll, C.P. 37148 León,
+                    Guanajuato.</span>
+            </div>
+
+            <!-- <button class="btn button-primary">Contáctanos</button> -->
+        </div>
+
+        <div class="img-footer-logo">
+            <div style="
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(
+                            to bottom,
+                            transparent 0%,
+                            rgba(26, 26, 26, 0.35) 100%
+                        );
+                    "></div>
+            <img src="../img/logo_secon.webp" alt="" />
+        </div>
+
+        <div style="
+                    border-top: 0.5px solid rgba(179, 153, 212, 0.1);
+                    padding: 14px 36px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                ">
+            <span style="color: #fafafa; font-size: 12px">© 2026 Minzait.</span>
+            <div style="display: flex; gap: 18px">
+                <a class="nav-link" style="font-size: 12px">Privacidad</a>
+                <a class="nav-link" style="font-size: 12px">Términos</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Contact Javascript File -->
+    <script src="../mail/jqBootstrapValidation.min.js"></script>
+    <script src="../mail/contact.js"></script>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

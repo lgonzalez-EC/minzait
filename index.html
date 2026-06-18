@@ -108,8 +108,12 @@
                                 <span class="nav-num">02</span>
                             </div>
                             <div class="nav-item">
-                                <span class="nav-link"><a href="contacto/">Contacto</a></span>
+                                <span class="nav-link"><a href="blog/">Blog</a></span>
                                 <span class="nav-num">03</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="contacto/">Contacto</a></span>
+                                <span class="nav-num">04</span>
                             </div>
                         </nav>
                     </div>
@@ -150,9 +154,9 @@
         <header class="vh-100 d-flex align-items-center justify-content-center text-white" style="padding-top: 80px;">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <img src="img/logo_secon.webp" alt="Logo Minzait" class="img-fluid img-header">
-                        <h3 class="lead text-center p-3"><span id="typewriter-text"></span></h3>
+                    <div class="col-lg-8 text-center justify-content-center align-items-center">
+                        <img src="img/logo_secon.webp" alt="Logo Minzait" class="img-header">
+                        <!-- <h3 class="lead text-center p-3"><span id="typewriter-text"></span></h3> -->
                         <div class="text-center ">
                             <a href="#about"
                                 class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">Ver
@@ -392,7 +396,159 @@
 
 
         <!-- Paquete Básico Start -->
-        <section class="py-5 ">
+        <!-- Primer carousel: inclinado a la izquierda -->
+        <section class="carousel-texto-section -tilt-left" id="carouselSection1">
+            <div class="carousel-overlay-left"></div>
+            <div class="carousel-overlay-right"></div>
+            <div class="carousel-texto-track" id="carouselTrack1"></div>
+        </section>
+
+
+        <section class="carousel-texto-section -tilt-right" id="carouselSection2">
+            <div class="carousel-overlay-left"></div>
+            <div class="carousel-overlay-right"></div>
+            <div class="carousel-texto-track" id="carouselTrack2"></div>
+        </section>
+
+        <style>
+            .spacer {
+                height: 150vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                color: #666;
+            }
+
+            .carousel-texto-section {
+                position: relative;
+                padding: 120px 0;
+                background: linear-gradient(135deg, #1A1A1A 0%, #4B0082 50%, #1A1A1A 100%);
+                overflow: hidden;
+                margin: 60px 0;
+            }
+
+            .carousel-texto-section::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 0;
+            }
+
+            .carousel-texto-section.-tilt-left {
+                transform: rotate(-2deg);
+            }
+
+            .carousel-texto-section.-tilt-right {
+                transform: rotate(2deg);
+            }
+
+            .carousel-texto-track {
+                display: flex;
+                gap: 0;
+                width: max-content;
+                will-change: transform;
+                position: relative;
+                z-index: 1;
+                padding: 20px 0;
+            }
+
+            .carousel-texto-item {
+                font-size: clamp(4rem, 12vw, 10rem);
+                font-weight: 800;
+                white-space: nowrap;
+                padding: 0 0.15em;
+                text-transform: uppercase;
+                letter-spacing: -0.02em;
+                background: linear-gradient(135deg, #fff 30%, #b399d4 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                line-height: 1;
+                user-select: none;
+            }
+
+            .carousel-texto-item.separator {
+                color: rgba(179, 153, 212, 0.4);
+                -webkit-text-fill-color: rgba(179, 153, 212, 0.4);
+                padding: 0 0.3em;
+                font-weight: 300;
+            }
+
+            .carousel-overlay-left,
+            .carousel-overlay-right {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 120px;
+                z-index: 2;
+                pointer-events: none;
+            }
+
+            .carousel-overlay-left {
+                left: 0;
+                background: linear-gradient(to right, #0f0f12, transparent);
+            }
+
+            .carousel-overlay-right {
+                right: 0;
+                background: linear-gradient(to left, #0f0f12, transparent);
+            }
+        </style>
+
+        <script>
+            function buildTrack(el, words, separatorChar) {
+                const repetitions = 6;
+                let html = '';
+                for (let r = 0; r < repetitions; r++) {
+                    words.forEach((word, i) => {
+                        html += `<span class="carousel-texto-item">${word}</span>`;
+                        if (i < words.length - 1) {
+                            html += `<span class="carousel-texto-item separator">${separatorChar}</span>`;
+                        }
+                    });
+                    if (r < repetitions - 1) {
+                        html += `<span class="carousel-texto-item separator" style="padding:0 0.6em;">•</span>`;
+                    }
+                }
+                el.innerHTML = html;
+            }
+
+            const track1 = document.getElementById('carouselTrack1');
+            const track2 = document.getElementById('carouselTrack2');
+
+            buildTrack(track1, ['Marketing', 'Estrategía', 'Social Media'], '—');
+            buildTrack(track2, ['Diseño web', 'Branding', 'SEM'], '—');
+
+            const section1 = document.getElementById('carouselSection1');
+            const section2 = document.getElementById('carouselSection2');
+
+            ScrollTrigger.create({
+                trigger: section1,
+                start: 'top bottom',
+                end: 'bottom top',
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const maxTravel = track1.scrollWidth / 3;
+                    gsap.set(track1, { x: -progress * maxTravel });
+                }
+            });
+
+            ScrollTrigger.create({
+                trigger: section2,
+                start: 'top bottom',
+                end: 'bottom top',
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const maxTravel = track2.scrollWidth / 3;
+                    gsap.set(track2, { x: -progress * maxTravel });
+                }
+            });
+        </script>
+
+
+        <!-- <section class="py-5 ">
             <div class="container py-5">
                 <div class="row justify-content-center align-items-center ">
                     <h2 class="display-4 text-center text-uppercase mb-4" style="color: #ffffff;">Planes y paquetes</h2>
@@ -407,7 +563,6 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title text-center p-2"><strong>Presencia digital</strong></h4>
-                                <!-- <p class="card-text"><strong>$10,000 MXN / mes</strong></p> -->
                                 <p><strong>Contrato mínimo: 3 meses</strong></p>
                                 <p>Objetivo: <strong>Presencia profesional</strong> y base para vender.</p>
                                 <ul class="card-text">
@@ -435,7 +590,6 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title text-center p-2"><strong>Lead builder</strong></h4>
-                                <!-- <p class="card-text"><strong>$12,500 MXN / mes</strong></p> -->
                                 <p><strong>Contrato mínimo: 3-6 meses</strong></p>
                                 <p>Objetivo: Generación constante de <strong>leads calificados.</strong></p>
                                 <ul class="card-text">
@@ -464,7 +618,6 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title text-center p-2"><strong>Sales performance</strong></h4>
-                                <!-- <p class="card-text"><strong>$16,000 MXN / mes</strong></p> -->
                                 <p><strong>Contrato mínimo: 6 meses</strong></p>
                                 <p>Objetivo: <strong>Ventas directas</strong> y retorno de inversión.</p>
                                 <ul class="card-text">
@@ -499,7 +652,6 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title text-center p-2"><strong>Scale partner</strong></h4>
-                                <!-- <p class="card-text"><strong>Desde $25,000 MXN / mes</strong></p> -->
                                 <p><strong>Contrato mínimo: 6-12 meses</strong></p>
                                 <p>Objetivo: <strong>Escalar ventas</strong> y optimizar CAC (Customer Acquisition Cost)
                                     Costo de Adquisición
@@ -522,8 +674,72 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Paquete Básico End -->
+
+
+        <!-- Blog Start -->
+        <section class="py-5 background-section">
+            <div class="container">
+                <!-- <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #ffffff;">Blog</h2> -->
+                <!-- <h3 class="text-center text-white mb-4">Próximamente</h3> -->
+                <h2 class="display-4 text-uppercase text-white text-center mb-5">
+                    Blog
+                </h2>
+                <div class="row g-5 justify-content-center">
+                    <!-- <h3 class="text-center text-white mb-4">Próximamente</h3> -->
+                    <!-- Caso de éxito 1 -->
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="case-item w-100 p-4">
+                            <div class="service-bg" style="background-image: url('img/portafolio/service_1.webp');">
+                            </div>
+                            <div class="card-hover">
+                                <div class="card-hover-top">
+                                    <a href="https://thetrendingbox.com" class="button-link"><i
+                                            class="fa-solid fa-arrow-up-right-from-square fa-xl p-3"></i></a>
+                                </div>
+                                <div class="card-rest">
+                                    <h5>Página web para <span>The Trending Box</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Caso de éxito 2 -->
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="case-item w-100 p-4">
+                            <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                            </div>
+                            <div class="card-hover">
+                                <div class="card-hover-top">
+                                    <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                    <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                                </div>
+                                <div class="card-rest">
+                                    <h5>Branding para <span>Somos People</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Caso de éxito 3 -->
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="case-item w-100 p-4">
+                            <div class="service-bg" style="background-image: url('img/portafolio/service_2.webp');">
+                            </div>
+                            <div class="card-hover">
+                                <div class="card-hover-top">
+                                    <a href="" class="button-link"><i class="fa-brands fa-facebook fa-xl p-3"></i></a>
+                                    <a href="" class="button-link"><i class="fa-brands fa-instagram fa-xl p-3"></i></a>
+                                </div>
+                                <div class="card-rest">
+                                    <h5>Marketing digital para <span>El Dorado Travel</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog End -->
 
 
         <!-- Contact Start -->

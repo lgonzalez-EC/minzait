@@ -3,6 +3,12 @@
    Solo incluye estilos personalizados y necesarios
    ========================================== */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* CSS Variables */
 :root {
   --primary: #4b0082;
@@ -53,6 +59,7 @@ ul {
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 a {
@@ -261,7 +268,7 @@ header {
 }
 
 header .img-header {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   padding: 20px;
 }
