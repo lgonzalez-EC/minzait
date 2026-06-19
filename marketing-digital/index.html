@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -507,6 +508,45 @@
     <!-- Back to Top -->
     <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a> -->
 
+
+    <!-- Botón musical Start -->
+    <div class="music-float" id="musicWidget" role="region"
+        aria-label="Recomendación musical semanal del equipo">
+        <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
+            <i class="ti ti-music" aria-hidden="true"></i>
+        </button>
+        <div class="music-card" id="musicCard">
+            <div class="head">
+                <div class="avatar" id="wAvatar" style="background:#EEEDFE;color:#3C3489">AT</div>
+                <div class="info">
+                    <p class="name" id="wName">Ana Torres</p>
+                    <p class="role" id="wRole">Diseño</p>
+                </div>
+                <button class="close-btn" id="wClose" aria-label="Cerrar widget de música">
+                    <i class="ti ti-x" style="font-size:14px" aria-hidden="true"></i>
+                </button>
+            </div>
+            <p class="msg" id="wMsg">"Esta semana no puedo parar de escuchar esto"</p>
+            <div class="spotify-wrap">
+                <iframe id="wIframe" src=""
+                    title="Reproducir canción recomendada en Spotify" loading="lazy"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+            <div class="foot">
+                <span class="week" id="wWeek">Semana 0</span>
+                <span class="countdown" id="wCountdown">cambia en 0 días</span>
+            </div>
+        </div>
+    </div>
+    <!-- Botón musical End -->
+
+    <!-- Botón WhatsApp Start -->
+    <a class="wa-float"
+        href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información"
+        target="_blank" aria-label="WhatsApp">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+    </a>
+    <!-- Botón WhatsApp End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
