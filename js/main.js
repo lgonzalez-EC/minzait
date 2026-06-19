@@ -468,3 +468,41 @@ closeBtn.addEventListener("click", closeWidget);
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && open) closeWidget();
 });
+
+// GSAP section entrance animations
+(function () {
+  if (typeof gsap === "undefined") return;
+
+  var sections = document.querySelectorAll("section");
+  var exclude = ["carouselSection1", "carouselSection2"];
+
+  sections.forEach(function (section) {
+    if (exclude.indexOf(section.id) === -1) {
+      gsap.set(section, { opacity: 0, y: 30 });
+    }
+  });
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          gsap.to(entry.target, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  sections.forEach(function (section) {
+    if (exclude.indexOf(section.id) === -1) {
+      observer.observe(section);
+    }
+  });
+})();
+

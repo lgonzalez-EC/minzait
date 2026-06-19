@@ -30,7 +30,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,11 +39,14 @@
     <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/style-v2.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/style-v2.css" rel="stylesheet">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -71,105 +74,68 @@
 
 
     <!-- Navbar Start -->
-    <div id="navbar-floating" class="floating-navbar">
+    <div class="hamburger-menu" id="hamburger-menu">
         <nav class="navbar">
-            <div class="navbar-content">
-                <div class="logo">
-                    <a href="../"><img src="../img/logo_prin.webp" alt="Logo" /></a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú"
+                aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+
+        <div class="curtain" id="curtain" role="dialog" aria-label="Menú de navegación">
+            <div class="curtain-inner">
+                <div class="curtain-body">
+                    <div class="curtain-left">
+                        <nav class="nav-links" id="nav-links">
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="../">Inicio</a></span>
+                                <span class="nav-num">01</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="../nosotros/">Nosotros</a></span>
+                                <span class="nav-num">02</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="../blog/">Blog</a></span>
+                                <span class="nav-num">03</span>
+                            </div>
+                            <div class="nav-item">
+                                <span class="nav-link"><a href="../contacto/">Contacto</a></span>
+                                <span class="nav-num">04</span>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="curtain-right">
+                        <div class="logo-placeholder">
+                            <img src="../img/logo_secon.webp" alt="">
+                        </div>
+                    </div>
                 </div>
-                <button class="hamburger" aria-label="Menú">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                <!-- Menu -->
-                <ul class="nav-items">
-                    <li>
-                        <a href="../" class="nav-btn" data-id="home" aria-label="Inicio">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                    <polyline points="9 22 9 12 15 12 15 22" />
-                                </svg>
-                            </span>
-                            <span class="label">Inicio</span>
+                <div class="nav-footer">
+                    <div class="social-links">
+                        <a class="btn button-primary mx-2" href="https://www.facebook.com/profile.php?id=61583716270317"
+                            target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="../nosotros/" class="nav-btn" data-id="about" aria-label="Nosotros">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <circle cx="12" cy="8" r="5" />
-                                    <path d="M20 21a8 8 0 0 0-16 0" />
-                                </svg>
-                            </span>
-                            <span class="label">Nosotros</span>
+                        <a class="btn button-primary mx-2" href="https://www.instagram.com/minzait.agency/"
+                            target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="../contacto/" class="nav-btn" data-id="contact" aria-label="Contacto">
-                            <span class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                </svg>
-                            </span>
-                            <span class="label">Contacto</span>
+                        <a class="btn button-primary mx-2" href="https://www.linkedin.com/company/minzait/"
+                            target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                    </li>
-                </ul>
-                <!-- Menu Movil -->
-                <div class="mobile-menu">
-                    <ul class="nav-items-mobile">
-                        <li>
-                            <a href="../" class="nav-btn-mobile" data-id="home" aria-label="Inicio">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                </span>
-                                <span class="label">Inicio</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../nosotros/" class="nav-btn-mobile active" data-id="about" aria-label="Nosotros">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="12" cy="8" r="5" />
-                                        <path d="M20 21a8 8 0 0 0-16 0" />
-                                    </svg>
-                                </span>
-                                <span class="label">Nosotros</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../contacto/" class="nav-btn-mobile" data-id="contact" aria-label="Contacto">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                    </svg>
-                                </span>
-                                <span class="label">Contacto</span>
-                            </a>
-                        </li>
-                    </ul>
+                        <a class="btn button-primary mx-2" href="https://www.tiktok.com/@minzait.agency"
+                            target="_blank">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <span class="contact-hint" id="time-label"></span>
                 </div>
             </div>
-        </nav>
+        </div>
     </div>
     <!-- Navbar End -->
 
@@ -277,7 +243,7 @@
                 </div>
             </div>
             <div class="col-lg-6 px-0">
-                <div class="contact-form bg-white rounded p-5">
+                <div class="contact-form rounded p-5">
                     <div id="success"></div>
                     <!-- Modal de Bootstrap para mensajes -->
                     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
@@ -302,38 +268,48 @@
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="form-row">
                             <div class="col-lg">
-                                <div class="control-group">
-                                    <p>Nombre</p>
-                                    <input type="text" class="form-control bg-light border-2 p-4" id="name"
-                                        required="required" data-validation-required-message="Escribe tu nombre" />
+                                <div class="control-group form">
+                                    <label>
+                                        <input type="text" class="input" id="name" placeholder=" " required="required"
+                                            data-validation-required-message="Escribe tu nombre" />
+                                        <span>Nombre</span>
+                                    </label>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-lg">
-                                <div class="control-group">
-                                    <p>Correo</p>
-                                    <input type="email" class="form-control bg-light border-2 p-4" id="email"
-                                        required="required" data-validation-required-message="Escribe tu correo" />
+                                <div class="control-group form">
+                                    <label>
+                                        <input type="email" class="input" id="email" placeholder=" " required="required"
+                                            data-validation-required-message="Escribe tu correo" />
+                                        <span>Correo</span>
+                                    </label>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <p>Teléfono (Opcional)</p>
-                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone" required="required"
-                                maxlength="10" data-validation-required-message="Escribe tu teléfono" />
+                        <div class="control-group form">
+                            <label>
+                                <input type="tel" class="input" id="phone" placeholder=" " required="required"
+                                    maxlength="10" data-validation-required-message="Escribe tu teléfono" />
+                                <span>Teléfono/WhatsApp</span>
+                            </label>
                             <p class="help-block text-danger"></p>
                         </div>
-                        <div class="control-group">
-                            <p>Asunto</p>
-                            <input type="text" class="form-control bg-light border-2 p-4" id="subject"
-                                required="required" data-validation-required-message="Esribe el asunto" />
+                        <div class="control-group form">
+                            <label>
+                                <input type="text" class="input" id="subject" placeholder=" " required="required"
+                                    data-validation-required-message="Esribe el asunto" />
+                                <span>Asunto</span>
+                            </label>
                             <p class="help-block text-danger"></p>
                         </div>
-                        <div class="control-group">
-                            <p>Mensaje</p>
-                            <textarea class="form-control bg-light border-2 py-3 px-4" rows="5" id="message"
-                                required="required" data-validation-required-message="Escribe el mensaje"></textarea>
+                        <div class="control-group form">
+                            <label>
+                                <textarea class="input" rows="5" id="message" placeholder=" " required="required"
+                                    data-validation-required-message="Escribe el mensaje"></textarea>
+                                <span>Mensaje</span>
+                            </label>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="text-center">
@@ -357,17 +333,18 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-4 mb-2">
                     <a href="../desarrollo-web/">
-                        <div class="service-item rounded p-5 mb-4">
+                        <div class="service-item p-5 mb-4">
                             <i class="fa fa-3x fa-code mb-4"></i>
-                            <h3 class="mb-4">Desarrollo <span class="d-block text-body">Web</span></h3>
+                            <h3 class="mb-4">Desarrollo <span class="d-block">Web</span></h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 mb-2">
                     <a href="../marketing-digital/">
-                        <div class="service-item rounded p-5 mb-4">
+                        <div class="service-item p-5 mb-4">
                             <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
-                            <h3 class="mb-4">Marketing <span class="d-block text-body">Digital</span></h3>
+                            <h3 class="mb-4">Marketing <span class="d-block">Digital</span>
+                            </h3>
                         </div>
                     </a>
                 </div>
@@ -378,83 +355,126 @@
 
 
     <!-- Footer Start -->
-    <footer id="footer-page" class="text-white-50 py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
-        <div class="text-center">
-            <a href="../" class="navbar-brand">
-                <img src="../img/logo_secon.webp" alt="Logo" style="width: 200px;" />
-            </a>
-        </div>
-        <div class="container-fluid">
-            <div class="row pt-5">
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <h4 class="text-uppercase text-white text-center mb-4">Síguenos</h4>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.facebook.com/profile.php?id=61583716270317"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.instagram.com/minzait.agency/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.linkedin.com/company/minzait/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn button-primary mx-2" target="_blank" rel="noopener"
-                            href="https://www.tiktok.com/@minzait.agency"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Contáctanos</h4>
-                    <a class="" target="_blank" rel="noopener" href="https://wa.me/5214791493088/">
-                        <p><i class="fa-brands fa-whatsapp text-white mx-2"></i>+52 479 149 3088</p>
+    <footer id="footer-page">
+        <div style="padding: 44px 36px 32px; text-align: center">
+            <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 28px;
+                        margin-bottom: 28px;
+                        flex-wrap: wrap;
+                    ">
+                <a href="./" class="nav-link" style="font-size: 14px"><i class="ti ti-home" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Inicio</a>
+                <a href="nosotros/" class="nav-link" style="font-size: 14px"><i class="ti ti-users" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Nosotros</a>
+                <a href="contacto/" class="nav-link" style="font-size: 14px"><i class="ti ti-mail" style="
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Contacto</a>
+            </div>
+
+            <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 28px;
+                    ">
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.instagram.com/minzait.agency/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a class="" target="_blank" rel="noopener" href="mailto:contacto@minzait.com">
-                        <p><i class="fa fa-envelope text-white mx-2"></i>contacto@minzait.com</p>
+                </div>
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.facebook.com/profile.php?id=61583716270317"
+                        target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.linkedin.com/company/minzait/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
-                    <style>
-                        a {
-                            text-decoration: none;
-                            color: inherit;
-                        }
-                    </style>
-
                 </div>
-                <div class="col-lg-4 col-md-6 mb-5 text-center">
-                    <h4 class="text-uppercase text-white mb-4">Encuentra la Mina</h4>
-                    <div class="d-flex flex-column justify-content-start">
-                        <p><i class="fa fa-map-marker-alt text-white mx-2"></i>Benedicto XV #144, San Jeronimo ll, C.P.
-                            37148 León, Guanajuato.</p>
-                    </div>
+                <div class="">
+                    <a class="btn button-primary mx-2" href="https://www.tiktok.com/@minzait.agency" target="_blank">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
                 </div>
             </div>
+
+            <div style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        margin-bottom: 28px;
+                    ">
+                <span style="color: #e9e9e9; font-size: 13px"><i class="ti ti-mail" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>contacto@minzait.com</span>
+                <!-- <span style="color: #e9e9e9">·</span> -->
+                <span style="color: #e9e9e9; font-size: 13px"><i class="ti ti-phone" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>+52 479 149 3088</span>
+                <!-- <span style="color: #e9e9e9">·</span> -->
+                <span style="color: #e9e9e9; font-size: 13px"><i class="ti ti-map-pin" style="
+                                color: #b399d4;
+                                font-size: 14px;
+                                margin-right: 5px;
+                                vertical-align: -1px;
+                            " aria-hidden="true"></i>Benedicto XV #144, San Jerónimo ll, C.P. 37148 León,
+                    Guanajuato.</span>
+            </div>
+
+            <!-- <button class="btn button-primary">Contáctanos</button> -->
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <h4 class="text-uppercase text-white text-center py-2">Accesos Directos</h4>
-                <div class="col-lg-3 col-md-6">
-                    <a href="../">
-                        <h5 class="text-uppercase text-white text-center py-2">Inicio</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="../nosotros/">
-                        <h5 class="text-uppercase text-white text-center py-2">Nosotros</h5>
-                    </a>
-                </div>
-                <!-- <div class="col-lg-3 col-md-6">
-                    <a href="../servicios/">
-                        <h5 class="text-uppercase text-white text-center py-2">Servicios</h5>
-                    </a>
-                </div> -->
-                <div class="col-lg-3 col-md-6">
-                    <a href="../contacto/">
-                        <h5 class="text-uppercase text-white text-center py-1">Contacto</h5>
-                    </a>
-                </div>
+
+        <div class="img-footer-logo">
+            <div style="
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(
+                            to bottom,
+                            transparent 0%,
+                            rgba(26, 26, 26, 0.35) 100%
+                        );
+                    "></div>
+            <img src="../img/logo_secon.webp" alt="" />
+        </div>
+
+        <div style="
+                    border-top: 0.5px solid rgba(179, 153, 212, 0.1);
+                    padding: 14px 36px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                ">
+            <span style="color: #fafafa; font-size: 12px">© 2026 Minzait.</span>
+            <div style="display: flex; gap: 18px">
+                <a class="nav-link" style="font-size: 12px">Privacidad</a>
+                <a class="nav-link" style="font-size: 12px">Términos</a>
             </div>
         </div>
     </footer>
-    <div class="py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="mb-2 text-center text-white">&copy; <a href="../">Minzait</a>. 2026.</p>
-    </div>
     <!-- Footer End -->
 
 

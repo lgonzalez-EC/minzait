@@ -160,7 +160,7 @@
                 </div>
             </div>
             <div class="col-lg-6 px-0">
-                <div class="contact-form bg-white rounded p-5">
+                <div class="contact-form rounded p-5">
                     <div id="success"></div>
                     <!-- Modal de Bootstrap para mensajes -->
                     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
@@ -182,48 +182,58 @@
                             </div>
                         </div>
                     </div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="form-row">
-                            <div class="col-lg">
-                                <div class="control-group">
-                                    <p>Nombre</p>
-                                    <input type="text" class="form-control bg-light border-2 p-4" id="name"
-                                        required="required" data-validation-required-message="Escribe tu nombre" />
-                                    <p class="help-block text-danger"></p>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="form-row">
+                                <div class="col-lg">
+                                    <div class="control-group form">
+                                        <label>
+                                            <input type="text" class="input" id="name" placeholder=" "
+                                                required="required" data-validation-required-message="Escribe tu nombre" />
+                                            <span>Nombre</span>
+                                        </label>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg">
+                                    <div class="control-group form">
+                                        <label>
+                                            <input type="email" class="input" id="email" placeholder=" "
+                                                required="required" data-validation-required-message="Escribe tu correo" />
+                                            <span>Correo</span>
+                                        </label>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg">
-                                <div class="control-group">
-                                    <p>Correo</p>
-                                    <input type="email" class="form-control bg-light border-2 p-4" id="email"
-                                        required="required" data-validation-required-message="Escribe tu correo" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                            <div class="control-group form">
+                                <label>
+                                    <input type="tel" class="input" id="phone" placeholder=" " required="required"
+                                        minlength="10" maxlength="10" data-validation-required-message="Escribe tu teléfono" />
+                                    <span>Teléfono/WhatsApp</span>
+                                </label>
+                                <p class="help-block text-danger"></p>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <p>Teléfono/WhatsApp</p>
-                            <input type="tel" class="form-control bg-light border-2 p-4" id="phone" required="required"
-                                minlength="10" maxlength="10" data-validation-required-message="Escribe tu teléfono" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <p>Asunto</p>
-                            <input type="text" class="form-control bg-light border-2 p-4" id="subject"
-                                required="required" data-validation-required-message="Esribe el asunto" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <p>Mensaje</p>
-                            <textarea class="form-control bg-light border-2 py-3 px-4" rows="5" id="message"
-                                required="required" data-validation-required-message="Escribe el mensaje"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn button-primary text-uppercase py-3 px-5" type="submit"
-                                id="sendMessageButton">Enviar</button>
-                        </div>
-                    </form>
+                            <div class="control-group form">
+                                <label>
+                                    <input type="text" class="input" id="subject" placeholder=" "
+                                        required="required" data-validation-required-message="Esribe el asunto" />
+                                    <span>Asunto</span>
+                                </label>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group form">
+                                <label>
+                                    <textarea class="input" rows="5" id="message" placeholder=" "
+                                        required="required" data-validation-required-message="Escribe el mensaje"></textarea>
+                                    <span>Mensaje</span>
+                                </label>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn button-primary text-uppercase py-3 px-5" type="submit"
+                                    id="sendMessageButton">Enviar</button>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
