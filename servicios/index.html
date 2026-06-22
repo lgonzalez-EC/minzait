@@ -411,9 +411,23 @@
     <!-- Botón musical Start -->
     <div class="music-float" id="musicWidget" role="region"
         aria-label="Recomendación musical semanal del equipo">
-        <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
-            <i class="ti ti-music" aria-hidden="true"></i>
-        </button>
+        <div class="music-row">
+            <div class="music-pill" id="musicPill" aria-live="polite" aria-atomic="true">
+                <svg class="music-pill-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+                <div id="pillContent"></div>
+            </div>
+            <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
+                <div class="music-btn-ring"></div>
+                <div class="music-btn-mask"></div>
+                <div class="music-btn-inner" aria-hidden="true">
+                    <i class="ti ti-music" aria-hidden="true"></i>
+                </div>
+            </button>
+        </div>
         <div class="music-card" id="musicCard">
             <div class="head">
                 <div class="avatar" id="wAvatar" style="background:#EEEDFE;color:#3C3489">AT</div>

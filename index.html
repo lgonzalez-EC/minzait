@@ -119,7 +119,7 @@
                     </div>
                     <div class="curtain-right">
                         <div class="logo-placeholder">
-                            <img src="img/logo_secon.webp" alt="">
+                            <img src="img/isotipo_secon.webp" alt="">
                         </div>
                     </div>
                 </div>
@@ -235,9 +235,9 @@
 
 
         <!-- Services Start -->
-        <section class="py-5 background-section-light">
+        <section class="py-5" style="background-color: #1a1a1a;">
             <div class="container pt-5 pb-3 justify-content-center align-items-center">
-                <h2 class="display-4 text-uppercase text-center mb-5">
+                <h2 class="display-4 text-uppercase text-white text-center mb-5">
                     Servicios
                 </h2>
                 <div class="row">
@@ -278,7 +278,7 @@
 
 
         <!-- Portfolio Start -->
-        <section id="portafolio" class="py-5 bg-dark">
+        <section id="portafolio" class="py-5" style="background-color: #1a1a1a;">
             <div class="container">
                 <div class="row g-5 justify-content-center">
                     <h2 class="display-4 text-uppercase text-white text-center mb-5">
@@ -954,7 +954,7 @@
                             rgba(26, 26, 26, 0.35) 100%
                         );
                     "></div>
-                <img src="img/logo_secon.webp" alt="" />
+                <img src="img/isologo_secon.webp" alt="" />
             </div>
 
             <div style="
@@ -977,9 +977,25 @@
 
         <!-- Botón musical Start -->
         <div class="music-float" id="musicWidget" role="region" aria-label="Recomendación musical semanal del equipo">
-            <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
-                <i class="ti ti-music" aria-hidden="true"></i>
-            </button>
+            <div class="music-row">
+                <div class="music-pill" id="musicPill" aria-live="polite" aria-atomic="true">
+                    <svg class="music-pill-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 18V5l12-2v13"></path>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                    <div id="pillContent"></div>
+                </div>
+                <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
+                    <div class="music-btn-ring"></div>
+                    <div class="music-btn-mask"></div>
+                    <div class="music-btn-inner" aria-hidden="true">
+                        <i class="ti ti-music" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
             <div class="music-card" id="musicCard">
                 <div class="head">
                     <div class="avatar" id="wAvatar" style="background:#EEEDFE;color:#3C3489">AT</div>

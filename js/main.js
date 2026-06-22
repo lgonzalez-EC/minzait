@@ -384,16 +384,20 @@ const equipo = [
     avatarColor: "#3C3489",
     mensaje: "Esta semana no puedo parar de escuchar esto",
     spotifyId: "track/7qkKJFIYBsLEVOjgAwqTlz",
+    trackName: "Track 1",
+    artista: "Artista 1",
     semana: 1,
   },
   {
-    nombre: "Carlos Ríos",
-    rol: "Desarrollo",
-    initials: "CR",
-    avatarBg: "#E1F5EE",
-    avatarColor: "#085041",
-    mensaje: "La tengo en repeat desde el lunes",
-    spotifyId: "track/7qiZfU4dY1lWllzX7mPBI3",
+    nombre: "Leo González",
+    rol: "Diseño",
+    initials: "LG",
+    avatarBg: "#EEEDFE",
+    avatarColor: "#3C3489",
+    mensaje: "Esta semana no puedo parar de escuchar esto",
+    spotifyId: "track/7qkKJFIYBsLEVOjgAwqTlz",
+    trackName: "Umbro",
+    artista: "Ghost",
     semana: 2,
   },
   {
@@ -404,6 +408,8 @@ const equipo = [
     avatarColor: "#633806",
     mensaje: "Perfecta para concentrarse",
     spotifyId: "track/5Rqh2EiFg4D22cJ3kIqCjm",
+    trackName: "Track 3",
+    artista: "Artista 3",
     semana: 3,
   },
   {
@@ -414,6 +420,8 @@ const equipo = [
     avatarColor: "#0C447C",
     mensaje: "No la esperaba pero me encantó",
     spotifyId: "track/0rKtyWc8bvkfBm2SWi8Vw3",
+    trackName: "Track 4",
+    artista: "Artista 4",
     semana: 4,
   },
 ];
@@ -425,9 +433,15 @@ const closeBtn = document.getElementById("wClose");
 
 const now = new Date();
 const start = new Date(now.getFullYear(), 0, 1);
-const weekNum = Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7);
-const idx = weekNum % equipo.length;
-const member = equipo[idx];
+const calcWeek = Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7);
+const override = localStorage.getItem("musicWeekOverride");
+const weekNum = override ? parseInt(override, 10) : calcWeek;
+const idx = (weekNum - 1) % equipo.length;
+const member = equipo[idx] || equipo[0];
+
+if (!equipo[idx]) {
+  console.warn("musicWeekOverride inválido, usando semana 1");
+}
 
 document.getElementById("wAvatar").style.background = member.avatarBg;
 document.getElementById("wAvatar").style.color = member.avatarColor;
@@ -437,7 +451,9 @@ document.getElementById("wRole").textContent = member.rol;
 document.getElementById("wMsg").textContent = '"' + member.mensaje + '"';
 document.getElementById("wIframe").src =
   "https://open.spotify.com/embed/" + member.spotifyId;
-document.getElementById("wWeek").textContent = "Semana " + weekNum;
+document.getElementById("wWeek").textContent = override
+  ? "Semana " + weekNum + " (fijada)"
+  : "Semana " + weekNum;
 const daysLeft = 7 - now.getDay();
 document.getElementById("wCountdown").textContent =
   "cambia en " + daysLeft + " día" + (daysLeft !== 1 ? "s" : "");
@@ -469,6 +485,110 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && open) closeWidget();
 });
 
+/* ─── PILL: etiqueta animada ──────────────────────────────────── */
+const pill = document.getElementById("musicPill");
+const pillContent = document.getElementById("pillContent");
+let phase = "idle";
+let hoverActive = false;
+let hideTimer = null;
+
+function showLoading() {
+  if (!pill || !pillContent) return;
+  pillContent.innerHTML =
+    '<span class="music-loading">cargando' +
+    "<span>.</span><span>.</span><span>.</span></span>";
+  pill.classList.add("show");
+  phase = "loading";
+}
+
+function showTrackName() {
+  if (!pill || !pillContent) return;
+  const txt =
+    member && member.trackName
+      ? member.trackName + " \u00B7 " + member.artista
+      : "Recomendación del equipo";
+  const doubled =
+    txt +
+    "\u00a0\u00a0\u00a0\u00a0\u00a0" +
+    txt +
+    "\u00a0\u00a0\u00a0\u00a0\u00a0";
+  pillContent.innerHTML =
+    '<div class="music-marquee-wrap">' +
+    '<span class="music-marquee-text run">' +
+    escaped(doubled) +
+    "</span>" +
+    "</div>";
+  phase = "showing";
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(hidePill, 4000);
+}
+
+function escaped(s) {
+  const d = document.createElement("div");
+  d.appendChild(document.createTextNode(s));
+  return d.innerHTML;
+}
+
+function hidePill() {
+  if (hoverActive || !pill) return;
+  pill.classList.remove("show");
+  phase = "idle";
+}
+
+function startSequence() {
+  setTimeout(function () {
+    showLoading();
+    setTimeout(showTrackName, 1500);
+  }, 800);
+}
+
+btn.addEventListener("mouseenter", function () {
+  if (phase === "loading") return;
+  hoverActive = true;
+  clearTimeout(hideTimer);
+  if (phase !== "showing") showTrackName();
+});
+
+btn.addEventListener("mouseleave", function () {
+  hoverActive = false;
+  hideTimer = setTimeout(hidePill, 800);
+});
+
+btn.addEventListener("focus", function () {
+  btn.dispatchEvent(new Event("mouseenter"));
+});
+
+btn.addEventListener("blur", function () {
+  btn.dispatchEvent(new Event("mouseleave"));
+});
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  var musicRing = document.querySelector(".music-btn-ring");
+  if (musicRing) musicRing.style.animation = "none";
+  var marquee = document.querySelector(".music-marquee-text");
+  if (marquee) marquee.style.animation = "none";
+}
+
+startSequence();
+
+// Fallback: si el loader de página no se oculta en 5s, forzarlo
+(function () {
+  var loader = document.getElementById("loader");
+  if (!loader) return;
+  var check = setInterval(function () {
+    if (loader.classList.contains("fade-out")) {
+      clearInterval(check);
+    }
+  }, 100);
+  setTimeout(function () {
+    if (!loader.classList.contains("fade-out")) {
+      loader.classList.add("fade-out");
+      document.body.classList.remove("loading");
+    }
+    clearInterval(check);
+  }, 5000);
+})();
+
 // GSAP section entrance animations
 (function () {
   if (typeof gsap === "undefined") return;
@@ -496,7 +616,7 @@ document.addEventListener("keydown", function (e) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15 },
   );
 
   sections.forEach(function (section) {
@@ -505,4 +625,3 @@ document.addEventListener("keydown", function (e) {
     }
   });
 })();
-

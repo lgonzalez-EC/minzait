@@ -461,7 +461,7 @@ header .img-header {
 }
 
 .hamburger-menu .logo-placeholder img {
-  width: 45rem;
+  width: 25rem;
   height: auto;
 }
 
@@ -913,6 +913,7 @@ h2.sr-only {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
   transition:
     transform 0.25s,
     opacity 0.25s;
@@ -932,6 +933,149 @@ h2.sr-only {
   transform: scale(0);
   opacity: 0;
   pointer-events: none;
+}
+
+/* Anillo animado del botón */
+.music-btn-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--secondary) 0deg,
+    #534ab7 120deg,
+    #ffffff 240deg,
+    var(--secondary) 360deg
+  );
+  animation: musicSpin 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes musicSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.music-btn-mask {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #111;
+  pointer-events: none;
+}
+
+.music-btn-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Fila que contiene pill + botón */
+.music-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+/* Pill de texto */
+.music-pill {
+  background: #111;
+  border-radius: 20px;
+  padding: 5px 12px 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: translateX(6px);
+}
+
+.music-pill:hover {
+  max-width: 220px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.music-pill.show {
+  max-width: 220px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.music-pill-icon {
+  font-size: 12px;
+  color: #1d9e75;
+  flex-shrink: 0;
+}
+
+.music-loading {
+  font-size: 11px;
+  color: #888;
+  font-family: sans-serif;
+  white-space: nowrap;
+}
+
+.music-loading span {
+  display: inline-block;
+  animation: musicDotBlink 1.2s infinite;
+}
+
+.music-loading span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.music-loading span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes musicDotBlink {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.music-marquee-wrap {
+  overflow: hidden;
+  max-width: 140px;
+}
+
+.music-marquee-text {
+  font-size: 11px;
+  color: #fff;
+  font-family: sans-serif;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.music-marquee-text.run {
+  animation: musicMarquee 5s linear infinite;
+}
+
+@keyframes musicMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .music-card {
@@ -1180,4 +1324,3 @@ h2.sr-only {
     width: 60px;
   }
 }
-
