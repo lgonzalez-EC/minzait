@@ -474,10 +474,6 @@ function closeWidget() {
   localStorage.setItem("musicWidgetClosed", "1");
 }
 
-if (localStorage.getItem("musicWidgetClosed") !== "1") {
-  openWidget();
-}
-
 btn.addEventListener("click", openWidget);
 closeBtn.addEventListener("click", closeWidget);
 

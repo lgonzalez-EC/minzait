@@ -81,6 +81,16 @@
 
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
 
+    <svg width="0" height="0" style="position: absolute;">
+        <filter id="noise-texture">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" seed="0" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 0.05" />
+            </feComponentTransfer>
+            <feBlend mode="soft-light" in="SourceGraphic" />
+        </filter>
+    </svg>
 
 
     <!-- Navbar Start -->
@@ -146,7 +156,6 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Page Content Start -->
     <div id="page-content">
 
@@ -154,6 +163,7 @@
         <header class="vh-100 d-flex align-items-center justify-content-center text-white" style="padding-top: 80px;">
             <div class="container-fluid">
                 <div class="row justify-content-center">
+
                     <div class="col-lg-8 text-center justify-content-center align-items-center">
                         <img src="img/logo_secon.webp" alt="Logo Minzait" class="img-header">
                         <!-- <h3 class="lead text-center p-3"><span id="typewriter-text"></span></h3> -->
@@ -197,8 +207,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quiénes somos</h2>
-                        <h5 class="text-uppercase text-white mb-2">Marketing Group | Agencia de
-                            Marketing Integral
+                        <h5 class="text-uppercase text-white mb-2">Marketing Agency
                         </h5>
                         <!-- <p class="mb-4 text-white">Estrategia, diseño y performance para crecer</p> -->
                         <p class="mb-4 text-white">
@@ -216,6 +225,7 @@
                 </div>
             </div>
         </section>
+        <!-- Poner el icono dentro del circulo  -->
 
         <script>
             const circleEl = document.getElementById('rotatingCircle');
@@ -233,18 +243,20 @@
         <!-- About End -->
 
 
-
         <!-- Services Start -->
-        <section class="py-5" style="background-color: #1a1a1a;">
+        <section class="py-5">
             <div class="container pt-5 pb-3 justify-content-center align-items-center">
-                <h2 class="display-4 text-uppercase text-white text-center mb-5">
+                <!-- <h2 class="display-4 text-uppercase text-white text-center mb-5">
                     Servicios
-                </h2>
+                </h2> -->
+                <img src="img/titulos/mnzt-servicios.webp" alt="Servicios" class="d-block mx-auto mb-4"
+                    style="height: 10rem; width: auto;">
                 <div class="row">
                     <div class="col-lg-4 mb-2">
                         <a href="/marketing-digital/">
                             <div class="service-item p-5 mb-4">
-                                <i class="fa fa-3x fa-solid fa-paperclip mb-4"></i>
+                                <img src="img/servicio_marketing.webp" alt="Marketing Digital"
+                                    style="width: 10rem; height: 10rem; object-fit: contain;" />
                                 <h3 class="mb-4">Marketing <span class="d-block">Digital</span>
                                 </h3>
                             </div>
@@ -253,7 +265,8 @@
                     <div class="col-lg-4 mb-2">
                         <a href="/desarrollo-web/">
                             <div class="service-item p-5 mb-4">
-                                <i class="fa fa-3x fa-code mb-4"></i>
+                                <img src="img/servicio_web.webp" alt="Desarrollo Web"
+                                    style="width: 10rem; height: 10rem; object-fit: contain;" />
                                 <h3 class="mb-4">Desarrollo <span class="d-block">Web</span></h3>
                             </div>
                         </a>
@@ -261,7 +274,8 @@
                     <div class="col-lg-4 mb-2">
                         <a href="/diseno-produccion/">
                             <div class="service-item p-5 mb-4">
-                                <i class="fa fa-3x fa-solid fa-pen-ruler mb-4"></i>
+                                <img src="img/servicio_audioviual.webp" alt="Producción Audiovisual"
+                                    style="width: 10rem; height: 10rem; object-fit: contain;" />
                                 <h3 class="mb-4">Diseño y Producción<span class="d-block">
                                         Audiovisual</span></h3>
                             </div>
@@ -278,12 +292,14 @@
 
 
         <!-- Portfolio Start -->
-        <section id="portafolio" class="py-5" style="background-color: #1a1a1a;">
+        <section id="portafolio" class="py-5">
             <div class="container">
+                <!-- <h2 class="display-4 text-uppercase text-white text-center mb-5">
+                        Portafolio
+                    </h2> -->
+                <img src="img/titulos/mnzt-portafolio.webp" alt="Portafolio" class="d-block mx-auto mb-4"
+                    style="height: 10rem; width: auto;">
                 <div class="row g-5 justify-content-center">
-                    <h2 class="display-4 text-uppercase text-white text-center mb-5">
-                        Casos de éxito
-                    </h2>
                     <!-- Caso de éxito 1 -->
                     <div class="col-lg-4 col-md-6 d-flex justify-content-center">
                         <div class="case-item w-100 p-4">
@@ -338,7 +354,66 @@
         <!-- Portfolio End -->
 
 
-        <!-- Carousel Clientes Start -->
+        <!-- Clientes Start -->
+        <section class="container-xxl pt-5 mb-5">
+            <div class="container">
+                <div class="cta-card p-5 text-center" data-anim="fade-up">
+                    <h2 class="display-4 text-center mb-5 text-uppercase">
+                        Nuestros Clientes
+                    </h2>
+                    <div class="client-carousel owl-carousel">
+                        <div class="client-item text-center">
+                            <img src="img/clientes/24-7.webp" alt="24-7" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/vetro.webp" alt="Vetro" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/the-trending-box.webp" alt="The Trending Box"
+                                class="img-fluid mx-auto d-block" style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/el-dorado.webp" alt="El Dorado" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/rama.webp" alt="Rama" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/somos-people.webp" alt="Somos People"
+                                class="img-fluid mx-auto d-block" style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/trivium.webp" alt="Trivium" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/edge-cloud.webp" alt="Edge Cloud" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/edt.webp" alt="EDT" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/clupse.webp" alt="Clupse" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                        <div class="client-item text-center">
+                            <img src="img/clientes/faser.webp" alt="Faser" class="img-fluid mx-auto d-block"
+                                style="max-height: 150px; width: auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Clientes End -->
+
+
+        <!-- Carousel Clientes Start --
         <section class="py-5 background-section">
             <div class="container py-5">
                 <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #ffffff;">Nuestros Clientes</h2>
@@ -390,7 +465,7 @@
                 </div>
             </div>
         </section>
-        <!-- Carousel Clientes End -->
+        <!- Carousel Clientes End -->
 
 
         <!-- Paquete Básico Start -->
@@ -676,17 +751,45 @@
         <!-- Paquete Básico End -->
 
 
+
+
         <!-- Blog Start -->
-        <section class="py-5 background-section">
-            <div class="container justify-content-center align-items-center">
+        <section class="container pt-5 mb-5">
+            <div class="cta-card cta-card--blog p-5 text-center" data-anim="fade-up">
                 <!-- <h2 class="display-4 text-center mb-5 text-uppercase" style="color: #ffffff;">Blog</h2> -->
                 <!-- <h3 class="text-center text-white mb-4">Próximamente</h3> -->
+                <img src="img/titulos/mnzt-blog.webp" alt="Blog" class="d-block mx-auto"
+                    style="height: 10rem; width: auto;">
+                <div class="row align-items-center p-3">
+                    <div class="col-lg-6 d-flex justify-content-center img-blog p-3">
+                        <img src="img/blog/referencia.webp" alt="img-blog">
+                    </div>
+                    <div class="col-lg-6" style="color: #B399D4;">
+                        <h5 class="mb-2">
+                            29 de febrero 2026
+                        </h5>
+                        <!-- <p class="mb-4 text-white">Estrategia, diseño y performance para crecer</p> -->
+                        <h2 class="mb-4" style="color: var(--primary);">Como el marketing influye en el Gaming</h2>
+                        <a href="/nosotros/" class="btn button-primary text-uppercase py-3 px-5">Seguir leyendo</a>
+                    </div>
+                </div>
+                <div class="text-center p-3">
+                    <a href="/blog/" class="btn button-primary text-uppercase text-center align-items-center py-3 px-5">
+                        Descubre más
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Blog End -->
+
+
+        <!-- Blog Start -->
+        <!-- <section class="py-5 background-section">
+            <div class="container justify-content-center align-items-center">
                 <h2 class="display-4 text-uppercase text-white text-center mb-5">
                     Blog
                 </h2>
                 <div class="row g-5 justify-content-center">
-                    <!-- <h3 class="text-center text-white mb-4">Próximamente</h3> -->
-                    <!-- Caso de éxito 1 -->
                     <div class="col-lg-4 col-md-6 d-flex justify-content-center">
                         <div class="case-item w-100 p-4">
                             <div class="service-bg" style="background-image: url('img/blog/blog-1.webp');">
@@ -702,7 +805,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Caso de éxito 2 -->
+
                     <div class="col-lg-4 col-md-6 d-flex justify-content-center">
                         <div class="case-item w-100 p-4">
                             <div class="service-bg" style="background-image: url('img/blog/blog-2.webp')">
@@ -718,7 +821,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Caso de éxito 3 -->
+
                     <div class="col-lg-4 col-md-6 d-flex justify-content-center">
                         <div class="case-item w-100 p-4">
                             <div class="service-bg" style="background-image: url('img/blog/blog-3.webp');">
@@ -741,7 +844,7 @@
                         Más</a>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Blog End -->
 
 

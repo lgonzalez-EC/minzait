@@ -70,6 +70,19 @@
     </div>
     <!--Loader end-->
 
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <filter id="noise-texture">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" seed="0" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 0.05" />
+            </feComponentTransfer>
+            <feBlend mode="soft-light" in="SourceGraphic" />
+        </filter>
+    </svg>
+
 
     <!-- Navbar Start -->
     <div class="hamburger-menu" id="hamburger-menu">
@@ -140,7 +153,7 @@
 
     <!-- Page Header Start -->
     <header class="page-header d-flex flex-column align-items-center justify-content-center">
-        <h1 class="display-3 text-white text-white text-uppercase mb-3">Nosotros</h1>
+        <h1 class="text-white display-3 text-uppercase">Nosotros</h1>
         <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="../">Inicio</a></h6>
             <h6 class="m-0 px-3">/</h6>
@@ -359,7 +372,7 @@
                             rgba(26, 26, 26, 0.35) 100%
                         );
                     "></div>
-            <img src="../img/logo_secon.webp" alt="" />
+            <img src="../img/isologo_secon.webp" alt="" />
         </div>
 
         <div style="
@@ -386,11 +399,12 @@
 
 
     <!-- Botón musical Start -->
-    <div class="music-float" id="musicWidget" role="region"
-        aria-label="Recomendación musical semanal del equipo">
+    <div class="music-float" id="musicWidget" role="region" aria-label="Recomendación musical semanal del equipo">
         <div class="music-row">
             <div class="music-pill" id="musicPill" aria-live="polite" aria-atomic="true">
-                <svg class="music-pill-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg class="music-pill-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
                     <path d="M9 18V5l12-2v13"></path>
                     <circle cx="6" cy="18" r="3"></circle>
                     <circle cx="18" cy="16" r="3"></circle>
@@ -418,8 +432,7 @@
             </div>
             <p class="msg" id="wMsg">"Esta semana no puedo parar de escuchar esto"</p>
             <div class="spotify-wrap">
-                <iframe id="wIframe" src=""
-                    title="Reproducir canción recomendada en Spotify" loading="lazy"
+                <iframe id="wIframe" src="" title="Reproducir canción recomendada en Spotify" loading="lazy"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
             <div class="foot">
@@ -431,9 +444,8 @@
     <!-- Botón musical End -->
 
     <!-- Botón WhatsApp Start -->
-    <a class="wa-float"
-        href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información"
-        target="_blank" aria-label="WhatsApp">
+    <a class="wa-float" href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información" target="_blank"
+        aria-label="WhatsApp">
         <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
     </a>
     <!-- Botón WhatsApp End -->

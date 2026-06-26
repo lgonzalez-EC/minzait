@@ -13,7 +13,7 @@
 :root {
   --primary: #4b0082;
   --secondary: #b399d4;
-  --light: #f5ede0;
+  --light: #fff;
   --dark: #1a1a1a;
 }
 
@@ -31,8 +31,8 @@ h6 {
   font-weight: 700;
 }
 
-.display-3 {
-  font-size: 2.5rem;
+/* .display-3 {
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -50,7 +50,7 @@ h6 {
   .display-4 {
     font-size: 3rem;
   }
-}
+} */
 
 ul {
   list-style-type: square;
@@ -60,6 +60,15 @@ body {
   font-family: "Open Sans", sans-serif;
   background-color: #1a1a1a;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  filter: url(#noise-filter);
+  pointer-events: none;
 }
 
 a {
@@ -310,6 +319,16 @@ header {
   background-blend-mode: overlay;
 }
 
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  filter: url(#noise-texture);
+  pointer-events: none;
+}
+
+/* Add this SVG to your HTML */
+
 header .img-header {
   width: 100%;
   height: auto;
@@ -322,12 +341,7 @@ header .img-header {
     linear-gradient(to bottom, #8005d8 0%, #4b0082 80%, transparent 100%),
     url("../img/background.webp") center/cover no-repeat; */
 
-  background: radial-gradient(
-    ellipse at 0% 0%,
-    #b399d4 0%,
-    #4b0082 40%,
-    #1a1a1a 100%
-  );
+  background: radial-gradient(ellipse at 0% 0%, #b399d4 0%, #4b0082 40%);
   background-blend-mode: overlay;
   min-height: 400px;
 }
@@ -773,7 +787,61 @@ header .img-header {
   }
 }
 
-/* Footer Start */
+/* ==========================================
+  Banner/Ventana
+   ========================================== */
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cta-card {
+  position: relative;
+  z-index: 0;
+  background: transparent;
+  border-radius: 20px;
+
+  padding: 0px 30px;
+  box-shadow: 0 10px 40px rgba(73, 39, 82, 0.25);
+}
+
+/* Anillo degradado animado (borde) */
+/* .cta-card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 23px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    var(--secondary) 0deg,
+    var(--primary) 120deg,
+    #1f1f1f 240deg,
+    var(--secondary) 360deg
+  );
+  animation: rotar 3s linear infinite;
+  z-index: -2;
+}
+
+@keyframes rotar {
+  to {
+    --angle: 360deg;
+  }
+} */
+
+/* Fondo fijo de la card (cubre el centro, dejando solo 3px de borde visible) */
+.cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 17px;
+  background: url("../img/background-white.webp");
+  z-index: -1;
+}
+/* ==========================================
+  Footer Start
+   ========================================== */
 #footer-page {
   background: radial-gradient(
     ellipse at 50% 120%,
@@ -1322,5 +1390,17 @@ h2.sr-only {
   .carousel-overlay-left,
   .carousel-overlay-right {
     width: 60px;
+  }
+}
+
+/* Blog Start */
+.img-blog img {
+  width: 30em;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .img-blog img {
+    width: 25em;
   }
 }
