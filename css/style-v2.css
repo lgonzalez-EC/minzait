@@ -1771,10 +1771,3 @@ h2.sr-only {
     align-items: flex-start;
   }
 }
-
-@media (max-width: 920px) {
-  .map-ubi {
-    width: 10px;
-    height: 10px;
-  }
-}
