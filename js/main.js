@@ -377,51 +377,52 @@ document.addEventListener("keydown", (e) => {
 
 const equipo = [
   {
-    nombre: "Leo González",
-    rol: "Diseño",
-    initials: "LG",
-    avatarBg: "#EEEDFE",
-    avatarColor: "#3C3489",
-    mensaje: "Esta semana no puedo parar de escuchar esto",
-    spotifyId: "track/7qkKJFIYBsLEVOjgAwqTlz",
-    trackName: "Track 1",
-    artista: "Artista 1",
+    nombre: "Luis Cruz",
+    rol: "Canela",
+    initials: "LC",
+    avatarBg: "#ee5454",
+    avatarColor: "#fffbfb",
+    mensaje: "No la esperaba pero me encantó",
+    spotifyId: "track/4xu0gZ96zx1G7UdajUGDqD",
+    trackName: "私達を信じていて",
+    artista: "Cindy",
     semana: 1,
   },
   {
-    nombre: "Leo González",
+    nombre: "Jaqueline Barajas",
     rol: "Diseño",
-    initials: "LG",
-    avatarBg: "#EEEDFE",
-    avatarColor: "#3C3489",
+    initials: "JB",
+    avatarBg: "#ff00dd",
+    avatarColor: "#ffffff",
     mensaje: "Esta semana no puedo parar de escuchar esto",
-    spotifyId: "track/7qkKJFIYBsLEVOjgAwqTlz",
-    trackName: "Umbro",
-    artista: "Ghost",
+    spotifyId: "track/1iuljeYz6ZG3GTJOZZkoer",
+    trackName: "RGF Island",
+    artista: "Fetty Wap",
     semana: 2,
   },
   {
-    nombre: "María López",
-    rol: "Marketing",
-    initials: "ML",
-    avatarBg: "#FAEEDA",
-    avatarColor: "#633806",
-    mensaje: "Perfecta para concentrarse",
-    spotifyId: "track/5Rqh2EiFg4D22cJ3kIqCjm",
-    trackName: "Track 3",
-    artista: "Artista 3",
+    nombre: "Tony Badillo",
+    rol: "Gerente General",
+    initials: "TB",
+    avatarBg: "#EEEDFE",
+    avatarColor: "#2613cf",
+    mensaje:
+      "No todo merece cinco estrellas. Las ideas que realmente importan rara vez nacen intentando gustarle a todo el mundo",
+    spotifyId: "track/5Z5nbOXhsSbySVC7WUc6y9",
+    trackName: "Four Out of Five",
+    artista: "Arctic Monkeys",
     semana: 3,
   },
   {
-    nombre: "Diego Salas",
-    rol: "Backend",
-    initials: "DS",
-    avatarBg: "#E6F1FB",
-    avatarColor: "#0C447C",
+    nombre: "Leo Gonzalez",
+    rol: "Diseñador web",
+    initials: "LG",
+    avatarBg: "#d600cb",
+    avatarColor: "#fffbfb",
     mensaje: "No la esperaba pero me encantó",
-    spotifyId: "track/0rKtyWc8bvkfBm2SWi8Vw3",
-    trackName: "Track 4",
-    artista: "Artista 4",
+    spotifyId: "track/4xu0gZ96zx1G7UdajUGDqD",
+    trackName: "私達を信じていて",
+    artista: "Cindy",
     semana: 4,
   },
 ];
@@ -432,8 +433,13 @@ const btn = document.getElementById("musicBtn");
 const closeBtn = document.getElementById("wClose");
 
 const now = new Date();
+const wedOffset = (now.getDay() + 4) % 7;
+const refDate = new Date(now);
+refDate.setDate(now.getDate() - wedOffset);
 const start = new Date(now.getFullYear(), 0, 1);
-const calcWeek = Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7);
+const calcWeek = Math.ceil(
+  ((refDate - start) / 86400000 + start.getDay() + 1) / 7,
+);
 const override = localStorage.getItem("musicWeekOverride");
 const weekNum = override ? parseInt(override, 10) : calcWeek;
 const idx = (weekNum - 1) % equipo.length;
@@ -454,9 +460,12 @@ document.getElementById("wIframe").src =
 document.getElementById("wWeek").textContent = override
   ? "Semana " + weekNum + " (fijada)"
   : "Semana " + weekNum;
-const daysLeft = 7 - now.getDay();
+const daysUntilWednesday = ((3 - now.getDay() + 6) % 7) + 1;
 document.getElementById("wCountdown").textContent =
-  "cambia en " + daysLeft + " día" + (daysLeft !== 1 ? "s" : "");
+  "cambia en " +
+  daysUntilWednesday +
+  " día" +
+  (daysUntilWednesday !== 1 ? "s" : "");
 
 let open = false;
 
