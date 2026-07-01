@@ -1,320 +1,523 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Nosotros - Minzait</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta
+            name="keywords"
+            content="diseño web, identidad de marca, branding, marketing digital, diseño gráfico, desarrollo web, agencia creativa, presencia digital, Minzait, León, Guanajuato" />
+        <meta
+            name="description"
+            content="Agencia creativa en León, Guanajuato especializada en diseño web, identidad de marca y marketing digital. Creamos sitios y estrategias digitales que ayudan a las empresas a destacar en línea." />
 
-<head>
-    <meta charset="utf-8">
-    <title>Nosotros - Minzait</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords"
-        content="diseño web, identidad de marca, branding, marketing digital, diseño gráfico, desarrollo web, agencia creativa, presencia digital, Minzait, León, Guanajuato">
-    <meta name="description"
-        content="Agencia creativa en León, Guanajuato especializada en diseño web, identidad de marca y marketing digital. Creamos sitios y estrategias digitales que ayudan a las empresas a destacar en línea.">
+        <!-- Favicon -->
+        <link href="../img/icon.webp" rel="icon" />
 
-    <!-- Favicon -->
-    <link href="../img/icon.webp" rel="icon">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    "gtm.start": new Date().getTime(),
+                    event: "gtm.js",
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-TWQCLB55");
+        </script>
+        <!-- End Google Tag Manager -->
 
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TWQCLB55');</script>
-    <!-- End Google Tag Manager -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <!-- Libraries Stylesheet -->
+        <link
+            href="../lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet" />
+        <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/style-v2.css" rel="stylesheet">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="../css/style-v2.css" rel="stylesheet" />
 
-    <!-- Lottie Player -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-</head>
+        <!-- Lottie Player -->
+    </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CVVZVJTVP"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2CVVZVJTVP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-    gtag('config', 'G-2CVVZVJTVP');
-</script>
+        gtag("config", "G-2CVVZVJTVP");
+    </script>
 
-<body>
-
-    <!--Loader start-->
-    <div id="loader">
-        <div class="loader-content">
-            <!-- <lottie-player src="assets/loading.json" background="transparent" speed="1" loop autoplay>
+    <body>
+        <!--Loader start-->
+        <div id="loader">
+            <div class="loader-content">
+                <!-- <lottie-player src="assets/loading.json" background="transparent" speed="1" loop autoplay>
             </lottie-player> -->
-            <dotlottie-wc src="https://lottie.host/6a9cb8dc-3556-4cb4-9969-892bfb0857fc/CtLRSRNt5q.lottie"
-                style="width: 400px;height: 400px" autoplay loop></dotlottie-wc>
-        </div>
-    </div>
-    <!--Loader end-->
-
-    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
-
-    <svg width="0" height="0" style="position: absolute;">
-        <filter id="noise-texture">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" seed="0" stitchTiles="stitch" />
-            <feColorMatrix type="saturate" values="0" />
-            <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 0.05" />
-            </feComponentTransfer>
-            <feBlend mode="soft-light" in="SourceGraphic" />
-        </filter>
-    </svg>
-
-
-    <!-- Navbar Start -->
-    <div class="hamburger-menu" id="hamburger-menu">
-        <nav class="navbar">
-            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menú"
-                aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </nav>
-
-        <div class="curtain" id="curtain" role="dialog" aria-label="Menú de navegación">
-            <div class="curtain-inner">
-                <div class="curtain-body">
-                    <div class="curtain-left">
-                        <nav class="nav-links" id="nav-links">
-                            <div class="nav-item">
-                                <span class="nav-link"><a href="../">Inicio</a></span>
-                                <span class="nav-num">01</span>
-                            </div>
-                            <div class="nav-item">
-                                <span class="nav-link"><a href="./">Nosotros</a></span>
-                                <span class="nav-num">02</span>
-                            </div>
-                            <div class="nav-item">
-                                <span class="nav-link"><a href="../blog/">Blog</a></span>
-                                <span class="nav-num">03</span>
-                            </div>
-                            <div class="nav-item">
-                                <span class="nav-link"><a href="../contacto/">Contacto</a></span>
-                                <span class="nav-num">04</span>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="curtain-right">
-                        <div class="logo-placeholder">
-                            <img src="../img/isotipo_secon.webp" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-footer">
-                    <div class="social-links">
-                        <a class="btn button-primary mx-2" href="https://www.facebook.com/profile.php?id=61583716270317"
-                            target="_blank">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a class="btn button-primary mx-2" href="https://www.instagram.com/minzait.agency/"
-                            target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a class="btn button-primary mx-2" href="https://www.linkedin.com/company/minzait/"
-                            target="_blank">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a class="btn button-primary mx-2" href="https://www.tiktok.com/@minzait.agency"
-                            target="_blank">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                    </div>
-                    <span class="contact-hint" id="time-label"></span>
-                </div>
+                <dotlottie-wc
+                    src="https://lottie.host/6a9cb8dc-3556-4cb4-9969-892bfb0857fc/CtLRSRNt5q.lottie"
+                    style="width: 400px; height: 400px"
+                    autoplay
+                    loop></dotlottie-wc>
             </div>
         </div>
-    </div>
-    <!-- Navbar End -->
+        <!--Loader end-->
 
+        <script
+            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js"
+            type="module"></script>
 
-    <!-- Page Header Start -->
-    <header class="page-header d-flex flex-column align-items-center justify-content-center">
-        <h1 class="text-white display-3 text-uppercase">Nosotros</h1>
-        <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="../">Inicio</a></h6>
-            <h6 class="m-0 px-3">/</h6>
-            <h6 class="text-uppercase m-0">Nosotros</h6>
-        </div>
-    </header>
-    <!-- Page Header Start -->
+        <svg width="0" height="0" style="position: absolute">
+            <filter id="noise-texture">
+                <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.65"
+                    numOctaves="4"
+                    seed="0"
+                    stitchTiles="stitch" />
+                <feColorMatrix type="saturate" values="0" />
+                <feComponentTransfer>
+                    <feFuncA type="discrete" tableValues="0 0.05" />
+                </feComponentTransfer>
+                <feBlend mode="soft-light" in="SourceGraphic" />
+            </filter>
+        </svg>
 
+        <!-- Navbar Start -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <nav class="navbar">
+                <button
+                    class="hamburger"
+                    id="hamburger"
+                    onclick="toggleMenu()"
+                    aria-label="Abrir menú"
+                    aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </nav>
 
-    <!-- About Start -->
-    <section class="container-xxl py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid mb-4 mb-lg-0" src="../img/about.webp" alt="">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="display-4 text-uppercase mb-4" style="color: #B399D4;">Quiénes somos</h2>
-                    <h5 class="text-uppercase text-white mb-2">Minzait<sup>&reg;</sup> | Marketing & Branding Agency
-                    </h5>
-                    <p class="mb-4 text-white">Estrategia, diseño y performance para crecer</p>
-                    <p class="mb-4 text-white">
-                        Somos una <strong>agencia de Marketing & Branding</strong> enfocada en transformar la presencia
-                        digital de las
-                        marcas en <strong>crecimiento comercial real y medible</strong>.
-                        Actuamos como un <strong>growth partner estratégico</strong> integrando herramientas de
-                        <strong>Social Media, Paid Media,
-                            Diseño Web y Branding</strong> para construir marcas sólidas y estrategias que generan
-                        leads, ventas y
-                        posicionamiento.
-                    </p>
-                    <p class="mb-4 text-white">
-                        Diseñamos con intención, ejecutamos con datos y optimizamos con enfoque a resultados.
-                        Acompañamos a emprendedores, PyMEs y empresas que buscan escalar de forma clara, rentable y
-                        sostenible.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About End -->
-
-
-    <!-- About Info Start -->
-    <section class="container-fluid py-5">
-        <div class="container pb-3">
-            <div class="row">
-                <div class="col-lg-4 mb-2 portfolio-item" data-category="web">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <img src="../img/nosotros/mision.webp" width="128" height="128" alt="Icono Misión">
-                        <div class="card-body">
-                            <h5 class="card-title text-center p-2">Misión</h5>
-                            <p class="card-text">Impulsar el crecimiento comercial de emprendedores, PyMEs y grandes
-                                empresas mediante <strong>estrategias digitales claras, medibles y rentables</strong>,
-                                integrando
-                                branding, diseño web, social media y paid media como un ecosistema orientado a
-                                resultados.</p>
+            <div
+                class="curtain"
+                id="curtain"
+                role="dialog"
+                aria-label="Menú de navegación">
+                <div class="curtain-inner">
+                    <div class="curtain-body">
+                        <div class="curtain-left">
+                            <nav class="nav-links" id="nav-links">
+                                <div class="nav-item">
+                                    <span class="nav-link"
+                                        ><a href="../">Inicio</a></span
+                                    >
+                                    <span class="nav-num">01</span>
+                                </div>
+                                <div class="nav-item">
+                                    <span class="nav-link"
+                                        ><a href="./">Nosotros</a></span
+                                    >
+                                    <span class="nav-num">02</span>
+                                </div>
+                                <!-- <div class="nav-item">
+                                    <span class="nav-link"
+                                        ><a href="../blog/">Blog</a></span
+                                    >
+                                    <span class="nav-num">03</span>
+                                </div> -->
+                                <div class="nav-item">
+                                    <span class="nav-link"
+                                        ><a href="../contacto/"
+                                            >Contacto</a
+                                        ></span
+                                    >
+                                    <span class="nav-num">03</span>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="curtain-right">
+                            <div class="logo-placeholder">
+                                <img src="../img/isotipo_secon.webp" alt="" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-2 portfolio-item" data-category="web">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <img src="../img/nosotros/vision.webp" width="128" height="128" alt="Icono Misión">
-                        <div class="card-body">
-                            <h5 class="card-title text-center p-2">Visión</h5>
-                            <p class="card-text">Ser una de las agencias de Marketing & Branding referentes en
-                                <strong>León,
-                                    Guanajuato, el Bajío y Latinoamérica</strong>, reconocida por sus <strong>resultados
-                                    comprobables</strong>,
-                                procesos profesionales y relaciones de largo plazo con clientes que confían en
-                                <strong>Minzait®</strong>
-                                como su aliado estratégico de crecimiento.
-                            </p>
+                    <div class="nav-footer">
+                        <div class="social-links">
+                            <a
+                                class="btn button-primary mx-2"
+                                href="https://www.facebook.com/profile.php?id=61583716270317"
+                                target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a
+                                class="btn button-primary mx-2"
+                                href="https://www.instagram.com/minzait.agency/"
+                                target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a
+                                class="btn button-primary mx-2"
+                                href="https://www.linkedin.com/company/minzait/"
+                                target="_blank">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a
+                                class="btn button-primary mx-2"
+                                href="https://www.tiktok.com/@minzait.agency"
+                                target="_blank">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-2 portfolio-item" data-category="web">
-                    <div
-                        class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
-                        <img src="../img/nosotros/valores.webp" width="128" height="128" alt="Icono Misión">
-                        <div class="card-body">
-                            <h5 class="card-title text-center p-2">Valores</h5>
-                            <p>Nuestros valores guían cada <strong>decisión, proceso y relación</strong>:</p>
-                            <ul class="card-text">
-                                <li>Transparencia</li>
-                                <li>Resultados</li>
-                                <li>Calidad</li>
-                                <li>Colaboración</li>
-                                <li>Responsabilidad</li>
-                                <li>Innovación</li>
-                            </ul>
-                        </div>
+                        <span class="contact-hint" id="time-label"></span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- About Info End -->
+        <!-- Navbar End -->
 
+        <!-- Page Header Start -->
+        <header
+            class="page-header d-flex flex-column align-items-center justify-content-center">
+            <h1 class="text-white display-3 text-uppercase">Nosotros</h1>
+            <div class="d-inline-flex text-white">
+                <h6 class="text-uppercase m-0">
+                    <a class="text-white" href="../">Inicio</a>
+                </h6>
+                <h6 class="m-0 px-3">/</h6>
+                <h6 class="text-uppercase m-0">Nosotros</h6>
+            </div>
+        </header>
+        <!-- Page Header Start -->
 
-    <!-- Footer Start -->
-    <footer id="footer-page">
-        <div style="padding: 44px 36px 32px; text-align: center">
-            <div style="
+        <!-- About Start -->
+        <section class="container-xxl py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div
+                        class="col-lg-6 d-flex justify-content-center"
+                        id="circleSection">
+                        <svg
+                            class="circle-svg"
+                            viewBox="0 0 300 300"
+                            id="rotatingCircle">
+                            <defs>
+                                <path
+                                    id="circlePath"
+                                    d="M 150 30 A 120 120 0 1 1 149.99 30"
+                                    fill="none" />
+                            </defs>
+                            <circle
+                                cx="150"
+                                cy="150"
+                                r="120"
+                                fill="none"
+                                stroke="rgba(179,153,212,0.15)"
+                                stroke-width="1" />
+                            <circle
+                                cx="150"
+                                cy="150"
+                                r="100"
+                                fill="none"
+                                stroke="rgba(179,153,212,0.05)"
+                                stroke-width="1" />
+                            <text
+                                font-size="20"
+                                font-weight="700"
+                                fill="#b399d4"
+                                letter-spacing="6"
+                                textLength="680">
+                                <textPath href="#circlePath" startOffset="0%">
+                                    Estrategia, diseño y performance para crecer
+                                </textPath>
+                            </text>
+                            <circle
+                                cx="150"
+                                cy="150"
+                                r="35"
+                                fill="rgba(75,0,130,0.3)"
+                                stroke="rgba(179,153,212,0.2)"
+                                stroke-width="1" />
+                            <image
+                                x="125"
+                                y="125"
+                                width="50"
+                                height="50"
+                                href="../img/icon.webp" />
+                        </svg>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2
+                            class="display-4 text-uppercase mb-4"
+                            style="color: #b399d4">
+                            Quiénes somos
+                        </h2>
+                        <h5 class="text-uppercase text-white mb-2">
+                            Minzait<sup>&reg;</sup> | Marketing & Branding
+                            Agency
+                        </h5>
+                        <p class="mb-4 text-white">
+                            Estrategia, diseño y performance para crecer
+                        </p>
+                        <p class="mb-4 text-white">
+                            Somos una
+                            <strong>agencia de Marketing & Branding</strong>
+                            enfocada en transformar la presencia digital de las
+                            marcas en
+                            <strong>crecimiento comercial real y medible</strong
+                            >. Actuamos como un
+                            <strong>growth partner estratégico</strong>
+                            integrando herramientas de
+                            <strong
+                                >Social Media, Paid Media, Diseño Web y
+                                Branding</strong
+                            >
+                            para construir marcas sólidas y estrategias que
+                            generan leads, ventas y posicionamiento.
+                        </p>
+                        <p class="mb-4 text-white">
+                            Diseñamos con intención, ejecutamos con datos y
+                            optimizamos con enfoque a resultados. Acompañamos a
+                            emprendedores, PyMEs y empresas que buscan escalar
+                            de forma clara, rentable y sostenible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            const circleEl = document.getElementById("rotatingCircle");
+            const circleSection = document.getElementById("circleSection");
+
+            ScrollTrigger.create({
+                trigger: circleSection,
+                start: "top bottom",
+                end: "bottom top",
+                onUpdate: (self) => {
+                    gsap.set(circleEl, { rotation: self.progress * 360 });
+                },
+            });
+        </script>
+        <!-- About End -->
+
+        <!-- About Info Start -->
+        <section class="container-fluid py-5">
+            <div class="container pb-3">
+                <div class="row">
+                    <div
+                        class="col-lg-4 mb-2 portfolio-item"
+                        data-category="web">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <img
+                                src="../img/nosotros/mision.webp"
+                                width="128"
+                                height="128"
+                                alt="Icono Misión" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center p-2">
+                                    Misión
+                                </h5>
+                                <p class="card-text">
+                                    Impulsar el crecimiento comercial de
+                                    emprendedores, PyMEs y grandes empresas
+                                    mediante
+                                    <strong
+                                        >estrategias digitales claras, medibles
+                                        y rentables</strong
+                                    >, integrando branding, diseño web, social
+                                    media y paid media como un ecosistema
+                                    orientado a resultados.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 mb-2 portfolio-item"
+                        data-category="web">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <img
+                                src="../img/nosotros/vision.webp"
+                                width="128"
+                                height="128"
+                                alt="Icono Misión" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center p-2">
+                                    Visión
+                                </h5>
+                                <p class="card-text">
+                                    Ser una de las agencias de Marketing &
+                                    Branding referentes en
+                                    <strong
+                                        >León, Guanajuato, el Bajío y
+                                        Latinoamérica</strong
+                                    >, reconocida por sus
+                                    <strong>resultados comprobables</strong>,
+                                    procesos profesionales y relaciones de largo
+                                    plazo con clientes que confían en
+                                    <strong>Minzait®</strong>
+                                    como su aliado estratégico de crecimiento.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 mb-2 portfolio-item"
+                        data-category="web">
+                        <div
+                            class="card portfolio-card bg-secondary text-white h-100 align-items-center justify-content-center">
+                            <img
+                                src="../img/nosotros/valores.webp"
+                                width="128"
+                                height="128"
+                                alt="Icono Misión" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center p-2">
+                                    Valores
+                                </h5>
+                                <p>
+                                    Nuestros valores guían cada
+                                    <strong>decisión, proceso y relación</strong
+                                    >:
+                                </p>
+                                <ul class="card-text">
+                                    <li>Transparencia</li>
+                                    <li>Resultados</li>
+                                    <li>Calidad</li>
+                                    <li>Colaboración</li>
+                                    <li>Responsabilidad</li>
+                                    <li>Innovación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Info End -->
+
+        <!-- Footer Start -->
+        <footer id="footer-page">
+            <div style="padding: 44px 36px 32px; text-align: center">
+                <div
+                    style="
                         display: flex;
                         justify-content: center;
                         gap: 28px;
                         margin-bottom: 28px;
                         flex-wrap: wrap;
                     ">
-                <a href="./" class="nav-link" style="font-size: 14px"><i class="ti ti-home" style="
+                    <a href="./" class="nav-link" style="font-size: 14px"
+                        ><i
+                            class="ti ti-home"
+                            style="
                                 font-size: 14px;
                                 margin-right: 5px;
                                 vertical-align: -1px;
-                            " aria-hidden="true"></i>Inicio</a>
-                <a href="nosotros/" class="nav-link" style="font-size: 14px"><i class="ti ti-users" style="
+                            "
+                            aria-hidden="true"></i
+                        >Inicio</a
+                    >
+                    <a href="nosotros/" class="nav-link" style="font-size: 14px"
+                        ><i
+                            class="ti ti-users"
+                            style="
                                 font-size: 14px;
                                 margin-right: 5px;
                                 vertical-align: -1px;
-                            " aria-hidden="true"></i>Nosotros</a>
-                <a href="contacto/" class="nav-link" style="font-size: 14px"><i class="ti ti-mail" style="
+                            "
+                            aria-hidden="true"></i
+                        >Nosotros</a
+                    >
+                    <a href="contacto/" class="nav-link" style="font-size: 14px"
+                        ><i
+                            class="ti ti-mail"
+                            style="
                                 font-size: 14px;
                                 margin-right: 5px;
                                 vertical-align: -1px;
-                            " aria-hidden="true"></i>Contacto</a>
-            </div>
+                            "
+                            aria-hidden="true"></i
+                        >Contacto</a
+                    >
+                </div>
 
-            <div style="
+                <div
+                    style="
                         display: flex;
                         justify-content: center;
                         gap: 10px;
                         margin-bottom: 28px;
                     ">
-                <div class="">
-                    <a class="btn button-primary mx-2" href="https://www.instagram.com/minzait.agency/" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                    <div class="">
+                        <a
+                            class="btn button-primary mx-2"
+                            href="https://www.instagram.com/minzait.agency/"
+                            target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a
+                            class="btn button-primary mx-2"
+                            href="https://www.facebook.com/profile.php?id=61583716270317"
+                            target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a
+                            class="btn button-primary mx-2"
+                            href="https://www.linkedin.com/company/minzait/"
+                            target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a
+                            class="btn button-primary mx-2"
+                            href="https://www.tiktok.com/@minzait.agency"
+                            target="_blank">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="">
-                    <a class="btn button-primary mx-2" href="https://www.facebook.com/profile.php?id=61583716270317"
-                        target="_blank">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                </div>
-                <div class="">
-                    <a class="btn button-primary mx-2" href="https://www.linkedin.com/company/minzait/" target="_blank">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
 
-                </div>
-                <div class="">
-                    <a class="btn button-primary mx-2" href="https://www.tiktok.com/@minzait.agency" target="_blank">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-
-                </div>
-            </div>
-
-            <div style="
+                <div
+                    style="
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -322,34 +525,53 @@
                         flex-wrap: wrap;
                         margin-bottom: 28px;
                     ">
-                <span style="color: #666; font-size: 13px"><i class="ti ti-mail" style="
+                    <span style="color: #666; font-size: 13px"
+                        ><i
+                            class="ti ti-mail"
+                            style="
                                 color: #b399d4;
                                 font-size: 14px;
                                 margin-right: 5px;
                                 vertical-align: -1px;
-                            " aria-hidden="true"></i>contacto@minzait.com</span>
-                <span style="color: #333">·</span>
-                <span style="color: #666; font-size: 13px"><i class="ti ti-phone" style="
+                            "
+                            aria-hidden="true"></i
+                        >contacto@minzait.com</span
+                    >
+                    <span style="color: #333">·</span>
+                    <span style="color: #666; font-size: 13px"
+                        ><i
+                            class="ti ti-phone"
+                            style="
                                 color: #b399d4;
                                 font-size: 14px;
                                 margin-right: 5px;
                                 vertical-align: -1px;
-                            " aria-hidden="true"></i>+52 479 149 3088</span>
-                <span style="color: #333">·</span>
-                <span style="color: #666; font-size: 13px"><i class="ti ti-map-pin" style="
+                            "
+                            aria-hidden="true"></i
+                        >+52 479 149 3088</span
+                    >
+                    <span style="color: #333">·</span>
+                    <span style="color: #666; font-size: 13px"
+                        ><i
+                            class="ti ti-map-pin"
+                            style="
                                 color: #b399d4;
                                 font-size: 14px;
                                 margin-right: 5px;
                                 vertical-align: -1px;
-                            " aria-hidden="true"></i>Benedicto XV #144, San Jerónimo ll, C.P. 37148 León,
-                    Guanajuato.</span>
+                            "
+                            aria-hidden="true"></i
+                        >Benedicto XV #144, San Jerónimo ll, C.P. 37148 León,
+                        Guanajuato.</span
+                    >
+                </div>
+
+                <!-- <button class="btn button-primary">Contáctanos</button> -->
             </div>
 
-            <!-- <button class="btn button-primary">Contáctanos</button> -->
-        </div>
-
-        <div class="img-footer-logo">
-            <div style="
+            <div class="img-footer-logo">
+                <div
+                    style="
                         position: absolute;
                         inset: 0;
                         background: linear-gradient(
@@ -358,10 +580,11 @@
                             rgba(26, 26, 26, 0.35) 100%
                         );
                     "></div>
-            <img src="../img/isologo_secon.webp" alt="" />
-        </div>
+                <img src="../img/isologo_secon.webp" alt="" />
+            </div>
 
-        <div style="
+            <div
+                style="
                     border-top: 0.5px solid rgba(179, 153, 212, 0.1);
                     padding: 14px 36px;
                     display: flex;
@@ -370,87 +593,134 @@
                     flex-wrap: wrap;
                     gap: 8px;
                 ">
-            <span style="color: #fafafa; font-size: 12px">© 2026 Minzait.</span>
-            <div style="display: flex; gap: 18px">
-                <a class="nav-link" style="font-size: 12px">Privacidad</a>
-                <a class="nav-link" style="font-size: 12px">Términos</a>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a> -->
-
-
-    <!-- Botón musical Start -->
-    <div class="music-float" id="musicWidget" role="region" aria-label="Recomendación musical semanal del equipo">
-        <div class="music-row">
-            <div class="music-pill" id="musicPill" aria-live="polite" aria-atomic="true">
-                <svg class="music-pill-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 18V5l12-2v13"></path>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <circle cx="18" cy="16" r="3"></circle>
-                </svg>
-                <div id="pillContent"></div>
-            </div>
-            <button class="music-btn" id="musicBtn" aria-label="Abrir recomendación musical">
-                <div class="music-btn-ring"></div>
-                <div class="music-btn-mask"></div>
-                <div class="music-btn-inner" aria-hidden="true">
-                    <i class="ti ti-music" aria-hidden="true"></i>
+                <span style="color: #fafafa; font-size: 12px"
+                    >© 2026 Minzait.</span
+                >
+                <div style="display: flex; gap: 18px">
+                    <a class="nav-link" style="font-size: 12px">Privacidad</a>
+                    <a class="nav-link" style="font-size: 12px">Términos</a>
                 </div>
-            </button>
-        </div>
-        <div class="music-card" id="musicCard">
-            <div class="head">
-                <div class="avatar" id="wAvatar" style="background:#EEEDFE;color:#3C3489">AT</div>
-                <div class="info">
-                    <p class="name" id="wName">Ana Torres</p>
-                    <p class="role" id="wRole">Diseño</p>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a> -->
+
+        <!-- Botón musical Start -->
+        <div
+            class="music-float"
+            id="musicWidget"
+            role="region"
+            aria-label="Recomendación musical semanal del equipo">
+            <div class="music-row">
+                <div
+                    class="music-pill"
+                    id="musicPill"
+                    aria-live="polite"
+                    aria-atomic="true">
+                    <svg
+                        class="music-pill-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M9 18V5l12-2v13"></path>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                    <div id="pillContent"></div>
                 </div>
-                <button class="close-btn" id="wClose" aria-label="Cerrar widget de música">
-                    <i class="ti ti-x" style="font-size:14px" aria-hidden="true"></i>
+                <button
+                    class="music-btn"
+                    id="musicBtn"
+                    aria-label="Abrir recomendación musical">
+                    <div class="music-btn-ring"></div>
+                    <div class="music-btn-mask"></div>
+                    <div class="music-btn-inner" aria-hidden="true">
+                        <i class="ti ti-music" aria-hidden="true"></i>
+                    </div>
                 </button>
             </div>
-            <p class="msg" id="wMsg">"Esta semana no puedo parar de escuchar esto"</p>
-            <div class="spotify-wrap">
-                <iframe id="wIframe" src="" title="Reproducir canción recomendada en Spotify" loading="lazy"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
-            <div class="foot">
-                <span class="week" id="wWeek">Semana 0</span>
-                <span class="countdown" id="wCountdown">cambia en 0 días</span>
+            <div class="music-card" id="musicCard">
+                <div class="head">
+                    <div
+                        class="avatar"
+                        id="wAvatar"
+                        style="background: #eeedfe; color: #3c3489">
+                        AT
+                    </div>
+                    <div class="info">
+                        <p class="name" id="wName">Ana Torres</p>
+                        <p class="role" id="wRole">Diseño</p>
+                    </div>
+                    <button
+                        class="close-btn"
+                        id="wClose"
+                        aria-label="Cerrar widget de música">
+                        <i
+                            class="ti ti-x"
+                            style="font-size: 14px"
+                            aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="msg" id="wMsg">
+                    "Esta semana no puedo parar de escuchar esto"
+                </p>
+                <div class="spotify-wrap">
+                    <iframe
+                        id="wIframe"
+                        src=""
+                        title="Reproducir canción recomendada en Spotify"
+                        loading="lazy"
+                        allow="
+                            autoplay;
+                            clipboard-write;
+                            encrypted-media;
+                            fullscreen;
+                            picture-in-picture;
+                        "></iframe>
+                </div>
+                <div class="foot">
+                    <span class="week" id="wWeek">Semana 0</span>
+                    <span class="countdown" id="wCountdown"
+                        >cambia en 0 días</span
+                    >
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Botón musical End -->
+        <!-- Botón musical End -->
 
-    <!-- Botón WhatsApp Start -->
-    <a class="wa-float" href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información" target="_blank"
-        aria-label="WhatsApp">
-        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
-    </a>
-    <!-- Botón WhatsApp End -->
+        <!-- Botón WhatsApp Start -->
+        <a
+            class="wa-float"
+            href="https://wa.me/524772329401?text=Hola,%20me%20interesa%20más%20información"
+            target="_blank"
+            aria-label="WhatsApp">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+        </a>
+        <!-- Botón WhatsApp End -->
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="../lib/lightbox/js/lightbox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <!-- Contact Javascript File -->
-    <script src="../mail/jqBootstrapValidation.min.js"></script>
-    <script src="../mail/contact.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../lib/easing/easing.min.js"></script>
+        <script src="../lib/waypoints/waypoints.min.js"></script>
+        <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="../lib/lightbox/js/lightbox.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <!-- Contact Javascript File -->
+        <script src="../mail/jqBootstrapValidation.min.js"></script>
+        <script src="../mail/contact.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
-</body>
-
+        <!-- Template Javascript -->
+        <script src="../js/main.js"></script>
+    </body>
 </html>
